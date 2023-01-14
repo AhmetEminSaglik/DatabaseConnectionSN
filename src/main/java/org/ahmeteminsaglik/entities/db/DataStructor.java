@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Entity
-@Table(name = "data_structors")
+@Table(name = "data_structor")
 @NoArgsConstructor
 public class DataStructor {
 

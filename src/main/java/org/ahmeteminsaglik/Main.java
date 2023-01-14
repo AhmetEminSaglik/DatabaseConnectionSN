@@ -63,17 +63,17 @@ public class Main {
         Object[] dsArr = Arrays.stream(EnumDataStructorName.values()).toArray();
 
         for (int i = 0; i < dsArr.length; i++) {
+            boolean dataIsFound = false;
             EnumDataStructorName enumDSN = ((EnumDataStructorName) dsArr[i]);
             for (int j = 0; j < listDB.size(); j++) {
 
                 if (listDB.get(j).getName().equals(enumDSN.getName())) {
+                    dataIsFound = true;
                     break;
                 }
-                if (j == listDB.size() - 1) {
-                    saveDataStructor(new DataStructor(enumDSN.getName()));
-                    break;
-                }
-
+            }
+            if (dataIsFound == false) {
+                saveDataStructor(new DataStructor(enumDSN.getName()));
             }
         }
 
