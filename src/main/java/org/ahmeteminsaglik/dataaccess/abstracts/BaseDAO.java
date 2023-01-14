@@ -5,7 +5,7 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 
 import java.util.List;
 
-public interface BaseDAO<T extends Object> {
+public interface BaseDAO<T> {
     void save(T t);
 
     void saveAll(List<T> tList);

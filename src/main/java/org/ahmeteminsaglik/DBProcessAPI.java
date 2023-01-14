@@ -6,10 +6,7 @@ import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.*;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.entities.enums.EnumDataStructor;
-import org.ahmeteminsaglik.entities.enums.EnumSearchAlgorithm;
-import org.ahmeteminsaglik.entities.enums.EnumSortAlgorithm;
-import org.ahmeteminsaglik.entities.enums.EnumWordTable;
+import org.ahmeteminsaglik.entities.enums.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,6 +14,23 @@ import java.util.List;
 
 public class DBProcessAPI {
 
+    public static void exampleSaveAbsentProcesName() {
+
+        List<EnumProcessName> enumList = Arrays.asList(EnumProcessName.values());
+        List<ProcessName> processNameFromEnum = new ArrayList<>();
+        enumList.forEach(e -> processNameFromEnum.add(new ProcessName(e.getName())));
+
+        BaseDAO baseDAO = new ProcessNameDAOImp();
+        List<ProcessName> wordListFromDB = new ArrayList<>();
+
+        List<Object> listDB = exampleGetAllDataFromDBRequestedObject(baseDAO);
+        listDB.forEach(e -> {
+            wordListFromDB.add((ProcessName) e);
+            System.out.println("added item : "+((WordList) e).getName());
+        });
+
+        saveAbsentEnumValuesToDB(processNameFromEnum, wordListFromDB, baseDAO);
+    }
     public static void exampleSaveAbsentWordListTableName() {
 
         List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
@@ -29,6 +43,7 @@ public class DBProcessAPI {
         List<Object> listDB = exampleGetAllDataFromDBRequestedObject(baseDAO);
         listDB.forEach(e -> {
             wordListFromDB.add((WordList) e);
+            System.out.println("added item : "+((WordList) e).getName());
         });
 
         saveAbsentEnumValuesToDB(wordListFromEnum, wordListFromDB, baseDAO);
