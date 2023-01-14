@@ -47,6 +47,7 @@ public class DBConnectionProcess {
         }
     }
 
+
     public void saveAll(List<?> objectList) {
         int i = 0;
         int batchSize = 50;

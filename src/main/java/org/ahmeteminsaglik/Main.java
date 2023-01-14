@@ -1,5 +1,7 @@
 package org.ahmeteminsaglik;
 
+import org.ahmeteminsaglik.entities.db.DataStructorProcess;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -13,7 +15,10 @@ public class Main {
 //        DBProcessAPI.exampleSaveAbsentSortAlgorithm();
 //        DBProcessAPI.exampleSaveAbsentWordListTableName();
 //        DBProcessAPI.exampleSaveAbsentProcesName();
-        DBProcessAPI.exampleSaveRecord();
+
+
+        DBProcessAPI.exampleSaveDataStructorProcess();
+//        DBProcessAPI.exampleSaveRecord();
     }
 
 

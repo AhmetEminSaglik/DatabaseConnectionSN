@@ -9,7 +9,7 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class RecordDAOImp implements RecordDAO {
-    DBService<Record> dbService;
+    private DBService<Record> dbService;
 
     public RecordDAOImp() {
         dbService = new DBService<>(Record.class);

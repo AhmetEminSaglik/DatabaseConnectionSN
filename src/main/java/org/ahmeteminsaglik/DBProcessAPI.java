@@ -1,9 +1,6 @@
 package org.ahmeteminsaglik;
 
-import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
-import org.ahmeteminsaglik.dataaccess.abstracts.DataStructorDAO;
-import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
-import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
+import org.ahmeteminsaglik.dataaccess.abstracts.*;
 import org.ahmeteminsaglik.dataaccess.concretes.*;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
@@ -15,6 +12,29 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DBProcessAPI {
+
+    public static void exampleSaveDataStructorProcess() {
+        Record record = new Record();
+//        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
+        RecordDAO dao= new RecordDAOImp();
+        DataStructorProcess dsp = new DataStructorProcess();
+        dsp.setRecordId(record);
+        dsp.setDataStructorId(2);
+
+        DataStructorProcess dsp2 = new DataStructorProcess();
+        dsp2.setRecordId(record);
+        dsp2.setDataStructorId(1);
+
+        DataStructorProcess dsp3 = new DataStructorProcess();
+        dsp3.setRecordId(record);
+        dsp3.setDataStructorId(3);
+
+        record.getHashSetDSP().add(dsp);
+        record.getHashSetDSP().add(dsp2);
+        record.getHashSetDSP().add(dsp3);
+
+        dao.save(record);
+    }
 
     public static void exampleSaveRecord() {
         RecordDAO recordDAO = new RecordDAOImp();

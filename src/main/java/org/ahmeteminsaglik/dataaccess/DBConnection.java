@@ -67,13 +67,17 @@ public class DBConnection {
     }
 
     public void closeAllConnection() {
-        if (factory != null || factory.isOpen()) {
+        if (factory != null && factory.isOpen()) {
             factory.close();
         }
-        if (session != null || session.isOpen()) {
+        if (session != null && session.isOpen()) {
             session.close();
         }
     }
+
+ /*   public void mergeSession(Object o) {
+        session.merge(o);
+    }*/
 
     public Query createQuery() {
         return session.createQuery("FROM " + clazz.getSimpleName(), clazz);

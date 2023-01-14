@@ -9,7 +9,7 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class ProcessNameDAOImp implements ProcessNameDAO {
-    DBService<ProcessName> dbService;
+    private DBService<ProcessName> dbService;
 
     public ProcessNameDAOImp() {
         dbService = new DBService<>(ProcessName.class);

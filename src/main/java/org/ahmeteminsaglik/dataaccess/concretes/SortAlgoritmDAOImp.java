@@ -10,7 +10,7 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class SortAlgoritmDAOImp implements SortAlgorithmDAO {
-    DBService<SortAlgorithm> dbService;
+    private DBService<SortAlgorithm> dbService;
 
     public SortAlgoritmDAOImp() {
         this.dbService = new DBService<>(SortAlgorithm.class);
