@@ -9,7 +9,7 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class DataStructorDaoImp implements DataStructorDAO {
-    DBService<DataStructor> dbService;
+    private DBService<DataStructor> dbService;
 
     public DataStructorDaoImp() {
         dbService = new DBService<>(DataStructor.class);

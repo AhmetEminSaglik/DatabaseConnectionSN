@@ -9,8 +9,7 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class WordDAOImp implements WordDAO {
-    DBService<Word> dbService;
-
+    private DBService<Word> dbService;
     public WordDAOImp() {
         dbService = new DBService<>(Word.class);
     }

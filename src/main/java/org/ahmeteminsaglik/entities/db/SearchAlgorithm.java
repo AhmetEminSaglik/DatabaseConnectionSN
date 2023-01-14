@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
+import java.util.Objects;
+
 @Entity
-@Table(name = "data_structor")
+@Table(name = "search_algorithm")
 @NoArgsConstructor
-public class DataStructor {
+public class SearchAlgorithm {
 
     @Id
     @Column
@@ -17,7 +19,7 @@ public class DataStructor {
     @Column(name = "name", unique = true)
     private String name;
 
-    public DataStructor(String name) {
+    public SearchAlgorithm(String name) {
         this.name = name;
     }
 
@@ -38,8 +40,21 @@ public class DataStructor {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SearchAlgorithm that = (SearchAlgorithm) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+    @Override
     public String toString() {
-        return "DataStructor{" +
+        return "SearchAlgorithm{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
