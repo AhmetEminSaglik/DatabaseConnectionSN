@@ -3,15 +3,9 @@ package org.ahmeteminsaglik;
 import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
 import org.ahmeteminsaglik.dataaccess.abstracts.DataStructorDAO;
 import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
-import org.ahmeteminsaglik.dataaccess.concretes.DataStructorDaoImp;
-import org.ahmeteminsaglik.dataaccess.concretes.SearchAlgorithmDAOImp;
-import org.ahmeteminsaglik.dataaccess.concretes.SortAlgoritmDAOImp;
-import org.ahmeteminsaglik.dataaccess.concretes.WordDAOImp;
+import org.ahmeteminsaglik.dataaccess.concretes.*;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
-import org.ahmeteminsaglik.entities.db.DataStructor;
-import org.ahmeteminsaglik.entities.db.SearchAlgorithm;
-import org.ahmeteminsaglik.entities.db.SortAlgorithm;
-import org.ahmeteminsaglik.entities.db.Word;
+import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.entities.enums.EnumDataStructor;
 import org.ahmeteminsaglik.entities.enums.EnumSearchAlgorithm;
 import org.ahmeteminsaglik.entities.enums.EnumSortAlgorithm;
@@ -23,34 +17,50 @@ import java.util.List;
 
 public class DBProcessAPI {
 
+    public static void exampleSaveAbsentWordListTableName() {
+
+        List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
+        List<WordList> wordListFromEnum = new ArrayList<>();
+        enumList.forEach(e -> wordListFromEnum.add(new WordList(e.getName())));
+
+        BaseDAO baseDAO = new WordListDAOImp();
+        List<WordList> wordListFromDB = new ArrayList<>();
+
+        List<Object> listDB = exampleGetAllDataFromDBRequestedObject(baseDAO);
+        listDB.forEach(e -> {
+            wordListFromDB.add((WordList) e);
+        });
+
+        saveAbsentEnumValuesToDB(wordListFromEnum, wordListFromDB, baseDAO);
+    }
+
     public static void exampleSaveAbsentSearchAlgorithm() {
 
         List<EnumSearchAlgorithm> enumList = Arrays.asList(EnumSearchAlgorithm.values());
         List<SearchAlgorithm> searchAlgorithmListFromEnum = new ArrayList<>();
         enumList.forEach(e -> searchAlgorithmListFromEnum.add(new SearchAlgorithm(e.getName())));
 
-        System.out.println("_----------------------------------");
         BaseDAO baseDAO = new SearchAlgorithmDAOImp();
         List<SearchAlgorithm> searchAlgorithmListFromDB = new ArrayList<>();
 
-        List<Object> listDB = exampleGetAllDataFromDBRequestedObject(new SearchAlgorithmDAOImp());
+        List<Object> listDB = exampleGetAllDataFromDBRequestedObject(baseDAO);
         listDB.forEach(e -> {
             searchAlgorithmListFromDB.add((SearchAlgorithm) e);
         });
 
         saveAbsentEnumValuesToDB(searchAlgorithmListFromEnum, searchAlgorithmListFromDB, baseDAO);
     }
+
     public static void exampleSaveAbsentSortAlgorithm() {
 
         List<EnumSortAlgorithm> enumList = Arrays.asList(EnumSortAlgorithm.values());
         List<SortAlgorithm> sortAlgorithmListFromEnum = new ArrayList<>();
         enumList.forEach(e -> sortAlgorithmListFromEnum.add(new SortAlgorithm(e.getName())));
 
-        System.out.println("_----------------------------------");
         BaseDAO baseDAO = new SortAlgoritmDAOImp();
         List<SearchAlgorithm> searchAlgorithmListFromDB = new ArrayList<>();
 
-        List<Object> listDB = exampleGetAllDataFromDBRequestedObject(new SearchAlgorithmDAOImp());
+        List<Object> listDB = exampleGetAllDataFromDBRequestedObject(baseDAO);
         listDB.forEach(e -> {
             searchAlgorithmListFromDB.add((SearchAlgorithm) e);
         });
@@ -100,8 +110,6 @@ public class DBProcessAPI {
     }
 
 
-
-
     public static void exampleSaveDataToDataStructor() {
         Object[] dsArr = Arrays.stream(EnumDataStructor.values()).toArray();
         List<DataStructor> list = new ArrayList<>();
@@ -135,7 +143,6 @@ public class DBProcessAPI {
             }
         }
     }
-
 
 
     public static void saveDataStructor(DataStructor dataStructor) {

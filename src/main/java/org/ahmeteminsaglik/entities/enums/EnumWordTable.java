@@ -23,5 +23,9 @@ public enum EnumWordTable {
         return wordTable.name;
     }
 
+    public String getName() {
+        return name;
+    }
+
 
 }
