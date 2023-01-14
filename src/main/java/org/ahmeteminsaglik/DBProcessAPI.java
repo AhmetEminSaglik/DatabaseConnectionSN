@@ -12,6 +12,35 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DBProcessAPI {
+    public static void exampleSaveSearchAlgorithmProcess() {
+        Record record = new Record();
+//        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
+        RecordDAO dao = new RecordDAOImp();
+
+        SearchAlgorithmProcess sap = new SearchAlgorithmProcess();
+        sap.setRecordId(record);
+        sap.setSearchAlgorithmId(9);
+
+        SearchAlgorithmProcess sap2 = new SearchAlgorithmProcess();
+        sap2.setRecordId(record);
+        sap2.setSearchAlgorithmId(2);
+
+        SearchAlgorithmProcess dsp3 = new SearchAlgorithmProcess();
+        dsp3.setRecordId(record);
+        dsp3.setSearchAlgorithmId(3);
+
+        SearchAlgorithmProcess dsp4 = new SearchAlgorithmProcess();
+        dsp4.setRecordId(record);
+        dsp4.setSearchAlgorithmId(1);
+
+        record.getSearchAlgorithmProcessList().add(sap);
+        record.getSearchAlgorithmProcessList().add(sap2);
+        record.getSearchAlgorithmProcessList().add(dsp3);
+        record.getSearchAlgorithmProcessList().add(dsp4);
+
+        dao.save(record);
+    }
+
 
     public static void exampleSaveSortAlgorithmProcess() {
         Record record = new Record();

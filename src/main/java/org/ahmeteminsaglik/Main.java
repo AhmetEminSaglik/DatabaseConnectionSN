@@ -19,7 +19,8 @@ public class Main {
 
 //        DBProcessAPI.exampleSaveRecord();
 //        DBProcessAPI.exampleSaveDataStructorProcess();
-        DBProcessAPI.exampleSaveSortAlgorithmProcess();
+//        DBProcessAPI.exampleSaveSortAlgorithmProcess();
+        DBProcessAPI.exampleSaveSearchAlgorithmProcess();
     }
 
 

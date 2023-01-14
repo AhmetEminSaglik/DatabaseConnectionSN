@@ -18,8 +18,9 @@
         <property name="format_sql">true</property>
 <!--        <property name="hibernate.jdbc.batch_size">10</property>-->
         <property name="hibernate.order_inserts">true</property>
-        <mapping class="org.ahmeteminsaglik.entities.db.Record"></mapping>
-        <mapping class="org.ahmeteminsaglik.entities.db.DataStructorProcess"></mapping>
-        <mapping class="org.ahmeteminsaglik.entities.db.SortAlgorithmProcess"></mapping>
+        <mapping class="org.ahmeteminsaglik.entities.db.Record"/>
+        <mapping class="org.ahmeteminsaglik.entities.db.DataStructorProcess"/>
+        <mapping class="org.ahmeteminsaglik.entities.db.SortAlgorithmProcess"/>
+        <mapping class="org.ahmeteminsaglik.entities.db.SearchAlgorithmProcess"/>
     </session-factory>
 </hibernate-configuration>

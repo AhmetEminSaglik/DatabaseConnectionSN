@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "record")
@@ -31,6 +29,11 @@ public class Record {
             cascade = CascadeType.ALL,
             targetEntity = SortAlgorithmProcess.class)
     private List<SortAlgorithmProcess> sortAlgorithmProcessList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "recordId",
+            cascade = CascadeType.ALL,
+            targetEntity = SearchAlgorithmProcess.class)
+    private List<SearchAlgorithmProcess> searchAlgorithmProcessList = new ArrayList<>();
 
     public int getId() {
         return id;
