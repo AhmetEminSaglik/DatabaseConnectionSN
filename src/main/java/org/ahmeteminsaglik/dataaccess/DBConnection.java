@@ -1,6 +1,5 @@
 package org.ahmeteminsaglik.dataaccess;
 
-import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -9,8 +8,6 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DBConnection {
     private Class<?> clazz;
@@ -47,6 +44,22 @@ public class DBConnection {
         buildFactory();
         openSession(statementInspector);
         beginTransaction();
+    }
+
+    public void setBatchSize(int size) {
+        session.setJdbcBatchSize(size);
+    }
+
+    public void persistSession(Object o) {
+        session.persist(o);
+    }
+
+    public void flushSession() {
+        session.flush();
+    }
+
+    public void clearSession() {
+        session.clear();
     }
 
     public void commitTransaction() {

@@ -1,6 +1,6 @@
-package org.ahmeteminsaglik.entities;
+package org.ahmeteminsaglik.entities.enums;
 
-public enum WordTable {
+public enum EnumWordTable {
     WORD_ALL("word_all"),
     WORD_50("word_50"), WORD_100("word_100"), WORD_250("word_250"), WORD_500("word_500"),
     WORD_1_000("word_1_000"), WORD_1_500("word_1_500"), WORD_3_000("word_3_000"),
@@ -15,11 +15,11 @@ public enum WordTable {
 
     private final String name;
 
-    WordTable(String name) {
+    EnumWordTable(String name) {
         this.name = name;
     }
 
-    public static String selectTableName(WordTable wordTable) {
+    public static String selectTableName(EnumWordTable wordTable) {
         return wordTable.name;
     }
 

@@ -1,4 +1,4 @@
-package org.ahmeteminsaglik.entities;
+package org.ahmeteminsaglik.entities.db;
 
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;
@@ -23,10 +23,6 @@ public class Word {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getWord() {

@@ -34,4 +34,37 @@ public class DBConnectionProcess {
         return list;
 
     }
+
+    public void save(Object o) {
+        try {
+            connection.configure(null);
+            connection.persistSession(o);
+            connection.commitTransaction();
+        } catch (Exception e) {
+            System.out.println("Exception occured : save(Object o) --> " + e.getMessage());
+        } finally {
+            connection.closeAllConnection();
+        }
+    }
+
+    public void saveAll(List<?> objectList) {
+        int i = 0;
+        int batchSize = 50;
+        try {
+            connection.configure(null);
+            connection.setBatchSize(batchSize);
+            for (i = 0; i < objectList.size(); i++) {
+                connection.persistSession(objectList.get(i));
+                if (i % batchSize == 0) {
+                    connection.flushSession();
+                    connection.clearSession();
+                }
+            }
+            connection.commitTransaction();
+        } catch (Exception e) {
+            System.out.println("Exception occured : save(Object o) --> " + e.getMessage());
+        } finally {
+            connection.closeAllConnection();
+        }
+    }
 }

@@ -1,24 +1,28 @@
 package org.ahmeteminsaglik.dataaccess.concretes;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
-import org.ahmeteminsaglik.dataaccess.abstracts.WordDao;
-import org.ahmeteminsaglik.entities.Word;
-import org.ahmeteminsaglik.entities.WordPool;
+import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
+import org.ahmeteminsaglik.entities.db.Word;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 
 import java.util.List;
 
-public class WordDAOImp implements WordDao {
+public class WordDAOImp implements WordDAO {
     DBService<Word> dbService;
 
     public WordDAOImp() {
-        dbService = new DBService<Word>(Word.class);
+        dbService = new DBService<>(Word.class);
     }
 
     @Override
     public void save(Word word) {
 //        dbService.save(word);
+        throw new NotYetImplementedException();
+    }
+
+    @Override
+    public void saveAll(List<Word> words) {
         throw new NotYetImplementedException();
 
     }

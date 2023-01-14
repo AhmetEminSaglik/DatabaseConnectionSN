@@ -1,14 +1,17 @@
-package org.ahmeteminsaglik.entities;
+package org.ahmeteminsaglik.entities.custom;
+
+import org.ahmeteminsaglik.entities.db.Word;
 
 import java.util.List;
 
-public class WordSearchGroup {
+
+public class WordPool {
     List<Word> wordList;
 
-    public WordSearchGroup() {
+    public WordPool() {
     }
 
-    public WordSearchGroup(List<Word> wordList) {
+    public WordPool(List<Word> wordList) {
         this.wordList = wordList;
     }
 

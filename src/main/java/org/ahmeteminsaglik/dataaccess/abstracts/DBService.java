@@ -18,7 +18,12 @@ public class DBService<T> implements BaseDAO<T> {
 
     @Override
     public void save(T t) {
+        connectionProcess.save(t);
+    }
 
+    @Override
+    public void saveAll(List<T> tList) {
+        connectionProcess.saveAll(tList);
     }
 
     @Override
