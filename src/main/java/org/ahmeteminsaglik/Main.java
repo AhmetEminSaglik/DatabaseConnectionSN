@@ -10,6 +10,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+
         exampleGetAllRequestedWordTableWords();
     }
 
@@ -26,4 +27,5 @@ public class Main {
         System.out.println("wordList.size() : " + wordList.size());
 
     }
+
 }
