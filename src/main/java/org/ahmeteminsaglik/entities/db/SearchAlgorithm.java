@@ -1,14 +1,16 @@
 package org.ahmeteminsaglik.entities.db;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "search_algorithm")
 @NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class SearchAlgorithm {
 
     @Id
@@ -20,22 +22,6 @@ public class SearchAlgorithm {
     private String name;
 
     public SearchAlgorithm(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 
@@ -52,11 +38,4 @@ public class SearchAlgorithm {
         return Objects.hash(name);
     }
 
-    @Override
-    public String toString() {
-        return "SearchAlgorithm{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }

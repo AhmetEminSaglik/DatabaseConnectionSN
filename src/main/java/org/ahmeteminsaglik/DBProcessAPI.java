@@ -2,10 +2,12 @@ package org.ahmeteminsaglik;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
 import org.ahmeteminsaglik.dataaccess.abstracts.DataStructorDAO;
+import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.*;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
+import org.ahmeteminsaglik.entities.db.Record;
 import org.ahmeteminsaglik.entities.enums.*;
 
 import java.util.ArrayList;
@@ -13,6 +15,17 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DBProcessAPI {
+
+    public static void exampleSaveRecord() {
+        RecordDAO recordDAO = new RecordDAOImp();
+        /*List<Record> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(new Record());
+        }
+        recordDAO.saveAll(list);*/
+        Record record = new Record();
+        recordDAO.save(record);
+    }
 
     public static void exampleSaveAbsentProcesName() {
 
@@ -26,11 +39,12 @@ public class DBProcessAPI {
         List<Object> listDB = exampleGetAllDataFromDBRequestedObject(baseDAO);
         listDB.forEach(e -> {
             wordListFromDB.add((ProcessName) e);
-            System.out.println("added item : "+((WordList) e).getName());
+            System.out.println("added item : " + ((ProcessName) e).getName());
         });
 
         saveAbsentEnumValuesToDB(processNameFromEnum, wordListFromDB, baseDAO);
     }
+
     public static void exampleSaveAbsentWordListTableName() {
 
         List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
@@ -43,7 +57,7 @@ public class DBProcessAPI {
         List<Object> listDB = exampleGetAllDataFromDBRequestedObject(baseDAO);
         listDB.forEach(e -> {
             wordListFromDB.add((WordList) e);
-            System.out.println("added item : "+((WordList) e).getName());
+            System.out.println("added item : " + ((WordList) e).getName());
         });
 
         saveAbsentEnumValuesToDB(wordListFromEnum, wordListFromDB, baseDAO);

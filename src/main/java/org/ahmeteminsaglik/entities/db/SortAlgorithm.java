@@ -1,13 +1,19 @@
 package org.ahmeteminsaglik.entities.db;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "sort_algorithm")
 @NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class SortAlgorithm {
     @Id
     @Column
@@ -18,22 +24,6 @@ public class SortAlgorithm {
     private String name;
 
     public SortAlgorithm(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 
@@ -50,11 +40,4 @@ public class SortAlgorithm {
         return Objects.hash(name);
     }
 
-    @Override
-    public String toString() {
-        return "SortAlgorithm{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }

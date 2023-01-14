@@ -1,13 +1,19 @@
 package org.ahmeteminsaglik.entities.db;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "word_list")
 @NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class WordList {
     @Id
     @Column
@@ -17,22 +23,6 @@ public class WordList {
     private String name;
 
     public WordList(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
         this.name = name;
     }
 
@@ -49,11 +39,4 @@ public class WordList {
         return Objects.hash(name);
     }
 
-    @Override
-    public String toString() {
-        return "WordList{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
 }

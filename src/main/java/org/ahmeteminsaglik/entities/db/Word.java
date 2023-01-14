@@ -1,13 +1,19 @@
 package org.ahmeteminsaglik.entities.db;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Objects;
 
 @Entity
 @Table (name = "word_no_selected_table")
 @NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class Word {
 
     @Id
@@ -20,18 +26,6 @@ public class Word {
     private  String word;
 
     public Word(String word) {
-        this.word = word;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getWord() {
-        return word;
-    }
-
-    public void setWord(String word) {
         this.word = word;
     }
 
@@ -48,11 +42,4 @@ public class Word {
         return Objects.hash(word);
     }
 
-    @Override
-    public String toString() {
-        return "Word{" +
-                "id=" + id +
-                ", word='" + word + '\'' +
-                '}';
-    }
 }

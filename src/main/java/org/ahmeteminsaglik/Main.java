@@ -12,8 +12,8 @@ public class Main {
 //        DBProcessAPI.exampleSaveAbsentSearchAlgorithm();
 //        DBProcessAPI.exampleSaveAbsentSortAlgorithm();
 //        DBProcessAPI.exampleSaveAbsentWordListTableName();
-        DBProcessAPI.exampleSaveAbsentProcesName();
-
+//        DBProcessAPI.exampleSaveAbsentProcesName();
+        DBProcessAPI.exampleSaveRecord();
     }
 
 

@@ -1,14 +1,16 @@
 package org.ahmeteminsaglik.entities.db;
 
 import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "data_structor")
 @NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class DataStructor {
 
     @Id
@@ -23,22 +25,6 @@ public class DataStructor {
         this.name = name;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -50,13 +36,5 @@ public class DataStructor {
     @Override
     public int hashCode() {
         return Objects.hash(name);
-    }
-
-    @Override
-    public String toString() {
-        return "DataStructor{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
     }
 }
