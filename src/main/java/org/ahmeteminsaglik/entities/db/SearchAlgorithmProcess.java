@@ -22,7 +22,7 @@ public class SearchAlgorithmProcess {
     @Column(name = "search_algorithm_id")
     private int searchAlgorithmId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Record recordId;
 
 }

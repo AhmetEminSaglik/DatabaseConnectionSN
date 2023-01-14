@@ -12,38 +12,32 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DBProcessAPI {
-    public static void exampleSaveSearchAlgorithmProcess() {
-        Record record = new Record();
-//        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
-        RecordDAO dao = new RecordDAOImp();
-
-        SearchAlgorithmProcess sap = new SearchAlgorithmProcess();
-        sap.setRecordId(record);
-        sap.setSearchAlgorithmId(9);
-
-        SearchAlgorithmProcess sap2 = new SearchAlgorithmProcess();
-        sap2.setRecordId(record);
-        sap2.setSearchAlgorithmId(2);
-
-        SearchAlgorithmProcess dsp3 = new SearchAlgorithmProcess();
-        dsp3.setRecordId(record);
-        dsp3.setSearchAlgorithmId(3);
-
-        SearchAlgorithmProcess dsp4 = new SearchAlgorithmProcess();
-        dsp4.setRecordId(record);
-        dsp4.setSearchAlgorithmId(1);
-
-        record.getSearchAlgorithmProcessList().add(sap);
-        record.getSearchAlgorithmProcessList().add(sap2);
-        record.getSearchAlgorithmProcessList().add(dsp3);
-        record.getSearchAlgorithmProcessList().add(dsp4);
-
-        dao.save(record);
-    }
-
-
     public static void exampleSaveSortAlgorithmProcess() {
-        Record record = new Record();
+
+        RecordDAO dao = new RecordDAOImp();
+        List<Record> recordList = new ArrayList();
+        for (int i = 0; i < 3; i++) {
+            recordList.add(new Record());
+        }
+        SortAlgorithmProcess sap1 = new SortAlgorithmProcess();
+        sap1.setRecordId(recordList.get(0));
+        sap1.setSortAlgorithmId(5);
+
+
+        SortAlgorithmProcess sap2 = new SortAlgorithmProcess();
+        sap2.setRecordId(recordList.get(1));
+        sap2.setSortAlgorithmId(3);
+
+        SortAlgorithmProcess sap3 = new SortAlgorithmProcess();
+        sap3.setRecordId(recordList.get(2));
+        sap3.setSortAlgorithmId(2);
+
+        recordList.get(0).setSortAlgorithmProcess(sap1);
+        recordList.get(1).setSortAlgorithmProcess(sap2);
+        recordList.get(2).setSortAlgorithmProcess(sap3);
+
+        dao.saveAll(recordList);
+/*        Record record = new Record();
 //        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
         RecordDAO dao = new RecordDAOImp();
 
@@ -68,15 +62,96 @@ public class DBProcessAPI {
         record.getSortAlgorithmProcessList().add(dsp3);
         record.getSortAlgorithmProcessList().add(dsp4);
 
-        dao.save(record);
+        dao.save(record);*/
+    }
+
+    public static void exampleSaveSearchAlgorithmProcess() {
+        RecordDAO dao = new RecordDAOImp();
+        List<Record> recordList = new ArrayList();
+        for (int i = 0; i < 3; i++) {
+            recordList.add(new Record());
+        }
+        SearchAlgorithmProcess sap1 = new SearchAlgorithmProcess();
+        sap1.setRecordId(recordList.get(0));
+        sap1.setSearchAlgorithmId(9);
+
+
+        SearchAlgorithmProcess sap2 = new SearchAlgorithmProcess();
+        sap2.setRecordId(recordList.get(1));
+        sap2.setSearchAlgorithmId(2);
+
+        SearchAlgorithmProcess sap3 = new SearchAlgorithmProcess();
+        sap3.setRecordId(recordList.get(2));
+        sap3.setSearchAlgorithmId(1);
+
+        recordList.get(0).setSearchAlgorithmProcess(sap1);
+        recordList.get(1).setSearchAlgorithmProcess(sap2);
+        recordList.get(2).setSearchAlgorithmProcess(sap3);
+
+        dao.saveAll(recordList);
+     /*   Record record = new Record();
+//        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
+        RecordDAO dao = new RecordDAOImp();
+
+        SearchAlgorithmProcess sap = new SearchAlgorithmProcess();
+        sap.setRecordId(record);
+        sap.setSearchAlgorithmId(9);
+
+        SearchAlgorithmProcess sap2 = new SearchAlgorithmProcess();
+        sap2.setRecordId(record);
+        sap2.setSearchAlgorithmId(2);
+
+        SearchAlgorithmProcess dsp3 = new SearchAlgorithmProcess();
+        dsp3.setRecordId(record);
+        dsp3.setSearchAlgorithmId(3);
+
+        SearchAlgorithmProcess dsp4 = new SearchAlgorithmProcess();
+        dsp4.setRecordId(record);
+        dsp4.setSearchAlgorithmId(1);
+        record.getSearchAlgorithmProcessList().add(sap);
+        record.getSearchAlgorithmProcessList().add(sap2);
+        record.getSearchAlgorithmProcessList().add(dsp3);
+        record.getSearchAlgorithmProcessList().add(dsp4);
+
+        dao.save(record);*/
     }
 
 
+
+
+
     public static void exampleSaveDataStructorProcess() {
-        Record record = new Record();
-//        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
+        RecordDAO dao = new RecordDAOImp();
+        List<Record> recordList = new ArrayList();
+        for (int i = 0; i < 3; i++) {
+            recordList.add(new Record());
+        }
+        DataStructorProcess dsp1 = new DataStructorProcess();
+        dsp1.setRecordId(recordList.get(0));
+        dsp1.setDataStructorId(3);
+
+
+        DataStructorProcess dsp2 = new DataStructorProcess();
+        dsp2.setRecordId(recordList.get(1));
+        dsp2.setDataStructorId(2);
+
+        DataStructorProcess dsp3 = new DataStructorProcess();
+        dsp3.setRecordId(recordList.get(2));
+        dsp3.setDataStructorId(4);
+
+        recordList.get(0).setDataStructorProcess(dsp1);
+        recordList.get(1).setDataStructorProcess(dsp2);
+        recordList.get(2).setDataStructorProcess(dsp3);
+
+        dao.saveAll(recordList);
+        /*DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
         RecordDAO dao = new RecordDAOImp();
         DataStructorProcess dsp = new DataStructorProcess();
+        dsp.setDataStructorId();*/
+/*
+//
+
+
         dsp.setRecordId(record);
         dsp.setDataStructorId(2);
 
@@ -92,7 +167,7 @@ public class DBProcessAPI {
         record.getDataStructorProcessList().add(dsp2);
         record.getDataStructorProcessList().add(dsp3);
 
-        dao.save(record);
+        dao.save(record);*/
     }
 
     public static void exampleSaveRecord() {

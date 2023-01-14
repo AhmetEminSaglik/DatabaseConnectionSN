@@ -20,7 +20,12 @@ public class Main {
 //        DBProcessAPI.exampleSaveRecord();
 //        DBProcessAPI.exampleSaveDataStructorProcess();
 //        DBProcessAPI.exampleSaveSortAlgorithmProcess();
-        DBProcessAPI.exampleSaveSearchAlgorithmProcess();
+//        DBProcessAPI.exampleSaveSearchAlgorithmProcess();
+
+        /// here is created after fixed associations to @OneToOne Record and dataStructor,sort,search process
+//        DBProcessAPI.exampleSaveDataStructorProcess();
+//        DBProcessAPI.exampleSaveSortAlgorithmProcess();
+//        DBProcessAPI.exampleSaveSearchAlgorithmProcess();
     }
 
 

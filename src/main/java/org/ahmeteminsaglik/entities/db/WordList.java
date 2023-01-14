@@ -22,6 +22,9 @@ public class WordList {
     @Column(name = "name", unique = true)
     private String name;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private  WordProcess wordProcessId;
+
     public WordList(String name) {
         this.name = name;
     }

@@ -21,6 +21,6 @@ public class SortAlgorithmProcess {
 
     @Column(name = "sort_algorithm_id")
     private int sortAlgorithmId;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private Record recordId;
 }

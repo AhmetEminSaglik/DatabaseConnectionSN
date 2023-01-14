@@ -17,7 +17,8 @@ public class DataStructorProcess {
     private int id;
     @Column(name = "data_structor_id")
     private int dataStructorId;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(/*mappedBy = "dataStructorProcess",*/
+            cascade = CascadeType.ALL)
     private Record recordId;
 
 
