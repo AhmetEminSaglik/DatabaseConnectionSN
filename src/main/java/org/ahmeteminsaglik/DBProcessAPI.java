@@ -5,13 +5,16 @@ import org.ahmeteminsaglik.dataaccess.abstracts.DataStructorDAO;
 import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.DataStructorDaoImp;
 import org.ahmeteminsaglik.dataaccess.concretes.SearchAlgorithmDAOImp;
+import org.ahmeteminsaglik.dataaccess.concretes.SortAlgoritmDAOImp;
 import org.ahmeteminsaglik.dataaccess.concretes.WordDAOImp;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.DataStructor;
 import org.ahmeteminsaglik.entities.db.SearchAlgorithm;
+import org.ahmeteminsaglik.entities.db.SortAlgorithm;
 import org.ahmeteminsaglik.entities.db.Word;
 import org.ahmeteminsaglik.entities.enums.EnumDataStructor;
 import org.ahmeteminsaglik.entities.enums.EnumSearchAlgorithm;
+import org.ahmeteminsaglik.entities.enums.EnumSortAlgorithm;
 import org.ahmeteminsaglik.entities.enums.EnumWordTable;
 
 import java.util.ArrayList;
@@ -36,6 +39,23 @@ public class DBProcessAPI {
         });
 
         saveAbsentEnumValuesToDB(searchAlgorithmListFromEnum, searchAlgorithmListFromDB, baseDAO);
+    }
+    public static void exampleSaveAbsentSortAlgorithm() {
+
+        List<EnumSortAlgorithm> enumList = Arrays.asList(EnumSortAlgorithm.values());
+        List<SortAlgorithm> sortAlgorithmListFromEnum = new ArrayList<>();
+        enumList.forEach(e -> sortAlgorithmListFromEnum.add(new SortAlgorithm(e.getName())));
+
+        System.out.println("_----------------------------------");
+        BaseDAO baseDAO = new SortAlgoritmDAOImp();
+        List<SearchAlgorithm> searchAlgorithmListFromDB = new ArrayList<>();
+
+        List<Object> listDB = exampleGetAllDataFromDBRequestedObject(new SearchAlgorithmDAOImp());
+        listDB.forEach(e -> {
+            searchAlgorithmListFromDB.add((SearchAlgorithm) e);
+        });
+
+        saveAbsentEnumValuesToDB(sortAlgorithmListFromEnum, searchAlgorithmListFromDB, baseDAO);
     }
 
     public static void saveAbsentEnumValuesToDB(List<?> enumValue, List<?> valueInDB, BaseDAO<Object> baseDAO) {

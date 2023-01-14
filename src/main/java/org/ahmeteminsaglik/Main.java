@@ -9,7 +9,8 @@ public class Main {
 //        saveDataStructor(dataStructor);
 //        exampleSaveDataToDataStructor();
 //        exampleSaveAbsentDataStructor();
-        DBProcessAPI.exampleSaveAbsentSearchAlgorithm();
+//        DBProcessAPI.exampleSaveAbsentSearchAlgorithm();
+        DBProcessAPI.exampleSaveAbsentSortAlgorithm();
     }
 
 
