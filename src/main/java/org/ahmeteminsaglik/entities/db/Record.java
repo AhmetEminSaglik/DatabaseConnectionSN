@@ -22,10 +22,15 @@ public class Record {
     private int id;
 
     @OneToMany(mappedBy = "recordId",
-    fetch = FetchType.LAZY,
-    cascade = CascadeType.ALL,
-    targetEntity = DataStructorProcess.class)
-    private Set<DataStructorProcess> hashSetDSP= new HashSet<>();
+//    fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL,
+            targetEntity = DataStructorProcess.class)
+    private List<DataStructorProcess> dataStructorProcessList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "recordId",
+            cascade = CascadeType.ALL,
+            targetEntity = SortAlgorithmProcess.class)
+    private List<SortAlgorithmProcess> sortAlgorithmProcessList = new ArrayList<>();
 
     public int getId() {
         return id;

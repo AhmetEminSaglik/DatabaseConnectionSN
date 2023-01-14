@@ -1,24 +1,26 @@
 package org.ahmeteminsaglik.entities.db;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-@Table(name = "data_structor_process")
+@Table(name = "sort_algorithm_process")
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class DataStructorProcess {
+public class SortAlgorithmProcess {
 
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "data_structor_id")
-    private int dataStructorId;
+
+    @Column(name = "sort_algorithm_id")
+    private int sortAlgorithmId;
     @ManyToOne(cascade = CascadeType.ALL)
     private Record recordId;
-
-
 }

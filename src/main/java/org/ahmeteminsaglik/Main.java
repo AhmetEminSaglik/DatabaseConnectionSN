@@ -17,8 +17,9 @@ public class Main {
 //        DBProcessAPI.exampleSaveAbsentProcesName();
 
 
-        DBProcessAPI.exampleSaveDataStructorProcess();
 //        DBProcessAPI.exampleSaveRecord();
+//        DBProcessAPI.exampleSaveDataStructorProcess();
+        DBProcessAPI.exampleSaveSortAlgorithmProcess();
     }
 
 

@@ -5,8 +5,6 @@ k
 ;src/main/java/org/ahmeteminsaglik/entities/db/WordList.java,9\a\9a02890b5f92f4eb8e495c06d899a675cd260e60
 r
 Bsrc/main/java/org/ahmeteminsaglik/entities/db/SearchAlgorithm.java,7\a\7aff4c15456dfa8b3581366dd6517d33032bc146
-p
-@src/main/java/org/ahmeteminsaglik/entities/db/SortAlgorithm.java,2\1\21f71ca2a6a565e78a9c1d70bdb86abdd06baf11
 ‚
 Rsrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/DataStructorProcessDAO.java,e\7\e7eaf84914ed700d5e5e0a94117819748469eaf3
 •

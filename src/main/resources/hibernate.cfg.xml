@@ -20,5 +20,6 @@
         <property name="hibernate.order_inserts">true</property>
         <mapping class="org.ahmeteminsaglik.entities.db.Record"></mapping>
         <mapping class="org.ahmeteminsaglik.entities.db.DataStructorProcess"></mapping>
+        <mapping class="org.ahmeteminsaglik.entities.db.SortAlgorithmProcess"></mapping>
     </session-factory>
 </hibernate-configuration>

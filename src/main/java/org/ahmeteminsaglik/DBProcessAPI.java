@@ -13,10 +13,40 @@ import java.util.List;
 
 public class DBProcessAPI {
 
+    public static void exampleSaveSortAlgorithmProcess() {
+        Record record = new Record();
+//        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
+        RecordDAO dao = new RecordDAOImp();
+
+        SortAlgorithmProcess sap = new SortAlgorithmProcess();
+        sap.setRecordId(record);
+        sap.setSortAlgorithmId(2);
+
+        SortAlgorithmProcess sap2 = new SortAlgorithmProcess();
+        sap2.setRecordId(record);
+        sap2.setSortAlgorithmId(1);
+
+        SortAlgorithmProcess dsp3 = new SortAlgorithmProcess();
+        dsp3.setRecordId(record);
+        dsp3.setSortAlgorithmId(3);
+
+        SortAlgorithmProcess dsp4 = new SortAlgorithmProcess();
+        dsp4.setRecordId(record);
+        dsp4.setSortAlgorithmId(5);
+
+        record.getSortAlgorithmProcessList().add(sap);
+        record.getSortAlgorithmProcessList().add(sap2);
+        record.getSortAlgorithmProcessList().add(dsp3);
+        record.getSortAlgorithmProcessList().add(dsp4);
+
+        dao.save(record);
+    }
+
+
     public static void exampleSaveDataStructorProcess() {
         Record record = new Record();
 //        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
-        RecordDAO dao= new RecordDAOImp();
+        RecordDAO dao = new RecordDAOImp();
         DataStructorProcess dsp = new DataStructorProcess();
         dsp.setRecordId(record);
         dsp.setDataStructorId(2);
@@ -29,9 +59,9 @@ public class DBProcessAPI {
         dsp3.setRecordId(record);
         dsp3.setDataStructorId(3);
 
-        record.getHashSetDSP().add(dsp);
-        record.getHashSetDSP().add(dsp2);
-        record.getHashSetDSP().add(dsp3);
+        record.getDataStructorProcessList().add(dsp);
+        record.getDataStructorProcessList().add(dsp2);
+        record.getDataStructorProcessList().add(dsp3);
 
         dao.save(record);
     }
