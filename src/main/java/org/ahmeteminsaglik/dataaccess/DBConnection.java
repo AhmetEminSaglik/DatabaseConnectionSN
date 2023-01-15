@@ -1,6 +1,5 @@
 package org.ahmeteminsaglik.dataaccess;
 
-import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -9,8 +8,6 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class DBConnection {
     private Class<?> clazz;
@@ -49,20 +46,51 @@ public class DBConnection {
         beginTransaction();
     }
 
+    public void setBatchSize(int size) {
+        session.setJdbcBatchSize(size);
+    }
+
+    public void persistSession(Object o) {
+        session.persist(o);
+    }
+
+    public void flushSession() {
+        session.flush();
+    }
+
+    public void clearSession() {
+        session.clear();
+    }
+
     public void commitTransaction() {
         transaction.commit();
     }
 
     public void closeAllConnection() {
-        if (factory != null || factory.isOpen()) {
+        if (factory != null && factory.isOpen()) {
             factory.close();
         }
-        if (session != null || session.isOpen()) {
+        if (session != null && session.isOpen()) {
             session.close();
         }
     }
 
+ /*   public void mergeSession(Object o) {
+        session.merge(o);
+    }*/
+
     public Query createQuery() {
         return session.createQuery("FROM " + clazz.getSimpleName(), clazz);
+    }
+
+    public Query createQuery(String columnName, String value) {
+        Query query = session.createQuery("FROM " + clazz.getSimpleName() + " W WHERE W." + columnName + " LIKE  :value ", clazz);
+//        query.setParameter("columnName", columnName);
+//        query.setParameter("value",value);
+//        System.out.println("columnName : " + columnName);
+        query.setParameter("value", value);
+        System.out.println("clazz.getSimpleName() : " + clazz.getSimpleName());
+        return query;
+
     }
 }

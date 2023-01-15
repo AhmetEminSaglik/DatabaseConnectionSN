@@ -1,18 +1,16 @@
-package org.ahmeteminsaglik.entities;
+package org.ahmeteminsaglik.entities.custom;
 
-import jakarta.persistence.*;
-import lombok.NoArgsConstructor;
+import org.ahmeteminsaglik.entities.db.Word;
 
 import java.util.List;
 
-
-public class WordPool {
+public class WordSearchGroup {
     List<Word> wordList;
 
-    public WordPool() {
+    public WordSearchGroup() {
     }
 
-    public WordPool(List<Word> wordList) {
+    public WordSearchGroup(List<Word> wordList) {
         this.wordList = wordList;
     }
 
