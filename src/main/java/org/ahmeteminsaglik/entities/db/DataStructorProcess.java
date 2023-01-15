@@ -19,6 +19,7 @@ public class DataStructorProcess {
     private int dataStructorId;
     @OneToOne(/*mappedBy = "dataStructorProcess",*/
             cascade = CascadeType.ALL)
+    @JoinColumn(name = "record_id")
     private Record recordId;
 
 

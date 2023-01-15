@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.GeneratedColumn;
 
 import java.util.List;
 
@@ -25,12 +26,16 @@ public class WordProcess {
     @Column(name = "misssing_word")
     private int missingWord;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "record_id")
+    private Record recordId;
+
     @OneToOne()
+    @JoinColumn(name = "total_word_list_id")
     private WordList totalWordListId;
 
     @OneToOne()
+    @JoinColumn(name = "search_word_list_id")
     private WordList searchWordListId;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Record recordId;
 }

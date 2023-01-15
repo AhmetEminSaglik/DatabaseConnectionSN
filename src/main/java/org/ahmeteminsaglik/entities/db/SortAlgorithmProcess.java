@@ -22,5 +22,6 @@ public class SortAlgorithmProcess {
     @Column(name = "sort_algorithm_id")
     private int sortAlgorithmId;
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "record_id")
     private Record recordId;
 }

@@ -23,6 +23,7 @@ public class SearchAlgorithmProcess {
     private int searchAlgorithmId;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "record_id")
     private Record recordId;
 
 }
