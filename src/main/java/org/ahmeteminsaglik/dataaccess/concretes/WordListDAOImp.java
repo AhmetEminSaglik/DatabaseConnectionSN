@@ -9,7 +9,7 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class WordListDAOImp implements WordListDAO {
-    private     DBService<WordList> dbService;
+    private DBService<WordList> dbService;
 
     public WordListDAOImp() {
         dbService = new DBService<>(WordList.class);
@@ -31,6 +31,16 @@ public class WordListDAOImp implements WordListDAO {
     }
 
     @Override
+    public WordList getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
+        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+    }
+
+    @Override
+    public WordList getByStringValueFromGivenColumnName(String columnName, String value) {
+        return getByStringValueFromGivenColumnName(columnName, value, null);
+    }
+
+    @Override
     public List<WordList> getAll() {
         return getAll(null);
     }
@@ -39,4 +49,5 @@ public class WordListDAOImp implements WordListDAO {
     public List<WordList> getAll(StatementInspector statementInspector) {
         return dbService.getAll(statementInspector);
     }
+
 }

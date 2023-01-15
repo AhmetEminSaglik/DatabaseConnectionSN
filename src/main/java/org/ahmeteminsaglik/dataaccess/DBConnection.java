@@ -82,4 +82,15 @@ public class DBConnection {
     public Query createQuery() {
         return session.createQuery("FROM " + clazz.getSimpleName(), clazz);
     }
+
+    public Query createQuery(String columnName, String value) {
+        Query query = session.createQuery("FROM " + clazz.getSimpleName() + " W WHERE W." + columnName + " LIKE  :value ", clazz);
+//        query.setParameter("columnName", columnName);
+//        query.setParameter("value",value);
+//        System.out.println("columnName : " + columnName);
+        query.setParameter("value", value);
+        System.out.println("clazz.getSimpleName() : " + clazz.getSimpleName());
+        return query;
+
+    }
 }

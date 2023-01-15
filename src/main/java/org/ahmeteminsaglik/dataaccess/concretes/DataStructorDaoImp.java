@@ -31,6 +31,17 @@ public class DataStructorDaoImp implements DataStructorDAO {
     }
 
     @Override
+    public DataStructor getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
+        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+    }
+
+    @Override
+    public DataStructor getByStringValueFromGivenColumnName(String columnName, String value) {
+        return getByStringValueFromGivenColumnName(columnName, value, null);
+    }
+
+
+    @Override
     public List<DataStructor> getAll() {
         return getAll(null);
     }

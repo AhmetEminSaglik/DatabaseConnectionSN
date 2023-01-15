@@ -3,6 +3,7 @@ package org.ahmeteminsaglik.dataaccess.concretes;
 import org.ahmeteminsaglik.dataaccess.DBConnection;
 import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.SortAlgorithmDAO;
+import org.ahmeteminsaglik.entities.db.SearchAlgorithm;
 import org.ahmeteminsaglik.entities.db.SortAlgorithm;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
@@ -31,6 +32,15 @@ public class SortAlgoritmDAOImp implements SortAlgorithmDAO {
         throw new NotYetImplementedException();
     }
 
+    @Override
+    public SortAlgorithm getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
+        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+    }
+
+    @Override
+    public SortAlgorithm getByStringValueFromGivenColumnName(String columnName, String value) {
+        return getByStringValueFromGivenColumnName(columnName, value, null);
+    }
     @Override
     public List<SortAlgorithm> getAll() {
         return getAll(null);

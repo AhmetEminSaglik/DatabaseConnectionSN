@@ -2,6 +2,7 @@ package org.ahmeteminsaglik.dataaccess.concretes;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
+import org.ahmeteminsaglik.entities.db.ProcessName;
 import org.ahmeteminsaglik.entities.db.Record;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
@@ -28,6 +29,16 @@ public class RecordDAOImp implements RecordDAO {
     @Override
     public Record getById(int id) {
         throw new NotYetImplementedException();
+    }
+
+    @Override
+    public Record getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
+        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+    }
+
+    @Override
+    public Record getByStringValueFromGivenColumnName(String columnName, String value) {
+        return getByStringValueFromGivenColumnName(columnName, value, null);
     }
 
     @Override

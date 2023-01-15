@@ -12,6 +12,33 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DBProcessAPI {
+    public static void exampleSaveWordProcess() {
+        RecordDAO recordDAO = new RecordDAOImp();
+        Record record = new Record();
+        WordProcess wordProcess = new WordProcess();
+
+
+        WordListDAO wordListDAO = new WordListDAOImp();
+        WordList wordListSearch = wordListDAO.getByStringValueFromGivenColumnName("name", "word_50");
+        System.out.println(wordListSearch.toString());
+        WordList wordListPool = wordListDAO.getByStringValueFromGivenColumnName("name", "word_100");
+        System.out.println(wordListPool.toString());
+
+        wordProcess.setTotalWordListId(wordListPool);
+        wordProcess.setSearchWordListId(wordListSearch);
+        wordProcess.setFoundWord(45);
+        wordProcess.setMissingWord(5);
+        wordProcess.setRecordId(record);
+        record.setWordProcess(wordProcess);
+
+        recordDAO.save(record);
+
+//        wordProcess.setTotalWordListId(2);
+//        wordProcess.setFoundWord(45);
+//        wordProcess.setMissingWord(5);
+
+    }
+
     public static void exampleSaveSortAlgorithmProcess() {
 
         RecordDAO dao = new RecordDAOImp();
@@ -115,9 +142,6 @@ public class DBProcessAPI {
 
         dao.save(record);*/
     }
-
-
-
 
 
     public static void exampleSaveDataStructorProcess() {

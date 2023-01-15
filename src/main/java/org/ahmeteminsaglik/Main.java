@@ -26,6 +26,7 @@ public class Main {
 //        DBProcessAPI.exampleSaveDataStructorProcess();
 //        DBProcessAPI.exampleSaveSortAlgorithmProcess();
 //        DBProcessAPI.exampleSaveSearchAlgorithmProcess();
+        DBProcessAPI.exampleSaveWordProcess();
     }
 
 

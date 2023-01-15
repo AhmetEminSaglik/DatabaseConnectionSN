@@ -22,5 +22,7 @@
         <mapping class="org.ahmeteminsaglik.entities.db.DataStructorProcess"/>
         <mapping class="org.ahmeteminsaglik.entities.db.SortAlgorithmProcess"/>
         <mapping class="org.ahmeteminsaglik.entities.db.SearchAlgorithmProcess"/>
+        <mapping class="org.ahmeteminsaglik.entities.db.WordProcess"/>
+        <mapping class="org.ahmeteminsaglik.entities.db.WordList"/>
     </session-factory>
 </hibernate-configuration>

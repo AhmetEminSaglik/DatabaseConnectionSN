@@ -12,6 +12,10 @@ public interface BaseDAO<T> {
 
     T getById(int id);
 
+    T getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector);
+
+    T getByStringValueFromGivenColumnName(String columnName, String value);
+
     List<T> getAll();
 
     List<T> getAll(StatementInspector statementInspector);

@@ -2,6 +2,7 @@ package org.ahmeteminsaglik.dataaccess.concretes;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
+import org.ahmeteminsaglik.entities.db.ProcessName;
 import org.ahmeteminsaglik.entities.db.Word;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
@@ -31,6 +32,16 @@ public class WordDAOImp implements WordDAO {
 //        return null;
         throw new NotYetImplementedException();
 
+    }
+
+    @Override
+    public Word getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
+        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+    }
+
+    @Override
+    public Word getByStringValueFromGivenColumnName(String columnName, String value) {
+        return getByStringValueFromGivenColumnName(columnName, value, null);
     }
 
     @Override

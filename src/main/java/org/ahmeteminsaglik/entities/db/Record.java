@@ -35,6 +35,10 @@ public class Record {
             targetEntity = SearchAlgorithmProcess.class)
     private SearchAlgorithmProcess searchAlgorithmProcess;
 
+    @OneToOne(mappedBy = "recordId",
+            cascade = CascadeType.ALL,
+            targetEntity = WordProcess.class)
+    private WordProcess wordProcess;
     /*@OneToMany(mappedBy = "recordId",
 //    fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,

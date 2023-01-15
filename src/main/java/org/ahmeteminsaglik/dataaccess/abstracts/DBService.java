@@ -32,6 +32,17 @@ public class DBService<T> implements BaseDAO<T> {
     }
 
     @Override
+    public T getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
+        return (T) connectionProcess.getByStringValueFromGivenColumnName(columnName, value, statementInspector);
+    }
+
+    @Override
+    public T getByStringValueFromGivenColumnName(String columnName, String value) {
+        return (T) getByStringValueFromGivenColumnName(columnName, value, null);
+    }
+
+
+    @Override
     public List<T> getAll() {
         return getAll(null);
     }

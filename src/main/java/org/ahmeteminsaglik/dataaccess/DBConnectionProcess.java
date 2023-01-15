@@ -68,4 +68,22 @@ public class DBConnectionProcess {
             connection.closeAllConnection();
         }
     }
+
+    public Object getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
+        connection.configure(statementInspector);
+        Object result = null;
+        try {
+            Query query = connection.createQuery(columnName, value);
+
+            result = query.getResultList().get(0);
+            connection.commitTransaction();
+
+        } catch (Exception e) {
+            System.out.println("Exception occured : getAll --> " + e.getMessage());
+        } finally {
+            connection.closeAllConnection();
+        }
+        return result;
+
+    }
 }

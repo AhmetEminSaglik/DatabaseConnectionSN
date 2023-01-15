@@ -3,6 +3,7 @@ package org.ahmeteminsaglik.dataaccess.concretes;
 import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.SearchAlgorithmDAO;
 import org.ahmeteminsaglik.entities.db.SearchAlgorithm;
+import org.ahmeteminsaglik.entities.db.WordList;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 
@@ -28,6 +29,16 @@ public class SearchAlgorithmDAOImp implements SearchAlgorithmDAO {
     @Override
     public SearchAlgorithm getById(int id) {
         throw new NotYetImplementedException();
+    }
+
+    @Override
+    public SearchAlgorithm getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
+        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+    }
+
+    @Override
+    public SearchAlgorithm getByStringValueFromGivenColumnName(String columnName, String value) {
+        return getByStringValueFromGivenColumnName(columnName, value, null);
     }
 
     @Override

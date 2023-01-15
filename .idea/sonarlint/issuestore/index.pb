@@ -1,25 +1,9 @@
 
-g
-7src/main/java/org/ahmeteminsaglik/entities/db/Word.java,f\9\f9d9e9efd58939606f389f4f711dab7ea8cb491c
 r
 Bsrc/main/java/org/ahmeteminsaglik/entities/db/SearchAlgorithm.java,7\a\7aff4c15456dfa8b3581366dd6517d33032bc146
 Ç
 Rsrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/DataStructorProcessDAO.java,e\7\e7eaf84914ed700d5e5e0a94117819748469eaf3
 ï
 esrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/statementinspector/WordStatementInspector.java,c\4\c4a484c5dcb048fe4fb7abb73d60ecb46e848648
-z
-Jsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/WordListDAOImp.java,1\2\129fee6bb655b2845ad20b6cd31978e6a3c2eef8
-v
-Fsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/WordDAOImp.java,4\7\47a3c5b398430e83e72954e158488ffad8a2c82d
-~
-Nsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/SortAlgoritmDAOImp.java,d\3\d3aee2b32fac78e7654f70da4e535df43fd554e1
-Å
-Qsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/SearchAlgorithmDAOImp.java,b\5\b532f6ae642d5b4684d5139ac55f1855a5959ae7
 u
 Esrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/RecordDAO.java,0\a\0a4247f0fa9c3ac42b27a3eeb65f0b590230ecd0
-}
-Msrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/ProcessNameDAOImp.java,2\2\22e1cdbeb5942459f49839466e06a063a03107e0
-~
-Nsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/DataStructorDaoImp.java,2\8\28d9004fbfb1cea89792434c643a62dc745ee5bc
-Ö
-Usrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/DataStructorProcessDAOImp.java,2\7\27d5ec84689c9a55fa72dc3e963b11906ae73d8c
