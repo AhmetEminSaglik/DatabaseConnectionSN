@@ -1,6 +1,4 @@
 
-r
-Bsrc/main/java/org/ahmeteminsaglik/entities/db/SearchAlgorithm.java,7\a\7aff4c15456dfa8b3581366dd6517d33032bc146
 ‚
 Rsrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/DataStructorProcessDAO.java,e\7\e7eaf84914ed700d5e5e0a94117819748469eaf3
 •

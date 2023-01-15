@@ -28,7 +28,7 @@ public class DBProcessAPI {
         wordProcess.setSearchWordListId(wordListSearch);
         wordProcess.setFoundWord(45);
         wordProcess.setMissingWord(5);
-        wordProcess.setRecordId(record);
+        wordProcess.setRecord(record);
         record.setWordProcess(wordProcess);
 
         recordDAO.save(record);
@@ -47,16 +47,16 @@ public class DBProcessAPI {
             recordList.add(new Record());
         }
         SortAlgorithmProcess sap1 = new SortAlgorithmProcess();
-        sap1.setRecordId(recordList.get(0));
+        sap1.setRecord(recordList.get(0));
         sap1.setSortAlgorithmId(5);
 
 
         SortAlgorithmProcess sap2 = new SortAlgorithmProcess();
-        sap2.setRecordId(recordList.get(1));
+        sap2.setRecord(recordList.get(1));
         sap2.setSortAlgorithmId(3);
 
         SortAlgorithmProcess sap3 = new SortAlgorithmProcess();
-        sap3.setRecordId(recordList.get(2));
+        sap3.setRecord(recordList.get(2));
         sap3.setSortAlgorithmId(2);
 
         recordList.get(0).setSortAlgorithmProcess(sap1);
@@ -99,16 +99,16 @@ public class DBProcessAPI {
             recordList.add(new Record());
         }
         SearchAlgorithmProcess sap1 = new SearchAlgorithmProcess();
-        sap1.setRecordId(recordList.get(0));
+        sap1.setRecord(recordList.get(0));
         sap1.setSearchAlgorithmId(9);
 
 
         SearchAlgorithmProcess sap2 = new SearchAlgorithmProcess();
-        sap2.setRecordId(recordList.get(1));
+        sap2.setRecord(recordList.get(1));
         sap2.setSearchAlgorithmId(2);
 
         SearchAlgorithmProcess sap3 = new SearchAlgorithmProcess();
-        sap3.setRecordId(recordList.get(2));
+        sap3.setRecord(recordList.get(2));
         sap3.setSearchAlgorithmId(1);
 
         recordList.get(0).setSearchAlgorithmProcess(sap1);
@@ -151,16 +151,16 @@ public class DBProcessAPI {
             recordList.add(new Record());
         }
         DataStructorProcess dsp1 = new DataStructorProcess();
-        dsp1.setRecordId(recordList.get(0));
+        dsp1.setRecord(recordList.get(0));
         dsp1.setDataStructorId(3);
 
 
         DataStructorProcess dsp2 = new DataStructorProcess();
-        dsp2.setRecordId(recordList.get(1));
+        dsp2.setRecord(recordList.get(1));
         dsp2.setDataStructorId(2);
 
         DataStructorProcess dsp3 = new DataStructorProcess();
-        dsp3.setRecordId(recordList.get(2));
+        dsp3.setRecord(recordList.get(2));
         dsp3.setDataStructorId(4);
 
         recordList.get(0).setDataStructorProcess(dsp1);

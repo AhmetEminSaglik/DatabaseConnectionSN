@@ -2,8 +2,11 @@ package org.ahmeteminsaglik;
 
 import org.ahmeteminsaglik.entities.db.DataStructorProcess;
 
+import java.sql.Time;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+
 
 //        exampleGetAllRequestedWordTableWords();
 //        exampleGetAllDataStructor();

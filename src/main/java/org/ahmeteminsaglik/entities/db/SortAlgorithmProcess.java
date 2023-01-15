@@ -23,5 +23,5 @@ public class SortAlgorithmProcess {
     private int sortAlgorithmId;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "record_id")
-    private Record recordId;
+    private Record record;
 }

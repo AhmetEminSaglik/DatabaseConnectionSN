@@ -19,26 +19,30 @@ public class Record {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne(mappedBy = "recordId",
+    @OneToOne(mappedBy = "record",
             cascade = CascadeType.ALL,
             targetEntity = DataStructorProcess.class)
     private DataStructorProcess dataStructorProcess;
 
 
-    @OneToOne(mappedBy = "recordId",
+    @OneToOne(mappedBy = "record",
             cascade = CascadeType.ALL,
             targetEntity = SortAlgorithmProcess.class)
     private SortAlgorithmProcess sortAlgorithmProcess;
 
-    @OneToOne(mappedBy = "recordId",
+    @OneToOne(mappedBy = "record",
             cascade = CascadeType.ALL,
             targetEntity = SearchAlgorithmProcess.class)
     private SearchAlgorithmProcess searchAlgorithmProcess;
 
-    @OneToOne(mappedBy = "recordId",
+    @OneToOne(mappedBy = "record",
             cascade = CascadeType.ALL,
             targetEntity = WordProcess.class)
     private WordProcess wordProcess;
+    @OneToMany(mappedBy = "record",
+            cascade = CascadeType.ALL,
+            targetEntity = Complexity.class)
+    private List<Complexity> complexityList = new ArrayList<>();
     /*@OneToMany(mappedBy = "recordId",
 //    fetch = FetchType.LAZY,
             cascade = CascadeType.ALL,

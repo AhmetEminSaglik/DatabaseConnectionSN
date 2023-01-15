@@ -28,7 +28,7 @@ public class WordProcess {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "record_id")
-    private Record recordId;
+    private Record record;
 
     @OneToOne()
     @JoinColumn(name = "total_word_list_id")

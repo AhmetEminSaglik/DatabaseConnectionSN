@@ -16,7 +16,8 @@
         <property name="show_sql">true</property>
         <property name="current_session_context_class">thread</property>
         <property name="format_sql">true</property>
-<!--        <property name="hibernate.jdbc.batch_size">10</property>-->
+        <property name="hibernate.jdbc.time_zone">UTC</property>
+        <!--        <property name="hibernate.jdbc.batch_size">10</property>-->
         <property name="hibernate.order_inserts">true</property>
         <mapping class="org.ahmeteminsaglik.entities.db.Record"/>
         <mapping class="org.ahmeteminsaglik.entities.db.DataStructorProcess"/>
@@ -24,5 +25,7 @@
         <mapping class="org.ahmeteminsaglik.entities.db.SearchAlgorithmProcess"/>
         <mapping class="org.ahmeteminsaglik.entities.db.WordProcess"/>
         <mapping class="org.ahmeteminsaglik.entities.db.WordList"/>
+        <mapping class="org.ahmeteminsaglik.entities.db.Complexity"/>
+
     </session-factory>
 </hibernate-configuration>
