@@ -52,6 +52,21 @@ public class DBProcessAPI {
         complexitySearchAlgorithm.setElapsedTime(stopwatch.getElapsedTimeString());
         complexitySearchAlgorithm.setMemoryUsage("Fake Data 500 mb");
 
+        SearchAlgorithmProcess searchAlgorithmProcess = new SearchAlgorithmProcess();
+        SearchAlgorithmDAO searchAlgorithmDAO = new SearchAlgorithmDAOImp();
+        List<SearchAlgorithm> list = searchAlgorithmDAO.getAll();
+        SearchAlgorithm searchAlgorithm = null;
+
+        for (SearchAlgorithm tmp : list) {
+            if (tmp.getName().equals(EnumSearchAlgorithm.SEARCH_NODE.getName())) {
+                searchAlgorithm = tmp;
+                break;
+            }
+        }
+        searchAlgorithmProcess.setRecord(record);
+        searchAlgorithmProcess.setSearchAlgorithmId(searchAlgorithm.getId());
+        record.setSearchAlgorithmProcess(searchAlgorithmProcess);
+
 
 //        recordDAO.save(record);
 //        ComplexityDAO complexityDAO= new ComplexityDAOImp();

@@ -15,11 +15,11 @@ public class DataStructorProcess {
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "data_structor_id")
+    @Column(name = "data_structor_id",nullable = false)
     private int dataStructorId;
     @OneToOne(/*mappedBy = "dataStructorProcess",*/
             cascade = CascadeType.ALL)
-    @JoinColumn(name = "record_id")
+    @JoinColumn(name = "record_id",nullable = false)
     private Record record;
 
 

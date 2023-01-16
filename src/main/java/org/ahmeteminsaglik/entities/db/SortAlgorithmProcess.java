@@ -19,9 +19,9 @@ public class SortAlgorithmProcess {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "sort_algorithm_id")
+    @Column(name = "sort_algorithm_id",nullable = false)
     private int sortAlgorithmId;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "record_id")
+    @JoinColumn(name = "record_id",nullable = false)
     private Record record;
 }

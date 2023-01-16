@@ -22,7 +22,7 @@ public class Word {
     private int id;
 
 
-    @Column(name="word")
+    @Column(name="word",nullable = false)
     private  String word;
 
     public Word(String word) {

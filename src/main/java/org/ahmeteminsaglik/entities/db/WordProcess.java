@@ -21,21 +21,21 @@ public class WordProcess {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "found_word")
+    @Column(name = "found_word",nullable = false)
     private int foundWord;
-    @Column(name = "misssing_word")
+    @Column(name = "misssing_word",nullable = false)
     private int missingWord;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "record_id")
+    @JoinColumn(name = "record_id",nullable = false)
     private Record record;
 
     @OneToOne()
-    @JoinColumn(name = "total_word_list_id")
+    @JoinColumn(name = "total_word_list_id",nullable = false)
     private WordList totalWordListId;
 
     @OneToOne()
-    @JoinColumn(name = "search_word_list_id")
+    @JoinColumn(name = "search_word_list_id",nullable = false)
     private WordList searchWordListId;
 
 }

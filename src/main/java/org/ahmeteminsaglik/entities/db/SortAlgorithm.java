@@ -20,7 +20,7 @@ public class SortAlgorithm {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
+    @Column(name = "name",unique = true,nullable = false)
     private String name;
 
     public SortAlgorithm(String name) {

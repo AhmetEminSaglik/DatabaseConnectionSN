@@ -19,7 +19,7 @@ public class WordList {
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "name", unique = true)
+    @Column(name = "name", unique = true,nullable = false)
     private String name;
 
 

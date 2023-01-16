@@ -9,7 +9,5 @@ u
 Esrc/main/java/org/ahmeteminsaglik/dataaccess/DBConnectionProcess.java,f\d\fd2e8fd3b64f37e54ea91f2672497cc11457e82b
 n
 >src/main/java/org/ahmeteminsaglik/dataaccess/DBConnection.java,9\5\958bb556f280abf9da42763e30a47518ae5f5c17
-r
-Bsrc/main/java/org/ahmeteminsaglik/entities/db/SearchAlgorithm.java,7\a\7aff4c15456dfa8b3581366dd6517d33032bc146
 {
 Ksrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/DataStructorDAO.java,c\0\c02fa778b26e132a16a8378972a6a002cc613861

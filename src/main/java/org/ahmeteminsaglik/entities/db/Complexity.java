@@ -18,14 +18,14 @@ public class Complexity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "record_id")
+    @JoinColumn(name = "record_id",nullable = false)
     private Record record;
     @OneToOne
-    @JoinColumn(name = "process_name_id")
+    @JoinColumn(name = "process_name_id",nullable = false)
     private ProcessName processName;
-    @Column(name = "elapsed_time")
+    @Column(name = "elapsed_time",nullable = false)
     private String elapsedTime;
-    @Column(name = "memory_usage_kb")
+    @Column(name = "memory_usage_kb",nullable = false)
     private String memoryUsage;
 //    @Column(name = "elapsed_time")
 //    private  Ti
