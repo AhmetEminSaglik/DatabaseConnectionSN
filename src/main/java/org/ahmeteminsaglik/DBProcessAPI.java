@@ -12,6 +12,80 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DBProcessAPI {
+    public static void exampleSaveComplexity() {
+        RecordDAO recordDAO = new RecordDAOImp();
+        Record record = new Record();
+
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.startTime();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        stopwatch.stopTime();
+        System.out.println(stopwatch.getElapsedTimeString());
+
+        ProcessNameDAO processNameDAO = new ProcessNameDAOImp();
+//        ProcessName processName = processNameDAO.getByStringValueFromGivenColumnName("name", EnumProcessName.DATA_STRUCTOR.getName());
+        List<ProcessName> processNameList = processNameDAO.getAll();
+
+        Complexity complexityDataStructor = new Complexity();
+        ProcessName processNameDataStructor = processNameList.get(0);
+        complexityDataStructor.setProcessName(processNameDataStructor);
+        complexityDataStructor.setRecord(record);
+        complexityDataStructor.setElapsedTime(stopwatch.getElapsedTimeString());
+        complexityDataStructor.setMemoryUsage("Fake Data 100 mb");
+
+        Complexity complexitySortAlgorithm = new Complexity();
+        ProcessName processNameSortAlgorithm = processNameList.get(1);
+        complexitySortAlgorithm.setProcessName(processNameSortAlgorithm);
+        complexitySortAlgorithm.setRecord(record);
+        complexitySortAlgorithm.setElapsedTime(stopwatch.getElapsedTimeString());
+        complexitySortAlgorithm.setMemoryUsage("Fake Data 10 mb");
+
+
+        Complexity complexitySearchAlgorithm = new Complexity();
+        ProcessName processNameSearchAlgorithm = processNameList.get(2);
+        complexitySearchAlgorithm.setProcessName(processNameSearchAlgorithm);
+        complexitySearchAlgorithm.setRecord(record);
+        complexitySearchAlgorithm.setElapsedTime(stopwatch.getElapsedTimeString());
+        complexitySearchAlgorithm.setMemoryUsage("Fake Data 500 mb");
+
+
+//        recordDAO.save(record);
+//        ComplexityDAO complexityDAO= new ComplexityDAOImp();
+//        complexityDAO.save(complexity);
+        List<Complexity> complexityList = new ArrayList<>();
+        complexityList.add(complexityDataStructor);
+        complexityList.add(complexitySortAlgorithm);
+        complexityList.add(complexitySearchAlgorithm);
+
+        record.setComplexityList(complexityList);
+        recordDAO.save(record);
+                /*
+
+    EKSIK DAHA ID KISMINI EKLEMEDIM
+        Stopwatch stopwatch = new Stopwatch();
+        Record record = new Record();
+        RecordDAO recordDAO = new RecordDAOImp();
+        Complexity complexity = new Complexity();
+        ProcessName processName = new ProcessName();
+        processName.setName(EnumProcessName.DATA_STRUCTOR.getName());
+
+        DataStructorProcess dsp = new DataStructorProcess();
+        dsp.setRecord(record);
+
+        complexity.setRecord(record);
+
+        stopwatch.startTime();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }*/
+    }
+
     public static void exampleSaveWordProcess() {
         RecordDAO recordDAO = new RecordDAOImp();
         Record record = new Record();
@@ -275,7 +349,8 @@ public class DBProcessAPI {
         saveAbsentEnumValuesToDB(sortAlgorithmListFromEnum, searchAlgorithmListFromDB, baseDAO);
     }
 
-    public static void saveAbsentEnumValuesToDB(List<?> enumValue, List<?> valueInDB, BaseDAO<Object> baseDAO) {
+    public static void saveAbsentEnumValuesToDB(List<?> enumValue, List<?>
+            valueInDB, BaseDAO<Object> baseDAO) {
         for (int i = 0; i < enumValue.size(); i++) {
             boolean dataIsFound = false;
             for (int j = 0; j < valueInDB.size(); j++) {

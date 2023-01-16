@@ -26,6 +26,7 @@
         <mapping class="org.ahmeteminsaglik.entities.db.WordProcess"/>
         <mapping class="org.ahmeteminsaglik.entities.db.WordList"/>
         <mapping class="org.ahmeteminsaglik.entities.db.Complexity"/>
+        <mapping class="org.ahmeteminsaglik.entities.db.ProcessName"/>
 
     </session-factory>
 </hibernate-configuration>

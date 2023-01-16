@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.sql.Time;
-
 @Entity
 @Table(name = "complexity")
 @NoArgsConstructor

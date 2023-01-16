@@ -27,8 +27,7 @@ public class ComplexityDAOImp implements ComplexityDAO {
 
     @Override
     public Complexity getById(int id) {
-        throw new NotYetImplementedException();
-    }
+        throw new NotYetImplementedException();    }
 
     @Override
     public Complexity getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
