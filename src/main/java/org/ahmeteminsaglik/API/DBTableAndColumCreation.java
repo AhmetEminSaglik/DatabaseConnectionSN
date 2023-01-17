@@ -22,7 +22,6 @@ public class DBTableAndColumCreation {
 
 
     private void saveAbsentProcesName() {
-
         List<EnumProcessName> enumList = Arrays.asList(EnumProcessName.values());
         List<ProcessName> processNameFromEnum = new ArrayList<>();
         enumList.forEach(e -> processNameFromEnum.add(new ProcessName(e.getName())));
@@ -30,10 +29,8 @@ public class DBTableAndColumCreation {
         BaseDAO baseDAO = service.getProcessNameDAO();
         List<ProcessName> wordListFromDB = new ArrayList<>();
 
-        List<Object> listDB = getAllDataFromDBRequestedObject(baseDAO);
-        listDB.forEach(e -> {
-            wordListFromDB.add((ProcessName) e);
-        });
+        List<ProcessName> listDB = getAllDataFromDBRequestedObject(baseDAO);
+        wordListFromDB.addAll(listDB);
 
         saveAbsentEnumValuesToDB(processNameFromEnum, wordListFromDB, baseDAO);
     }
@@ -46,69 +43,54 @@ public class DBTableAndColumCreation {
 
         BaseDAO baseDAO = service.getDataStructorDAO();
         List<DataStructor> dataStructorListFromDB = new ArrayList<>();
+        List<DataStructor> listDB = getAllDataFromDBRequestedObject(baseDAO);
+        dataStructorListFromDB.addAll(listDB);
 
-        List<Object> listDB = getAllDataFromDBRequestedObject(baseDAO);
-        listDB.forEach(e -> {
-            dataStructorListFromDB.add((DataStructor) e);
-        });
         saveAbsentEnumValuesToDB(dataStructorListFromEnum, dataStructorListFromDB, baseDAO);
     }
 
 
     private void saveAbsentSortAlgorithm() {
-
         List<EnumSortAlgorithm> enumList = Arrays.asList(EnumSortAlgorithm.values());
         List<SortAlgorithm> sortAlgorithmListFromEnum = new ArrayList<>();
         enumList.forEach(e -> sortAlgorithmListFromEnum.add(new SortAlgorithm(e.getName())));
 
         BaseDAO baseDAO = service.getSortAlgorithmDAO();
-        List<SearchAlgorithm> searchAlgorithmListFromDB = new ArrayList<>();
+        List<SortAlgorithm> sortAlgorithmListFromDB = new ArrayList<>();
+        List<SortAlgorithm> listDB = getAllDataFromDBRequestedObject(baseDAO);
+        sortAlgorithmListFromDB.addAll(listDB);
 
-        List<Object> listDB = getAllDataFromDBRequestedObject(baseDAO);
-        listDB.forEach(e -> {
-            searchAlgorithmListFromDB.add((SearchAlgorithm) e);
-        });
-
-        saveAbsentEnumValuesToDB(sortAlgorithmListFromEnum, searchAlgorithmListFromDB, baseDAO);
+        saveAbsentEnumValuesToDB(sortAlgorithmListFromEnum, sortAlgorithmListFromDB, baseDAO);
     }
 
     private void saveAbsentSearchAlgorithm() {
-
         List<EnumSearchAlgorithm> enumList = Arrays.asList(EnumSearchAlgorithm.values());
         List<SearchAlgorithm> searchAlgorithmListFromEnum = new ArrayList<>();
         enumList.forEach(e -> searchAlgorithmListFromEnum.add(new SearchAlgorithm(e.getName())));
 
         BaseDAO baseDAO = service.getSearchAlgorithmDAO();
         List<SearchAlgorithm> searchAlgorithmListFromDB = new ArrayList<>();
-
-        List<Object> listDB = getAllDataFromDBRequestedObject(baseDAO);
-        listDB.forEach(e -> {
-            searchAlgorithmListFromDB.add((SearchAlgorithm) e);
-        });
+        List<SearchAlgorithm> listDB = getAllDataFromDBRequestedObject(baseDAO);
+        searchAlgorithmListFromDB.addAll(listDB);
 
         saveAbsentEnumValuesToDB(searchAlgorithmListFromEnum, searchAlgorithmListFromDB, baseDAO);
     }
 
     private void saveAbsentWordListTableName() {
-
         List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
         List<WordList> wordListFromEnum = new ArrayList<>();
         enumList.forEach(e -> wordListFromEnum.add(new WordList(e.getName())));
 
         BaseDAO baseDAO = service.getWordListDAO();
         List<WordList> wordListFromDB = new ArrayList<>();
-
-        List<Object> listDB = getAllDataFromDBRequestedObject(baseDAO);
-        listDB.forEach(e -> {
-            wordListFromDB.add((WordList) e);
-        });
+        List<WordList> listDB = getAllDataFromDBRequestedObject(baseDAO);
+        wordListFromDB.addAll(listDB);
 
         saveAbsentEnumValuesToDB(wordListFromEnum, wordListFromDB, baseDAO);
     }
 
     private List<Object> getAllDataFromDBRequestedObject(BaseDAO<? extends Object> baseDAO) {
         return (List<Object>) baseDAO.getAll();
-
     }
 
     private void saveAbsentEnumValuesToDB(List<?> enumValue, List<?> valueInDB, BaseDAO<Object> baseDAO) {
@@ -125,8 +107,6 @@ public class DBTableAndColumCreation {
                 valueListToSaveDb.add(enumValue.get(i));
             }
         }
-
         baseDAO.saveAll(valueListToSaveDb);
     }
-
 }

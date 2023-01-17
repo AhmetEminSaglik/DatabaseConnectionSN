@@ -20,7 +20,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
 
-        DBTableAndColumCreation DBTableAndColumns= new DBTableAndColumCreation();
+        DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
         DBTableAndColumns.createAllTablesAndColumns();
         System.exit(0);
 
@@ -95,7 +95,7 @@ public class Main {
         ComplexityFundamental dataStructorComplexity = new ComplexityFundamental();
 
 //        ProcessName processNameDataStructor = new ProcessName(EnumProcessName.DATA_STRUCTOR.getName());
-        dataStructorComplexity.setEnumProcessName(EnumProcessName.DATA_STRUCTOR);
+        dataStructorComplexity.setEnumProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS);
         dataStructorComplexity.setElapsedTime("00:00:03:123");
         dataStructorComplexity.setMemoryUsage("1234 Fake");
 
