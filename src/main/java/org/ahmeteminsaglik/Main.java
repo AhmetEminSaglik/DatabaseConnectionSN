@@ -17,8 +17,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
-        DBTableAndColumns.createAllTablesAndColumns();
+//        DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
+//        DBTableAndColumns.createAllTablesAndColumns();
 //        System.exit(0);
 
 //        exampleGetAllRequestedWordTableWords();
