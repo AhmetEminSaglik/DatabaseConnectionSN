@@ -16,6 +16,8 @@ public class SearchAlgorithmProcess {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+
+    /* TODO burasi inner join yapilacak*/
     @Column(name = "search_algorithm_id",nullable = false)
     private int searchAlgorithmId;
 

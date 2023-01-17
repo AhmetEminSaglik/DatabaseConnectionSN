@@ -1,22 +1,40 @@
-package org.ahmeteminsaglik;
+package org.ahmeteminsaglik.API;
 
+import org.ahmeteminsaglik.API.abstracts.DBSaveProcessAPIService;
 import org.ahmeteminsaglik.dataaccess.abstracts.*;
 import org.ahmeteminsaglik.dataaccess.concretes.*;
-import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
-import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.entities.db.Record;
-import org.ahmeteminsaglik.entities.enums.*;
+import org.ahmeteminsaglik.utility.DBConfigureObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class DBProcessAPI {
+public class DBSaveProcessAPI implements DBSaveProcessAPIService {
+    private RecordDAO recordDAO = new RecordDAOImp();
+
+    @Override
+    public void save(DBConfigureObject dbConfigureObject) {
+        recordDAO.save(dbConfigureObject.getRecord());
+    }
+
+    @Override
+    public void save(List<DBConfigureObject> dbConfigureObjectList) {
+        List<Record> recordList = new ArrayList<>();
+        for (DBConfigureObject tmp : dbConfigureObjectList) {
+            recordList.add(tmp.getRecord());
+        }
+
+        recordDAO.saveAll(recordList);
+    }
+
+    /*
     public static void exampleSaveComplexity() {
         RecordDAO recordDAO = new RecordDAOImp();
         Record record = new Record();
 
         Stopwatch stopwatch = new Stopwatch();
+        MemoryUsage memoryUsage = new MemoryUsage();
+        memoryUsage.calculateMemoryBeforeProcess();
         stopwatch.startTime();
         try {
             Thread.sleep(1000);
@@ -24,6 +42,7 @@ public class DBProcessAPI {
             throw new RuntimeException(e);
         }
         stopwatch.stopTime();
+        memoryUsage.calculateMemoryAfterProcess();
         System.out.println(stopwatch.getElapsedTimeString());
 
         ProcessNameDAO processNameDAO = new ProcessNameDAOImp();
@@ -35,14 +54,14 @@ public class DBProcessAPI {
         complexityDataStructor.setProcessName(processNameDataStructor);
         complexityDataStructor.setRecord(record);
         complexityDataStructor.setElapsedTime(stopwatch.getElapsedTimeString());
-        complexityDataStructor.setMemoryUsage("Fake Data 100 mb");
+        complexityDataStructor.setMemoryUsage(ReadableFormat.getStringValue(memoryUsage.getUsedMemoryByte()));
 
         Complexity complexitySortAlgorithm = new Complexity();
         ProcessName processNameSortAlgorithm = processNameList.get(1);
         complexitySortAlgorithm.setProcessName(processNameSortAlgorithm);
         complexitySortAlgorithm.setRecord(record);
         complexitySortAlgorithm.setElapsedTime(stopwatch.getElapsedTimeString());
-        complexitySortAlgorithm.setMemoryUsage("Fake Data 10 mb");
+        complexitySortAlgorithm.setMemoryUsage(ReadableFormat.getStringValue(memoryUsage.getUsedMemoryKB()));
 
 
         Complexity complexitySearchAlgorithm = new Complexity();
@@ -50,7 +69,7 @@ public class DBProcessAPI {
         complexitySearchAlgorithm.setProcessName(processNameSearchAlgorithm);
         complexitySearchAlgorithm.setRecord(record);
         complexitySearchAlgorithm.setElapsedTime(stopwatch.getElapsedTimeString());
-        complexitySearchAlgorithm.setMemoryUsage("Fake Data 500 mb");
+        complexitySearchAlgorithm.setMemoryUsage(ReadableFormat.getStringValue(memoryUsage.getUsedMemoryMB()));
 
         SearchAlgorithmProcess searchAlgorithmProcess = new SearchAlgorithmProcess();
         SearchAlgorithmDAO searchAlgorithmDAO = new SearchAlgorithmDAOImp();
@@ -78,7 +97,7 @@ public class DBProcessAPI {
 
         record.setComplexityList(complexityList);
         recordDAO.save(record);
-                /*
+                *//*
 
     EKSIK DAHA ID KISMINI EKLEMEDIM
         Stopwatch stopwatch = new Stopwatch();
@@ -98,7 +117,7 @@ public class DBProcessAPI {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
-        }*/
+        }*//*
     }
 
     public static void exampleSaveWordProcess() {
@@ -153,7 +172,7 @@ public class DBProcessAPI {
         recordList.get(2).setSortAlgorithmProcess(sap3);
 
         dao.saveAll(recordList);
-/*        Record record = new Record();
+*//*        Record record = new Record();
 //        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
         RecordDAO dao = new RecordDAOImp();
 
@@ -178,7 +197,7 @@ public class DBProcessAPI {
         record.getSortAlgorithmProcessList().add(dsp3);
         record.getSortAlgorithmProcessList().add(dsp4);
 
-        dao.save(record);*/
+        dao.save(record);*//*
     }
 
     public static void exampleSaveSearchAlgorithmProcess() {
@@ -205,7 +224,7 @@ public class DBProcessAPI {
         recordList.get(2).setSearchAlgorithmProcess(sap3);
 
         dao.saveAll(recordList);
-     /*   Record record = new Record();
+     *//*   Record record = new Record();
 //        DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
         RecordDAO dao = new RecordDAOImp();
 
@@ -229,7 +248,7 @@ public class DBProcessAPI {
         record.getSearchAlgorithmProcessList().add(dsp3);
         record.getSearchAlgorithmProcessList().add(dsp4);
 
-        dao.save(record);*/
+        dao.save(record);*//*
     }
 
 
@@ -257,11 +276,11 @@ public class DBProcessAPI {
         recordList.get(2).setDataStructorProcess(dsp3);
 
         dao.saveAll(recordList);
-        /*DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
+        *//*DataStructorProcessDAO DSPdao = new DataStructorProcessDAOImp();
         RecordDAO dao = new RecordDAOImp();
         DataStructorProcess dsp = new DataStructorProcess();
-        dsp.setDataStructorId();*/
-/*
+        dsp.setDataStructorId();*//*
+     *//*
 //
 
 
@@ -280,16 +299,16 @@ public class DBProcessAPI {
         record.getDataStructorProcessList().add(dsp2);
         record.getDataStructorProcessList().add(dsp3);
 
-        dao.save(record);*/
+        dao.save(record);*//*
     }
 
     public static void exampleSaveRecord() {
         RecordDAO recordDAO = new RecordDAOImp();
-        /*List<Record> list = new ArrayList<>();
+        *//*List<Record> list = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             list.add(new Record());
         }
-        recordDAO.saveAll(list);*/
+        recordDAO.saveAll(list);*//*
         Record record = new Record();
         recordDAO.save(record);
     }
@@ -454,4 +473,5 @@ public class DBProcessAPI {
         dao.saveAll(dataStructorList);
     }
 
+*/
 }

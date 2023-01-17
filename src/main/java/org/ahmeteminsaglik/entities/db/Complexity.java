@@ -20,7 +20,7 @@ public class Complexity {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "record_id",nullable = false)
     private Record record;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "process_name_id",nullable = false)
     private ProcessName processName;
     @Column(name = "elapsed_time",nullable = false)

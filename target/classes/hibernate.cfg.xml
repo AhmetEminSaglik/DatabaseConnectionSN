@@ -20,6 +20,7 @@
         <!--        <property name="hibernate.jdbc.batch_size">10</property>-->
         <property name="hibernate.order_inserts">true</property>
         <mapping class="org.ahmeteminsaglik.entities.db.Record"/>
+        <mapping class="org.ahmeteminsaglik.entities.db.DataStructor"/>
         <mapping class="org.ahmeteminsaglik.entities.db.DataStructorProcess"/>
         <mapping class="org.ahmeteminsaglik.entities.db.SortAlgorithmProcess"/>
         <mapping class="org.ahmeteminsaglik.entities.db.SearchAlgorithmProcess"/>

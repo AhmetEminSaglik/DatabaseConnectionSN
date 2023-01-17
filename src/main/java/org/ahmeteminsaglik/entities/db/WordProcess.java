@@ -23,7 +23,7 @@ public class WordProcess {
 
     @Column(name = "found_word",nullable = false)
     private int foundWord;
-    @Column(name = "misssing_word",nullable = false)
+    @Column(name = "missing_word",nullable = false)
     private int missingWord;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -31,11 +31,11 @@ public class WordProcess {
     private Record record;
 
     @OneToOne()
-    @JoinColumn(name = "total_word_list_id",nullable = false)
-    private WordList totalWordListId;
+    @JoinColumn(name = "total_word_list_id",nullable = false)/*"total_word_list_id"*/
+    private WordList totalWordList;
 
     @OneToOne()
     @JoinColumn(name = "search_word_list_id",nullable = false)
-    private WordList searchWordListId;
+    private WordList searchWordList;
 
 }

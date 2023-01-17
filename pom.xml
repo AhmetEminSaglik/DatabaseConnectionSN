@@ -23,6 +23,16 @@
         </dependency>
         <dependency>
             <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>SaveRecordDB</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik.memoryusage</groupId>
+            <artifactId>memory-usage</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik.stopwatch</groupId>
             <artifactId>stopwatch</artifactId>
             <version>1.0</version>
         </dependency>
