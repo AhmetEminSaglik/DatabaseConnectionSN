@@ -22,7 +22,7 @@ public interface DBSaveProcessFundamentalDataSetupService {
 
 //    void setWordSearchResult(int foundWord, int missingWord);
 
-    void setFundamentalForComplexity(List<ComplexityFundamental> complexityList);
+    void setFundamentalForComplexity(List<Complexity> complexityList);
 
     void setFundamentalForWordProcess(EnumWordTable enumTotalWordList, EnumWordTable enumSearchWordList, int foundWord, int missingWord);
 

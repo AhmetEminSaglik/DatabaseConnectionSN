@@ -42,23 +42,14 @@ public class DBSaveProcessFundamentalDataSetupManagement implements DBSaveProces
     }
 
     @Override
-    public void setFundamentalForComplexity(List<ComplexityFundamental> complexityFundamentalList) {
-        List<Complexity> complexityList = new ArrayList<>();
-        for (ComplexityFundamental tmp : complexityFundamentalList) {
-            ProcessName processName = dataServiceFromDB.getProcessName(tmp.getEnumProcessName());
-            Complexity complexity = new Complexity();
-            complexity.setProcessName(processName);
-
-            complexity.setElapsedTime(tmp.getElapsedTime());
-            complexity.setMemoryUsage(tmp.getMemoryUsage());
-        }
+    public void setFundamentalForComplexity(List<Complexity> complexityList) {
         dbConfigureObject.setComplexityList(complexityList);
     }
 
     @Override
     public void setFundamentalForWordProcess(EnumWordTable enumTotalWordList, EnumWordTable enumSearchWordList, int foundWord, int missingWord) {
         WordProcess wordProcess = new WordProcess();
-        WordList totalWordList = dataServiceFromDB.getWordList(enumSearchWordList);
+        WordList totalWordList = dataServiceFromDB.getWordList(enumTotalWordList);
         WordList searchWordList = dataServiceFromDB.getWordList(enumSearchWordList);
 
         wordProcess.setTotalWordList(totalWordList);

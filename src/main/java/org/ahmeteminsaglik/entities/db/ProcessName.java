@@ -23,10 +23,14 @@ public class ProcessName {
     @Column(name = "name", unique = true, nullable = false)
     private String name;
 
+//    @OneToOne(mappedBy = "processName",
+//            cascade = CascadeType.ALL,
+//            targetEntity = Complexity.class)
+//    private Complexity complexity;
+
     public ProcessName(String name) {
         this.name = name;
     }
-
 
     @Override
     public boolean equals(Object o) {

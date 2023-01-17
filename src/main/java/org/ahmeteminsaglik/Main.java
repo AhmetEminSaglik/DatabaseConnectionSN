@@ -2,13 +2,11 @@ package org.ahmeteminsaglik;
 
 import org.ahmeteminsaglik.API.DBSaveProcessAPI;
 import org.ahmeteminsaglik.API.DBTableAndColumCreation;
-import org.ahmeteminsaglik.API.abstracts.DBSaveProcessAPIService;
 import org.ahmeteminsaglik.API.concretes.DBSaveProcessFundamentalDataSetupManagement;
-import org.ahmeteminsaglik.dataaccess.DBConnectionProcess;
+import org.ahmeteminsaglik.API.concretes.DataManagementFromDB;
 import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.WordDAOImp;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
-import org.ahmeteminsaglik.entities.ComplexityFundamental;
 import org.ahmeteminsaglik.entities.db.Complexity;
 import org.ahmeteminsaglik.entities.db.ProcessName;
 import org.ahmeteminsaglik.entities.db.Word;
@@ -19,10 +17,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-
         DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
         DBTableAndColumns.createAllTablesAndColumns();
-        System.exit(0);
+//        System.exit(0);
 
 //        exampleGetAllRequestedWordTableWords();
 //        exampleGetAllDataStructor();
@@ -60,8 +57,8 @@ public class Main {
         List<String> stringList = new ArrayList<>();
 
         WordDAO wordDAO = new WordDAOImp();
-        EnumWordTable enumWordPool = EnumWordTable.WORD_1_000;
-        EnumWordTable enumSearchGroup = EnumWordTable.WORD_250;
+        EnumWordTable enumWordPool = EnumWordTable.WORD_40_000;
+        EnumWordTable enumSearchGroup = EnumWordTable.WORD_3_000;
 
         List<Word> wordPool = wordDAO.getAll(new WordStatementInspector(enumWordPool));
         List<Word> searchWordGroup = wordDAO.getAll(new WordStatementInspector(enumSearchGroup));
@@ -86,29 +83,36 @@ public class Main {
         memoryUsage.calculateMemoryAfterProcess();
         stopwatch.stopTime();
 
-        setupManagement.setFundamentalForWordProcess(enumWordPool, enumSearchGroup, foundWord, (250 - foundWord));
+        setupManagement.setFundamentalForWordProcess(enumWordPool, enumSearchGroup, foundWord, (searchWordGroup.size() - foundWord));
         setupManagement.setFundamentalForDataStructorProcess(EnumDataStructor.ARRAYLIST);
         setupManagement.setFundamentalForSortAlgorithmProcess(EnumSortAlgorithm.BUBBLE_SORT);
         setupManagement.setFundamentalForSearchAlgorithmProcess(EnumSearchAlgorithm.LINEAR_SEARCH);
 
-        List<ComplexityFundamental> complexityList = new ArrayList<>();
-        ComplexityFundamental dataStructorComplexity = new ComplexityFundamental();
+//        List<ComplexityFundamental> complexityList = new ArrayList<>();
+        List<Complexity> complexityList = new ArrayList<>();
+        Complexity dataStructorComplexity = new Complexity();
 
-//        ProcessName processNameDataStructor = new ProcessName(EnumProcessName.DATA_STRUCTOR.getName());
-        dataStructorComplexity.setEnumProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS);
+        DataManagementFromDB dataManagementFromDB = new DataManagementFromDB();
+
+        ProcessName processNameDataStructor = new ProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS.getName());
+        dataStructorComplexity.setProcessNameId(dataManagementFromDB.getProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS).getId());
+//        dataStructorComplexity.setProcessNameId(dataManagementFromDB.getProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS).getId());
         dataStructorComplexity.setElapsedTime("00:00:03:123");
         dataStructorComplexity.setMemoryUsage("1234 Fake");
 
-        ComplexityFundamental sortAlgorithmComplexity = new ComplexityFundamental();
+        Complexity sortAlgorithmComplexity = new Complexity();
 //        ProcessName processNameSortAlgorithmProcess = new ProcessName(EnumProcessName.SORT_PROCESS.getName());
-        sortAlgorithmComplexity.setEnumProcessName(EnumProcessName.SORT_PROCESS);
+        sortAlgorithmComplexity.setProcessNameId(dataManagementFromDB.getProcessName(EnumProcessName.SORT_PROCESS).getId());
+//        sortAlgorithmComplexity.setProcessNameId(dataManagementFromDB.getProcessName(EnumProcessName.SORT_PROCESS).getId());
+
         sortAlgorithmComplexity.setElapsedTime("00:00:10:555");
         sortAlgorithmComplexity.setMemoryUsage("22 Fake");
 
-        ComplexityFundamental searchAlgorithmComplexity = new ComplexityFundamental();
+        Complexity searchAlgorithmComplexity = new Complexity();
 //        ProcessName processNameSearchAlgorithmProcess = new ProcessName(EnumProcessName.SEARCH_PROCESS.getName());
 
-        searchAlgorithmComplexity.setEnumProcessName(EnumProcessName.SEARCH_PROCESS);
+        searchAlgorithmComplexity.setProcessNameId(dataManagementFromDB.getProcessName(EnumProcessName.SEARCH_PROCESS).getId());
+//        searchAlgorithmComplexity.setProcessNameId(dataManagementFromDB.getProcessName(EnumProcessName.SEARCH_PROCESS).getId());
         searchAlgorithmComplexity.setElapsedTime(stopwatch.getElapsedTimeString());
         searchAlgorithmComplexity.setMemoryUsage(ReadableFormat.getStringValue(memoryUsage.getUsedMemoryKB()));
 
