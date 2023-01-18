@@ -7,17 +7,11 @@ import java.util.List;
 
 public class DBConfigureObject {
     private Record record = new Record();
-    private ProcessName processName;
-    //    private DataStructor dataStructor;
     private DataStructorProcess dataStructorProcess;
-    //    private SortAlgorithm sortAlgorithm;
     private SortAlgorithmProcess sortAlgorithmProcess;
-    //    private SearchAlgorithm searchAlgorithm;
     private SearchAlgorithmProcess searchAlgorithmProcess;
     private List<Complexity> complexityList;
     private WordProcess wordProcess;
-
-
 
 
     /*    --> WordList, Word, WordProcess
@@ -60,15 +54,6 @@ public class DBConfigureObject {
      * Or above records will keep in a list, and then save all records to db.
      *
      * */
-
-    public ProcessName getProcessName() {
-        return processName;
-    }
-
-    public void setProcessName(ProcessName processName) {
-        this.processName = processName;
-    }
-
     public DataStructorProcess getDataStructorProcess() {
         return dataStructorProcess;
     }
@@ -114,10 +99,7 @@ public class DBConfigureObject {
 
     public void setComplexityList(List<Complexity> complexityList) {
         this.complexityList = complexityList;
-
-        for (Complexity tmp : complexityList) {
-            tmp.setRecord(record);
-        }
+        complexityList.forEach(e -> e.setRecord(record));
         record.setComplexityList(complexityList);
     }
 

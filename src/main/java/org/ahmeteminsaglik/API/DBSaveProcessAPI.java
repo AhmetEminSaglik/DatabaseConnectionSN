@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBSaveProcessAPI implements DBSaveProcessAPIService {
-    private RecordDAO recordDAO = new RecordDAOImp();
+    private final RecordDAO recordDAO = new RecordDAOImp();
 
     @Override
     public void save(DBConfigureObject dbConfigureObject) {

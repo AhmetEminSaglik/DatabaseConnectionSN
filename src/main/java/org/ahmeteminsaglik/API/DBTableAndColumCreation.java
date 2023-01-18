@@ -52,7 +52,7 @@ public class DBTableAndColumCreation {
         saveAbsentEnumValuesToDB(wordListFromEnum, baseDAO);
     }
 
-    private <T extends Object> void saveAbsentEnumValuesToDB(List<T> enumValue, BaseDAO<T> baseDAO) {
+    private <T> void saveAbsentEnumValuesToDB(List<T> enumValue, BaseDAO<T> baseDAO) {
         List<T> valueListToSaveDb = new ArrayList<>(enumValue);
         baseDAO.saveAll(valueListToSaveDb);
     }

@@ -28,7 +28,16 @@ public class Complexity {
     private String elapsedTime;
     @Column(name = "memory_usage_kb",nullable = false)
     private String memoryUsage;
-//    @Column(name = "elapsed_time")
+
+    @Override
+    public String toString() {
+        return "Complexity{" +
+                "processNameId=" + processNameId +
+                ", elapsedTime='" + elapsedTime + '\'' +
+                ", memoryUsage='" + memoryUsage + '\'' +
+                '}';
+    }
+    //    @Column(name = "elapsed_time")
 //    private  Ti
 
 }

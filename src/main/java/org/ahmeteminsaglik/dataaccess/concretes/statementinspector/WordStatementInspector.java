@@ -20,8 +20,6 @@ public class WordStatementInspector extends EmptyStatementInspector {
             throw new TableNameNotFoundException();
         }
         preparedStatment= preparedStatment.replace("word_no_selected_table", tableName);
-        System.out.println("preparedStatment : "+preparedStatment);
-        System.out.println(this);
         return preparedStatment;
     }
 

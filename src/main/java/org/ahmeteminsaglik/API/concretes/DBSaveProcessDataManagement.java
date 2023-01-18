@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.API.concretes;
 
-import org.ahmeteminsaglik.business.abstracts.DBSaveProcessDataSetupService;
+import org.ahmeteminsaglik.business.abstracts.DBSaveProcessDataService;
 import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
 import org.ahmeteminsaglik.business.concrete.DataManagementFromDB;
 import org.ahmeteminsaglik.entities.db.*;
@@ -9,12 +9,12 @@ import org.ahmeteminsaglik.core.utility.DBConfigureObject;
 
 import java.util.List;
 
-public class DBSaveProcessDataSetupManagement implements DBSaveProcessDataSetupService {
+public class DBSaveProcessDataManagement implements DBSaveProcessDataService {
     private DBConfigureObject dbConfigureObject = new DBConfigureObject();
     private DataServiceFromDB dataServiceFromDB = new DataManagementFromDB();
 
     @Override
-    public void setFundamentalForDataStructorProcess(EnumDataStructor enumDataStructor) {
+    public void setDataStructorProcess(EnumDataStructor enumDataStructor) {
         DataStructorProcess dataStructorProcess = new DataStructorProcess();
         DataStructor dataStructor = dataServiceFromDB.getDataStructor(enumDataStructor);
 
@@ -23,7 +23,7 @@ public class DBSaveProcessDataSetupManagement implements DBSaveProcessDataSetupS
     }
 
     @Override
-    public void setFundamentalForSortAlgorithmProcess(EnumSortAlgorithm enumSortAlgorithm) {
+    public void setSortAlgorithmProcess(EnumSortAlgorithm enumSortAlgorithm) {
         SortAlgorithmProcess sortAlgorithmProcess = new SortAlgorithmProcess();
         SortAlgorithm sortAlgorithm = dataServiceFromDB.getSortAlgortihm(enumSortAlgorithm);
         sortAlgorithmProcess.setSortAlgorithmId(sortAlgorithm.getId());
@@ -32,7 +32,7 @@ public class DBSaveProcessDataSetupManagement implements DBSaveProcessDataSetupS
     }
 
     @Override
-    public void setFundamentalForSearchAlgorithmProcess(EnumSearchAlgorithm enumSearchAlgorithm) {
+    public void setSearchAlgorithmProcess(EnumSearchAlgorithm enumSearchAlgorithm) {
         SearchAlgorithmProcess searchAlgorithmProcess = new SearchAlgorithmProcess();
         SearchAlgorithm searchAlgorithm = dataServiceFromDB.getSearchAlgortihm(enumSearchAlgorithm);
         searchAlgorithmProcess.setSearchAlgorithmId(searchAlgorithm.getId());
@@ -41,12 +41,12 @@ public class DBSaveProcessDataSetupManagement implements DBSaveProcessDataSetupS
     }
 
     @Override
-    public void setFundamentalForComplexity(List<Complexity> complexityList) {
+    public void setComplexityList(List<Complexity> complexityList) {
         dbConfigureObject.setComplexityList(complexityList);
     }
 
     @Override
-    public void setFundamentalForWordProcess(EnumWordTable enumTotalWordList, EnumWordTable enumSearchWordList, int foundWord, int missingWord) {
+    public void setWordProcess(EnumWordTable enumTotalWordList, EnumWordTable enumSearchWordList, int foundWord, int missingWord) {
         WordProcess wordProcess = new WordProcess();
         WordList totalWordList = dataServiceFromDB.getWordList(enumTotalWordList);
         WordList searchWordList = dataServiceFromDB.getWordList(enumSearchWordList);

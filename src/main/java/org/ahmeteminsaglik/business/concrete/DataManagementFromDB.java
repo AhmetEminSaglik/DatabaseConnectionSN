@@ -2,8 +2,11 @@ package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
 import org.ahmeteminsaglik.business.concrete.DAOServiceManagement;
+import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.entities.enums.*;
+
+import java.util.List;
 
 public class DataManagementFromDB implements DataServiceFromDB {
     final String columnName = "name";
@@ -11,9 +14,14 @@ public class DataManagementFromDB implements DataServiceFromDB {
     private DAOServiceManagement daoService = new DAOServiceManagement();
 
     @Override
+    public List<Word> getWords(EnumWordTable enumWordTable) {
+        return daoService.getWordDAO().getAll(new WordStatementInspector(enumWordTable));
+    }
+
+    @Override
     public WordList getWordList(EnumWordTable enumWordTable) {
 //        StatementInspector statementInspector = new WordStatementInspector(enumWordTable.getName());
-        return daoService.getWordListDAO().getByStringValueFromGivenColumnName(columnName,enumWordTable.getName());
+        return daoService.getWordListDAO().getByStringValueFromGivenColumnName(columnName, enumWordTable.getName());
     }
 
     @Override
