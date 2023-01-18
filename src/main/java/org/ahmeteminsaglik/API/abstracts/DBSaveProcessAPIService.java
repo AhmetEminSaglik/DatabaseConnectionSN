@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.API.abstracts;
 
-import org.ahmeteminsaglik.utility.DBConfigureObject;
+import org.ahmeteminsaglik.core.utility.DBConfigureObject;
 
 import java.util.List;
 

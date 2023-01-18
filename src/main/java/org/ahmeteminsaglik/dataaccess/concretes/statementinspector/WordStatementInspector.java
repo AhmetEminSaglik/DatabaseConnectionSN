@@ -2,7 +2,7 @@ package org.ahmeteminsaglik.dataaccess.concretes.statementinspector;
 
 import lombok.SneakyThrows;
 import org.ahmeteminsaglik.entities.enums.EnumWordTable;
-import org.ahmeteminsaglik.exception.TableNameNotFoundException;
+import org.ahmeteminsaglik.business.concrete.exception.TableNameNotFoundException;
 import org.hibernate.resource.jdbc.internal.EmptyStatementInspector;
 
 public class WordStatementInspector extends EmptyStatementInspector {

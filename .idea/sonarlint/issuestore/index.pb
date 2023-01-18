@@ -3,8 +3,6 @@
 Rsrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/DataStructorProcessDAO.java,e\7\e7eaf84914ed700d5e5e0a94117819748469eaf3
 u
 Esrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/RecordDAO.java,0\a\0a4247f0fa9c3ac42b27a3eeb65f0b590230ecd0
-{
-Ksrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/DataStructorDAO.java,c\0\c02fa778b26e132a16a8378972a6a002cc613861
 ~
 Nsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/DataStructorDaoImp.java,2\8\28d9004fbfb1cea89792434c643a62dc745ee5bc
 ~

@@ -1,7 +1,6 @@
 package org.ahmeteminsaglik.dataaccess.abstracts;
 
-import org.ahmeteminsaglik.dataaccess.DBConnection;
-import org.ahmeteminsaglik.dataaccess.DBConnectionProcess;
+import org.ahmeteminsaglik.dataaccess.concretes.DBConnectionProcess;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 
 import java.util.List;

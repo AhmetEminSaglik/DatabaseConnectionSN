@@ -2,10 +2,10 @@ package org.ahmeteminsaglik;
 
 import org.ahmeteminsaglik.API.DBSaveProcessAPI;
 import org.ahmeteminsaglik.API.DBTableAndColumCreation;
-import org.ahmeteminsaglik.API.concretes.DBSaveProcessFundamentalDataSetupManagement;
-import org.ahmeteminsaglik.API.concretes.DataManagementFromDB;
+import org.ahmeteminsaglik.API.concretes.DBSaveProcessDataSetupManagement;
+import org.ahmeteminsaglik.business.concrete.DataManagementFromDB;
 import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
-import org.ahmeteminsaglik.dataaccess.concretes.WordDAOImp;
+import org.ahmeteminsaglik.dataaccess.concretes.imp.WordDAOImp;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.Complexity;
 import org.ahmeteminsaglik.entities.db.ProcessName;
@@ -17,34 +17,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-//        DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
-//        DBTableAndColumns.createAllTablesAndColumns();
-//        System.exit(0);
-
-//        exampleGetAllRequestedWordTableWords();
-//        exampleGetAllDataStructor();
-//        DataStructor dataStructor= new DataStructor("Test");
-//        saveDataStructor(dataStructor);
-//        exampleSaveDataToDataStructor();
-//        exampleSaveAbsentDataStructor();
-//        DBProcessAPI.exampleSaveAbsentSearchAlgorithm();
-//        DBProcessAPI.exampleSaveAbsentSortAlgorithm();
-//        DBProcessAPI.exampleSaveAbsentWordListTableName();
-//        DBProcessAPI.exampleSaveAbsentProcesName();
+        DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
+        DBTableAndColumns.createAllTablesAndColumns();
 
 
-//        DBProcessAPI.exampleSaveRecord();
-//        DBProcessAPI.exampleSaveDataStructorProcess();
-//        DBProcessAPI.exampleSaveSortAlgorithmProcess();
-//        DBProcessAPI.exampleSaveSearchAlgorithmProcess();
-
-        /// here is created after fixed associations to @OneToOne Record and dataStructor,sort,search process
-//        DBProcessAPI.exampleSaveDataStructorProcess();
-//        DBProcessAPI.exampleSaveSortAlgorithmProcess();
-//        DBProcessAPI.exampleSaveSearchAlgorithmProcess();
-//        DBProcessAPI.exampleSaveWordProcess();
-//        DBSaveProcessAPI.exampleSaveComplexity();
-        DBSaveProcessFundamentalDataSetupManagement setupManagement = new DBSaveProcessFundamentalDataSetupManagement();
+        DBSaveProcessDataSetupManagement setupManagement = new DBSaveProcessDataSetupManagement();
         DBSaveProcessAPI dbSaveProcessAPI = new DBSaveProcessAPI();
 
         setupManagement = fakeProcess(setupManagement);
@@ -53,7 +30,7 @@ public class Main {
 
     }
 
-    static DBSaveProcessFundamentalDataSetupManagement fakeProcess(DBSaveProcessFundamentalDataSetupManagement setupManagement) {
+    static DBSaveProcessDataSetupManagement fakeProcess(DBSaveProcessDataSetupManagement setupManagement) {
         List<String> stringList = new ArrayList<>();
 
         WordDAO wordDAO = new WordDAOImp();
