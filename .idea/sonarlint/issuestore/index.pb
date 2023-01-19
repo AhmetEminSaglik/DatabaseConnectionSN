@@ -5,8 +5,6 @@ u
 Esrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/RecordDAO.java,0\a\0a4247f0fa9c3ac42b27a3eeb65f0b590230ecd0
 y
 Isrc/main/java/org/ahmeteminsaglik/entities/enums/EnumSearchAlgorithm.java,6\f\6f123a844802a1a12fe15a0cb57749187ee9c164
-o
-?src/main/java/org/ahmeteminsaglik/core/utility/EnumUtility.java,c\6\c6304e0758d42e34896b4808ecffa4cfbec98ab1
 
 Osrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/DBConnectionProcess.java,6\a\6a8f340caf99ef9e8b5472c8de35b2858e32af3a
 u
@@ -29,8 +27,6 @@ Ksrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/DataStructorDAO.java,c\
 Rsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/imp/DataStructorDaoImp.java,2\5\25c7dffa091585578b2a8b8ca87b3d91dbff022f
 s
 Csrc/main/java/org/ahmeteminsaglik/dataaccess/abstracts/BaseDAO.java,3\7\376db09b1bb60d024245e0cb9b2b4a73c5c21136
-r
-Bsrc/main/java/org/ahmeteminsaglik/API/DBTableAndColumCreation.java,2\d\2dc7e0c7c307cbbabfd2bc805722da35e88e8749
 ï
 esrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/statementinspector/WordStatementInspector.java,c\4\c4a484c5dcb048fe4fb7abb73d60ecb46e848648
 }
@@ -57,3 +53,13 @@ i
 9src/main/java/org/ahmeteminsaglik/entities/db/Record.java,4\3\43e0bd6e68ce9880675a069700eec30607cc4f30
 v
 Fsrc/main/java/org/ahmeteminsaglik/entities/db/DataStructorProcess.java,a\0\a0ba89da5bf62d7b85e2a4d20d30b369180850b0
+Å
+Qsrc/main/java/org/ahmeteminsaglik/API/concretes/SearchAlgorithmAPIManagement.java,6\f\6f8d61eff4ff47dd941e708757ebb924db551733
+~
+Nsrc/main/java/org/ahmeteminsaglik/API/abstracts/SearchAlgorithmAPIService.java,d\3\d39f7c0717b7812ebb6bef71820b3161bb22e5a5
+v
+Fsrc/main/java/org/ahmeteminsaglik/entities/enums/EnumDataStructor.java,8\c\8c2e29451e9372da559e885eab4e061237262d91
+s
+Csrc/main/java/org/ahmeteminsaglik/entities/enums/EnumWordTable.java,0\e\0eebe2d5d44c597239df9e4c89857fbd3039dd3d
+{
+Ksrc/main/java/org/ahmeteminsaglik/business/abstracts/ComplexityService.java,7\2\72c408e031819df0a53293aba9876540eda6e596

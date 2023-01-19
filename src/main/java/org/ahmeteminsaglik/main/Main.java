@@ -1,12 +1,14 @@
-package org.ahmeteminsaglik;
+package org.ahmeteminsaglik.main;
 
 import org.ahmeteminsaglik.API.DBSaveProcessAPI;
 import org.ahmeteminsaglik.API.DBTableAndColumCreation;
 import org.ahmeteminsaglik.API.concretes.*;
+import org.ahmeteminsaglik.ReadableFormat;
 import org.ahmeteminsaglik.business.abstracts.ComplexityService;
 import org.ahmeteminsaglik.business.concrete.ComplexityManagement;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.entities.enums.*;
+import org.ahmeteminsaglik.searchnode.business.concretes.searchnode.SearchNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,6 +19,14 @@ public class Main {
     * Todo:
     *  Complexity,*/
     public static void main(String[] args) throws InterruptedException {
+        DBConnectionSaveRecord connectionSaveRecord= new DBConnectionSaveRecord();
+        connectionSaveRecord.setEnumWordTable(EnumWordTable.WORD_50);
+        connectionSaveRecord.setEnumDataStructor(EnumDataStructor.ARRAYLIST);
+        connectionSaveRecord.setEnumSortAlgorithm(EnumSortAlgorithm.BUBBLE_SORT);
+        connectionSaveRecord.setEnumSearchAlgorithm(EnumSearchAlgorithm.LINEAR_SEARCH);
+        connectionSaveRecord.saveProcess();
+        System.exit(0);
+
         DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
         DBTableAndColumns.createAllTablesAndColumns();
 /*
@@ -56,7 +66,7 @@ public class Main {
         List<Word> wordPoolList = wordAPIManagement.getWordList(enumWordTableWordPool);
         List<Word> searchWordList = wordAPIManagement.getWordList(enumWordTableSearchWord);
         searchWordList.forEach(e -> searchWordStringList.add(e.getWord()));
-
+        SearchNode searchNode = new SearchNode();
 
         EnumDataStructor enumDataStructor = EnumDataStructor.ARRAYLIST;
         EnumSortAlgorithm enumSortAlgorithm = EnumSortAlgorithm.TIM_SORT;
