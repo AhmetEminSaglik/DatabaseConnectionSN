@@ -8,12 +8,14 @@ import org.ahmeteminsaglik.business.concrete.ComplexityManagement;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.entities.enums.*;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Main {
+    /*
+    * Todo:
+    *  Complexity,*/
     public static void main(String[] args) throws InterruptedException {
         DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
         DBTableAndColumns.createAllTablesAndColumns();
