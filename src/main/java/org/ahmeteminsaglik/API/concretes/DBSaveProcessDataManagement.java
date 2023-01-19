@@ -17,8 +17,8 @@ public class DBSaveProcessDataManagement implements DBSaveProcessDataService {
     public void setDataStructorProcess(EnumDataStructor enumDataStructor) {
         DataStructorProcess dataStructorProcess = new DataStructorProcess();
         DataStructor dataStructor = dataServiceFromDB.getDataStructor(enumDataStructor);
+        dataStructorProcess.setDataStructorId(dataStructor.getId());
 
-        dataStructorProcess.setDataStructorId(1);
         dbConfigureObject.setDataStructorProcess(dataStructorProcess);
     }
 

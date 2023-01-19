@@ -49,15 +49,15 @@ public class Main {
         List<String> searchWordStringList = new ArrayList<>();
         List<String> wordPoolStringList = new ArrayList<>();
 
-        EnumWordTable enumWordTableWordPool = EnumWordTable.WORD_1_000_000;
-        EnumWordTable enumWordTableSearchWord = EnumWordTable.WORD_1_500;
+        EnumWordTable enumWordTableWordPool = EnumWordTable.WORD_1_500_000;
+        EnumWordTable enumWordTableSearchWord = EnumWordTable.WORD_25_000;
         List<Word> wordPoolList = wordAPIManagement.getWordList(enumWordTableWordPool);
         List<Word> searchWordList = wordAPIManagement.getWordList(enumWordTableSearchWord);
         searchWordList.forEach(e -> searchWordStringList.add(e.getWord()));
 
 
         EnumDataStructor enumDataStructor = EnumDataStructor.ARRAYLIST;
-        EnumSortAlgorithm enumSortAlgorithm = EnumSortAlgorithm.BUBBLE_SORT;
+        EnumSortAlgorithm enumSortAlgorithm = EnumSortAlgorithm.TIM_SORT;
         EnumSearchAlgorithm enumSearchAlgorithm = EnumSearchAlgorithm.LINEAR_SEARCH;
         complexityDataStructor.startComplexityCalculation();
         wordPoolList.forEach(e -> wordPoolStringList.add(e.getWord()));
@@ -73,8 +73,15 @@ public class Main {
         showInfo("AFTER SORT ALGORITHM");
 //        SearchAlgorithm searchAlgorithm = searchAlgorithmAPIService.getDataStructorName(EnumSearchAlgorithm.LINEAR_SEARCH);
         complexitySearchAlgorithm.startComplexityCalculation();
+
         int foundWordCounter = 0;
         int missingWordNumber = 0;
+        /*for (String tmp : searchWordStringList) {
+            Result result = searchNode.search(tmp);
+            if (result.isSuccess()) {
+                foundWordCounter++;
+            }
+        }*/
         for (String tmpWordPool : wordPoolStringList) {
             for (String tmpSearchWord : searchWordStringList) {
                 if (tmpWordPool.equals(tmpSearchWord)) {

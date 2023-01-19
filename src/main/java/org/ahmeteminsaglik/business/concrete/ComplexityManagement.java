@@ -39,7 +39,7 @@ public class ComplexityManagement implements ComplexityService {
 
     @Override
     public String getUsedMemory() {
-        return ReadableFormat.getStringValue(memoryUsage.getUsedMemoryKB());
+        return ReadableFormat.getStringValue(memoryUsage.getUsedMemoryMB());
     }
 
     public Stopwatch getStopwatch() {
