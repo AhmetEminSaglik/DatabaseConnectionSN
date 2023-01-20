@@ -7,9 +7,9 @@ import org.ahmeteminsaglik.entities.db.SortAlgorithm;
 import org.ahmeteminsaglik.entities.enums.EnumSortAlgorithm;
 
 public class SortAlgorithmAPIManagement extends AbstractComplexityCalculationForAPIService implements SortAlgorithmAPIService {
-
+/*
     @Override
     public SortAlgorithm getDataStructorName(EnumSortAlgorithm enumSortAlgorithm) {
         return dataServiceFromDB.getSortAlgortihm(enumSortAlgorithm);
-    }
+    }*/
 }

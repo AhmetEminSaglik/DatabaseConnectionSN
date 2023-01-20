@@ -22,8 +22,11 @@ public class Complexity {
     private Record record;
 //    @OneToOne(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "process_name_id",nullable = false)
-    @Column(name = "process_name_id",nullable = false)
-    private int processNameId;
+//    @Column(name = "process_name_id",nullable = false)
+//    private int processNameId;
+    @OneToOne
+    @JoinColumn(name="process_name_id",nullable = false)
+    private  ProcessName processName;
     @Column(name = "elapsed_time",nullable = false)
     private String elapsedTime;
     @Column(name = "memory_usage_kb",nullable = false)
@@ -32,11 +35,22 @@ public class Complexity {
     @Override
     public String toString() {
         return "Complexity{" +
-                "processNameId=" + processNameId +
+                "id=" + id +
+                ", record=" + record +
+                ", processName=" + processName +
                 ", elapsedTime='" + elapsedTime + '\'' +
                 ", memoryUsage='" + memoryUsage + '\'' +
                 '}';
     }
+
+    /*    @Override
+    public String toString() {
+        return "Complexity{" +
+                "processNameId=" + processNameId +
+                ", elapsedTime='" + elapsedTime + '\'' +
+                ", memoryUsage='" + memoryUsage + '\'' +
+                '}';
+    }*/
     //    @Column(name = "elapsed_time")
 //    private  Ti
 

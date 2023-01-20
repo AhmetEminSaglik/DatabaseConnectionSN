@@ -13,7 +13,7 @@ Query Console
 
 -- delete
 -- DROP TABLE if exists process_name cascade;
-
+-- DROP TABLE if exists record,process_name,complexity,word_process,search_algorithm_process,search_algorithm,sort_algorithm,sort_algorithm_process,data_structor_process,data_structor,word_list,word_no_selected_table cascade;
 
 Todo
  ---

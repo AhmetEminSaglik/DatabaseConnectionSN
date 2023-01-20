@@ -6,7 +6,6 @@ import org.ahmeteminsaglik.entities.enums.EnumSortAlgorithm;
 
 public interface SortAlgorithmAPIService extends ComplexityService {
 
-    SortAlgorithm getDataStructorName(EnumSortAlgorithm enumSortAlgorithm);
-
+//    SortAlgorithm getDataStructorName(EnumSortAlgorithm enumSortAlgorithm);
 
 }
