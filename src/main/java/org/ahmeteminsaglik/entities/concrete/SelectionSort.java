@@ -7,15 +7,15 @@ import java.util.List;
 public class SelectionSort implements SortAlgorithmBase {
     @Override
     public void sort(List<String> list) {
-        selectionSort(list);
+        sortWithSelectionSort(list);
     }
 
     @Override
     public void sort(String[] arr) {
-        selectionSort(arr);
+        sortWithSelectionSort(arr);
     }
 
-    private void selectionSort(List<String> list) {
+    private void sortWithSelectionSort(List<String> list) {
         // Find the string reference that should go in each cell of
         // the array, from cell 0 to the end
         for (int j = 0; j < list.size() - 1; j++) {
@@ -33,7 +33,7 @@ public class SelectionSort implements SortAlgorithmBase {
 
     }
 
-    public static void selectionSort(String[] array) {
+    public static void sortWithSelectionSort(String[] array) {
 
         // Find the string reference that should go in each cell of
         // the array, from cell 0 to the end
