@@ -6,25 +6,28 @@ import org.ahmeteminsaglik.API.concretes.*;
 import org.ahmeteminsaglik.ReadableFormat;
 import org.ahmeteminsaglik.business.abstracts.ComplexityService;
 import org.ahmeteminsaglik.business.concrete.ComplexityManagement;
+import org.ahmeteminsaglik.business.concrete.algorithmprocess.AlgorithmProcessArray;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.entities.enums.*;
 import org.ahmeteminsaglik.searchnode.business.concretes.searchnode.SearchNode;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class Main {
     /*
-    * Todo:
-    *  Complexity,*/
+     * Todo:
+     *  Complexity,*/
     public static void main(String[] args) throws InterruptedException {
-        DBConnectionSaveRecord connectionSaveRecord= new DBConnectionSaveRecord();
-        connectionSaveRecord.setEnumWordTable(EnumWordTable.WORD_50);
-        connectionSaveRecord.setEnumDataStructor(EnumDataStructor.ARRAYLIST);
-        connectionSaveRecord.setEnumSortAlgorithm(EnumSortAlgorithm.BUBBLE_SORT);
-        connectionSaveRecord.setEnumSearchAlgorithm(EnumSearchAlgorithm.LINEAR_SEARCH);
-        connectionSaveRecord.saveProcess();
+                System.exit(0);
+        DBConnectionSaveRecord connectionSaveRecord = new DBConnectionSaveRecord();
+        connectionSaveRecord.setEnumWordTable(EnumWordTable.WORD_50)
+                .setEnumDataStructor(EnumDataStructor.ARRAYLIST)
+                .setEnumSortAlgorithm(EnumSortAlgorithm.BUBBLE_SORT)
+                .setEnumSearchAlgorithm(EnumSearchAlgorithm.LINEAR_SEARCH)
+                .saveProcess();
         System.exit(0);
 
         DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
