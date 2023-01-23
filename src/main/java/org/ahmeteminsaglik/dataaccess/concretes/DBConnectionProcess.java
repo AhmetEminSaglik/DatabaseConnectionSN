@@ -22,7 +22,7 @@ public class DBConnectionProcess {
         connection.configure(statementInspector);
         List<?> list = new ArrayList<>();
         try {
-            Query query = connection.createQuery();
+            Query<?> query = connection.createQuery();
             list = query.getResultList();
             connection.commitTransaction();
 
@@ -73,7 +73,7 @@ public class DBConnectionProcess {
         connection.configure(statementInspector);
         Object result = null;
         try {
-            Query query = connection.createQuery(columnName, value);
+            Query<?> query = connection.createQuery(columnName, value);
 
             result = query.getResultList().get(0);
             connection.commitTransaction();

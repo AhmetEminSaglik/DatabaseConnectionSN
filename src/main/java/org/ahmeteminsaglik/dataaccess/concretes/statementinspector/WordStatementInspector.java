@@ -2,32 +2,29 @@ package org.ahmeteminsaglik.dataaccess.concretes.statementinspector;
 
 import lombok.SneakyThrows;
 import org.ahmeteminsaglik.entities.enums.EnumWordTable;
-import org.ahmeteminsaglik.business.concrete.exception.TableNameNotFoundException;
 import org.hibernate.resource.jdbc.internal.EmptyStatementInspector;
 
 public class WordStatementInspector extends EmptyStatementInspector {
-    String tableName;
+    private String newTableName;
+    private final String defaultTableName = "word_50";
 
     public WordStatementInspector(EnumWordTable enumWordTable) {
-        this.tableName = enumWordTable.getName();
+        this.newTableName = enumWordTable.getName();
     }
 
     @SneakyThrows
     @Override
     public String inspect(String sql) {
         String preparedStatment = super.inspect(sql);
-        if (!preparedStatment.contains("word")) {
-            throw new TableNameNotFoundException();
-        }
-        preparedStatment= preparedStatment.replace("word_no_selected_table", tableName);
+        preparedStatment = preparedStatment.replace(defaultTableName, newTableName);
         return preparedStatment;
     }
 
-    public String getTableName() {
-        return tableName;
+    public String getnewTableName() {
+        return newTableName;
     }
 
-    public void setTableName(String tableName) {
-        this.tableName = tableName;
+    public void setNewTableName(String newTableName) {
+        this.newTableName = newTableName;
     }
 }

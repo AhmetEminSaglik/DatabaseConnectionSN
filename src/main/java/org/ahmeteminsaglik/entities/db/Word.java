@@ -9,7 +9,7 @@ import lombok.ToString;
 import java.util.Objects;
 
 @Entity
-@Table (name = "word_no_selected_table")
+@Table (name = "word_50")
 @NoArgsConstructor
 @Getter
 @Setter

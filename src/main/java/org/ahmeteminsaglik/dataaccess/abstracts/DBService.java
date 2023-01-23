@@ -6,6 +6,17 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class DBService<T> implements BaseDAO<T> {
+    @Override
+    public List<T> getAll() {
+        return getAll(null);
+    }
+
+    @Override
+    public List<T> getAll(StatementInspector statementInspector) {
+        return (List<T>) connectionProcess.getAll(statementInspector);
+
+    }
+
 
     //    DBConnection connection;
     DBConnectionProcess connectionProcess;
@@ -41,14 +52,5 @@ public class DBService<T> implements BaseDAO<T> {
     }
 
 
-    @Override
-    public List<T> getAll() {
-        return getAll(null);
-    }
 
-    @Override
-    public List<T> getAll(StatementInspector statementInspector) {
-        return (List<T>) connectionProcess.getAll(statementInspector);
-
-    }
 }

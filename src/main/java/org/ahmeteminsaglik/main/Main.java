@@ -6,12 +6,18 @@ import org.ahmeteminsaglik.API.abstracts.ProcessNameService;
 import org.ahmeteminsaglik.API.concretes.*;
 import org.ahmeteminsaglik.ReadableFormat;
 import org.ahmeteminsaglik.business.abstracts.ComplexityService;
+import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
 import org.ahmeteminsaglik.business.concrete.ComplexityManagement;
+import org.ahmeteminsaglik.business.concrete.DataManagementFromDB;
+import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
+import org.ahmeteminsaglik.dataaccess.concretes.DBConnectionProcess;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.ProcessNameDAOImp;
+import org.ahmeteminsaglik.dataaccess.concretes.imp.WordDAOImp;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.entities.enums.*;
 import org.ahmeteminsaglik.searchnode.business.concretes.searchnode.SearchNode;
 
+import javax.swing.*;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,8 +27,16 @@ public class Main {
     /*
      * Todo:
      *  Complexity,*/
-    public static void main(String[] args) throws InterruptedException {
-//        System.exit(0);
+    public static void main(String[] args) {
+
+        DataServiceFromDB dbTest = new DataManagementFromDB();
+        List<Word> words_50 = dbTest.getWords(EnumWordTable.WORD_50);
+        List<Word> words_1_000 = dbTest.getWords(EnumWordTable.WORD_1_000);
+
+
+        System.out.println("Words Expected 50 Actual : " + words_50.size());
+        System.out.println("Words Expected 1000 Actual : " + words_1_000.size());
+        System.exit(0);
       /*  DBConnectionSaveRecord connectionSaveRecord = new DBConnectionSaveRecord();
         connectionSaveRecord.setEnumWordTable(EnumWordTable.WORD_50)
                 .setEnumDataStructor(EnumDataStructor.ARRAYLIST)
@@ -41,7 +55,13 @@ public class Main {
 
         dataManagement = fakeProcess(dataManagement);
         dbSaveProcessAPI.save(dataManagement.getDbConfigureObject());*/
-        testAPI();
+
+        DataManagementFromDB db = new DataManagementFromDB();
+        String msg = "GET : word_no_selected_table yerine word_50 yapinca hata vermedi. Bide bunun save olanini denemeliyim";
+        List<Word> words = db.getWords(EnumWordTable.WORD_1_000);
+        System.out.println(words.size());
+        JOptionPane.showMessageDialog(null, msg);
+//        testAPI();
 
     }
 
@@ -58,7 +78,8 @@ public class Main {
     }
 
     static void testAPI() {
-        WordAPIManagement wordAPIManagement = new WordAPIManagement();
+        DataManagementFromDB dataManagementFromDB = new DataManagementFromDB();
+//        WordAPIManagement wordAPIManagement = new WordAPIManagement();
         ProcessNameManagement processNameManagement = new ProcessNameManagement();
 //        showInfo("BASLANGIC");
 //        SortAlgorithmAPIService sortAlgorithmAPIService = new SortAlgorithmAPIManagement();
@@ -73,8 +94,8 @@ public class Main {
         ProcessName processNameSortAlgorithm = processNameManagement.getProcessName(EnumProcessName.SORT_PROCESS); //new ProcessName();
         ProcessName processNameSearchAlgorithm = processNameManagement.getProcessName(EnumProcessName.SEARCH_PROCESS);// new ProcessName();
 
-        List<Word> wordPoolList = wordAPIManagement.getWordList(enumWordTableWordPool);
-        List<Word> searchWordList = wordAPIManagement.getWordList(enumWordTableSearchWord);
+        List<Word> wordPoolList = dataManagementFromDB.getWords(enumWordTableWordPool);
+        List<Word> searchWordList = dataManagementFromDB.getWords(enumWordTableSearchWord);
         searchWordList.forEach(e -> searchWordStringList.add(e.getWord()));
         SearchNode searchNode = new SearchNode();
 
