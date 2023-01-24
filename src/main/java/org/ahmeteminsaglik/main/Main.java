@@ -182,22 +182,23 @@ public class Main {
 
 
         Complexity dsComplexity = new Complexity();
-        System.out.println("AES : "+new ProcessName(testResult.getDataStructorComplexityConcept().getEnumProcessName().getName()));
-
-        dsComplexity.setProcessName(new ProcessName(testResult.getDataStructorComplexityConcept().getEnumProcessName().getName()));
+        ProcessName dsProcessName= new ProcessName(testResult.getDataStructorComplexityConcept().getEnumProcessName().getName());
+        System.out.println("AES : "+dsProcessName);
+        dsComplexity.setProcessName(dsProcessName);
         dsComplexity.setElapsedTime(testResult.getDataStructorComplexityConcept().getStopwatch().getElapsedTimeString());
         dsComplexity.setMemoryUsage(ReadableFormat.getStringValue(testResult.getDataStructorComplexityConcept().getMemoryUsage().getUsedMemoryKB()));
 
         Complexity sortAComplexity = new Complexity();
-        System.out.println("AES : "+new ProcessName(testResult.getSortAlgorithmComplexityConcept().getEnumProcessName().getName()));
-
-        sortAComplexity.setProcessName(new ProcessName(testResult.getSortAlgorithmComplexityConcept().getEnumProcessName().getName()));
+        ProcessName sortProcessName= new ProcessName(testResult.getSortAlgorithmComplexityConcept().getEnumProcessName().getName());
+        System.out.println("AES : "+sortProcessName);
+        sortAComplexity.setProcessName(sortProcessName);
         sortAComplexity.setElapsedTime(testResult.getSortAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
         sortAComplexity.setMemoryUsage(ReadableFormat.getStringValue(testResult.getSortAlgorithmComplexityConcept().getMemoryUsage().getUsedMemoryKB()));
 
         Complexity searchAComplexity = new Complexity();
-        System.out.println("AES : "+new ProcessName(testResult.getSearchAlgorithmComplexityConcept().getEnumProcessName().getName()));
-        searchAComplexity.setProcessName(new ProcessName(testResult.getSearchAlgorithmComplexityConcept().getEnumProcessName().getName()));
+        ProcessName searchProcessName= new ProcessName(testResult.getSearchAlgorithmComplexityConcept().getEnumProcessName().getName());
+        System.out.println("AES : "+searchProcessName);
+        searchAComplexity.setProcessName(searchProcessName);
         searchAComplexity.setElapsedTime(testResult.getSearchAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
         searchAComplexity.setMemoryUsage(ReadableFormat.getStringValue(testResult.getSearchAlgorithmComplexityConcept().getMemoryUsage().getUsedMemoryKB()));
 
