@@ -4,13 +4,13 @@ import org.ahmeteminsaglik.business.abstracts.DBSaveProcessDataService;
 import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.core.utility.DBSavingProcessObjectSetting;
+import org.ahmeteminsaglik.core.utility.DBSavingProcessObject;
 import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 
 public class DBSaveProcessDataManagement implements DBSaveProcessDataService {
-    private DBSavingProcessObjectSetting objectSetting = new DBSavingProcessObjectSetting();
+    private DBSavingProcessObject savingObject = new DBSavingProcessObject();
     private DBService dbService = new DBManagement();
 
     @Override
@@ -19,7 +19,7 @@ public class DBSaveProcessDataManagement implements DBSaveProcessDataService {
         DataStructor dataStructor = dbService.getDataStructor(enumDataStructor);
         dataStructorProcess.setDataStructorId(dataStructor.getId());
 
-        objectSetting.setDataStructorProcess(dataStructorProcess);
+        savingObject.setDataStructorProcess(dataStructorProcess);
     }
 
     @Override
@@ -28,7 +28,7 @@ public class DBSaveProcessDataManagement implements DBSaveProcessDataService {
         SortAlgorithm sortAlgorithm = dbService.getSortAlgortihm(enumSortAlgorithm);
         sortAlgorithmProcess.setSortAlgorithmId(sortAlgorithm.getId());
 
-        objectSetting.setSortAlgorithmProcess(sortAlgorithmProcess);
+        savingObject.setSortAlgorithmProcess(sortAlgorithmProcess);
     }
 
     @Override
@@ -37,12 +37,12 @@ public class DBSaveProcessDataManagement implements DBSaveProcessDataService {
         SearchAlgorithm searchAlgorithm = dbService.getSearchAlgortihm(enumSearchAlgorithm);
         searchAlgorithmProcess.setSearchAlgorithmId(searchAlgorithm.getId());
 
-        objectSetting.setSearchAlgorithmProcess(searchAlgorithmProcess);
+        savingObject.setSearchAlgorithmProcess(searchAlgorithmProcess);
     }
 
     @Override
     public void setComplexityList(List<Complexity> complexityList) {
-        objectSetting.setComplexityList(complexityList);
+        savingObject.setComplexityList(complexityList);
     }
 
     @Override
@@ -56,11 +56,11 @@ public class DBSaveProcessDataManagement implements DBSaveProcessDataService {
         wordProcess.setFoundWord(foundWord);
         wordProcess.setMissingWord(missingWord);
 
-        objectSetting.setWordProcess(wordProcess);
+        savingObject.setWordProcess(wordProcess);
     }
 
-    public DBSavingProcessObjectSetting getObjectSetting() {
-        return objectSetting;
+    public DBSavingProcessObject getObjectSetting() {
+        return savingObject;
     }
 
 }

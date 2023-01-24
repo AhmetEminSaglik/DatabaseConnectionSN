@@ -162,7 +162,7 @@ public class Main {
         dataManagement.setWordProcess(enumWordTableWordPool, enumWordTableSearchWord, foundWordCounter, missingWordNumber);
         dataManagement.setComplexityList(complexityList);
         DBSaveProcessAPI dbProcess = new DBSaveProcessAPI();
-        dbProcess.save(dataManagement.getDbConfigureObject());
+        dbProcess.save(dataManagement.getObjectSetting());
 
         System.out.println(dataStructorComplexity);
         System.out.println(sortAlgorithmComplexity);
