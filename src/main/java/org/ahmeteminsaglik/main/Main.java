@@ -182,21 +182,22 @@ public class Main {
 
 
         Complexity dsComplexity = new Complexity();
-        ProcessName dsProcessName= new ProcessName(testResult.getDataStructorComplexityConcept().getEnumProcessName().getName());
+        /*process names must be retrived from database, otherwise error occurs transparent...*/
+        ProcessName dsProcessName= processNameManagement.getProcessName(testResult.getDataStructorComplexityConcept().getEnumProcessName());
         System.out.println("AES : "+dsProcessName);
         dsComplexity.setProcessName(dsProcessName);
         dsComplexity.setElapsedTime(testResult.getDataStructorComplexityConcept().getStopwatch().getElapsedTimeString());
         dsComplexity.setMemoryUsage(ReadableFormat.getStringValue(testResult.getDataStructorComplexityConcept().getMemoryUsage().getUsedMemoryKB()));
 
         Complexity sortAComplexity = new Complexity();
-        ProcessName sortProcessName= new ProcessName(testResult.getSortAlgorithmComplexityConcept().getEnumProcessName().getName());
+        ProcessName sortProcessName= processNameManagement.getProcessName(testResult.getSortAlgorithmComplexityConcept().getEnumProcessName());
         System.out.println("AES : "+sortProcessName);
         sortAComplexity.setProcessName(sortProcessName);
         sortAComplexity.setElapsedTime(testResult.getSortAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
         sortAComplexity.setMemoryUsage(ReadableFormat.getStringValue(testResult.getSortAlgorithmComplexityConcept().getMemoryUsage().getUsedMemoryKB()));
 
         Complexity searchAComplexity = new Complexity();
-        ProcessName searchProcessName= new ProcessName(testResult.getSearchAlgorithmComplexityConcept().getEnumProcessName().getName());
+        ProcessName searchProcessName= processNameManagement.getProcessName(testResult.getSearchAlgorithmComplexityConcept().getEnumProcessName());
         System.out.println("AES : "+searchProcessName);
         searchAComplexity.setProcessName(searchProcessName);
         searchAComplexity.setElapsedTime(testResult.getSearchAlgorithmComplexityConcept().getStopwatch().getElapsedTimeString());
