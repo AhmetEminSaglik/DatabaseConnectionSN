@@ -6,7 +6,7 @@ import org.ahmeteminsaglik.enums.*;
 import java.util.List;
 
 
-public interface DataServiceFromDB {
+public interface DBService {
     public List<Word> getWords(EnumWordTable enumWordTable);
 
     public WordList getWordList(EnumWordTable enumWordTable);

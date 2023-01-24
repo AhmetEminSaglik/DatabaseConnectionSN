@@ -1,10 +1,10 @@
 package org.ahmeteminsaglik.API.abstracts;
 
-import org.ahmeteminsaglik.core.utility.DBConfigureObject;
+import org.ahmeteminsaglik.core.utility.DBSavingProcessObjectSetting;
 
 import java.util.List;
 
 public interface DBSaveProcessAPIService {
-    void save(DBConfigureObject dbConfigureObject);
-    void save(List<DBConfigureObject> dbConfigureObjectList);
+    void save(DBSavingProcessObjectSetting dbSavingProcessObjectSetting);
+    void save(List<DBSavingProcessObjectSetting> dbSavingProcessObjectSettingList);
 }

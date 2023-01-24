@@ -5,7 +5,7 @@ import org.ahmeteminsaglik.entities.db.Record;
 
 import java.util.List;
 
-public class DBConfigureObject {
+public class DBSavingProcessObjectSetting {
     private Record record = new Record();
     private DataStructorProcess dataStructorProcess;
     private SortAlgorithmProcess sortAlgorithmProcess;
@@ -13,47 +13,6 @@ public class DBConfigureObject {
     private List<Complexity> complexityList;
     private WordProcess wordProcess;
 
-
-    /*    --> WordList, Word, WordProcess
-     *  Word (wordPool and wordSearchGroup) data will get from Enum.WordTable,
-     *  Then this table's name will be get from WordList table
-     *  Wordlist.id will set to wordProces
-     *  found and missing word number will set to WordProcess variables.
-     *  then WordProcess will set to Record.
-     *
-     *    --> DataStructor, DataStructorProcess
-     *  DataStructor will select from EnumDataStructor
-     *  then it will get from datastructor DB.
-     *  it's id will set to  dataStructorProcess
-     *  then dataStructorProcess will set to Record.
-     *
-     *    --> SortAlgorithm, SortAlgorithmProcess
-     *  SortAlgorithm will select from EnumSortAlgorithm
-     * then it will get from sortAlgorithm DB.
-     * it's id will set to sortAlgorithmProces
-     * then sortAlgorithmProcess will set to Record
-     *
-     *    -->SearchAlgorithm, SearchAlgorithmProcess
-     *  SearchAlgorithm will select from EnumSearchAlgorithm
-     * then it will get from searchAlgorithm DB.
-     * it's id will set to searchAlgorithmProcess
-     * then searchAlgorithmProcess will set to Record
-     *
-     *   -->
-     * Create Complexity Object.
-     *  ProcessName will select from EnumProcessName
-     * then it will get from processName DB
-     * it's id will set to  complexity.processName_id
-     * time and memory will start then algorithm will work. After algorithm finished, time and memory will stop.
-     * Then get these values from time and memory to complexity elapsedTime and usedMemory variable
-     * then complexity will set to Record
-     *
-     *
-     * then RecordDao will save the Record.
-     *
-     * Or above records will keep in a list, and then save all records to db.
-     *
-     * */
     public DataStructorProcess getDataStructorProcess() {
         return dataStructorProcess;
     }

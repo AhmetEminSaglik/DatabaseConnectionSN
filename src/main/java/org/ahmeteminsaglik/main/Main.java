@@ -3,9 +3,9 @@ package org.ahmeteminsaglik.main;
 import org.ahmeteminsaglik.API.DBSaveProcessAPI;
 import org.ahmeteminsaglik.API.concretes.*;
 import org.ahmeteminsaglik.business.abstracts.ComplexityService;
-import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
+import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.concrete.ComplexityManagement;
-import org.ahmeteminsaglik.business.concrete.DataManagementFromDB;
+import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
 import org.ahmeteminsaglik.readableformat.ReadableFormat;
@@ -22,7 +22,7 @@ public class Main {
      *  Complexity,*/
     public static void main(String[] args) {
 
-        DataServiceFromDB dbTest = new DataManagementFromDB();
+        DBService dbTest = new DBManagement();
         List<Word> words_50 = dbTest.getWords(EnumWordTable.WORD_50);
         List<Word> words_1_000 = dbTest.getWords(EnumWordTable.WORD_1_000);
 
@@ -49,7 +49,7 @@ public class Main {
         dataManagement = fakeProcess(dataManagement);
         dbSaveProcessAPI.save(dataManagement.getDbConfigureObject());*/
 
-        DataManagementFromDB db = new DataManagementFromDB();
+        DBManagement db = new DBManagement();
         String msg = "GET : word_no_selected_table yerine word_50 yapinca hata vermedi. Bide bunun save olanini denemeliyim";
         List<Word> words = db.getWords(EnumWordTable.WORD_1_000);
         System.out.println(words.size());
@@ -71,7 +71,7 @@ public class Main {
     }
 
     static void testAPI() {
-        DataManagementFromDB dataManagementFromDB = new DataManagementFromDB();
+        DBManagement dataManagementFromDB = new DBManagement();
 //        WordAPIManagement wordAPIManagement = new WordAPIManagement();
         ProcessNameManagement processNameManagement = new ProcessNameManagement();
 //        showInfo("BASLANGIC");
@@ -82,7 +82,7 @@ public class Main {
         List<String> wordPoolStringList = new ArrayList<>();
 
         EnumWordTable enumWordTableWordPool = EnumWordTable.WORD_500_000;
-        EnumWordTable enumWordTableSearchWord = EnumWordTable.WORD_1_500;
+        EnumWordTable enumWordTableSearchWord = EnumWordTable.WORD_3_000;
         ProcessName processNameDataStructor = processNameManagement.getProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS);//new ProcessName();
         ProcessName processNameSortAlgorithm = processNameManagement.getProcessName(EnumProcessName.SORT_PROCESS); //new ProcessName();
         ProcessName processNameSearchAlgorithm = processNameManagement.getProcessName(EnumProcessName.SEARCH_PROCESS);// new ProcessName();
@@ -230,7 +230,7 @@ public class Main {
         List<Complexity> complexityList = new ArrayList<>();
         Complexity dataStructorComplexity = new Complexity();
 
-        DataManagementFromDB dataManagementFromDB = new DataManagementFromDB();
+        DBManagement dataManagementFromDB = new DBManagement();
 
         ProcessName processNameDataStructor = new ProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS.getName());
         dataStructorComplexity.setProcessNameId(dataManagementFromDB.getProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS).getId());

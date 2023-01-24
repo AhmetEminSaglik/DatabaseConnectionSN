@@ -1,8 +1,8 @@
 package org.ahmeteminsaglik.API.abstracts;
 
-import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
-import org.ahmeteminsaglik.business.concrete.DataManagementFromDB;
+import org.ahmeteminsaglik.business.abstracts.DBService;
+import org.ahmeteminsaglik.business.concrete.DBManagement;
 
 public abstract class AbstractBaseAPI {
-    protected DataServiceFromDB dataServiceFromDB = new DataManagementFromDB();
+    protected DBService dataServiceFromDB = new DBManagement();
 }

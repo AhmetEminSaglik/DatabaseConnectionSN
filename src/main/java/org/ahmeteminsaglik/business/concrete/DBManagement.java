@@ -1,13 +1,13 @@
 package org.ahmeteminsaglik.business.concrete;
 
-import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
+import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 
-public class DataManagementFromDB implements DataServiceFromDB {
+public class DBManagement implements DBService {
     final String columnName = "name";
 
     private DAOServiceManagement daoService = new DAOServiceManagement();
