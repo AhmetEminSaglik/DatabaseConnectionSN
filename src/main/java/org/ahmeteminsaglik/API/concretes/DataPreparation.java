@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.API.concretes;
 
-import org.ahmeteminsaglik.business.abstracts.DBSaveProcessDataService;
+import org.ahmeteminsaglik.business.abstracts.DataPreparationService;
 import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.entities.db.*;
@@ -9,7 +9,7 @@ import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 
-public class DBSaveProcessDataManagement implements DBSaveProcessDataService {
+public class DataPreparation implements DataPreparationService {
     private DBSavingProcessObject savingObject = new DBSavingProcessObject();
     private DBService dbService = new DBManagement();
 

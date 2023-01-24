@@ -1,9 +1,9 @@
 package org.ahmeteminsaglik.main;
 
-import org.ahmeteminsaglik.API.DBSaveProcessAPI;
+import org.ahmeteminsaglik.API.DBTableAndColumCreation;
 import org.ahmeteminsaglik.API.concretes.*;
+import org.ahmeteminsaglik.DatabaseConnectionSN;
 import org.ahmeteminsaglik.business.abstracts.ComplexityService;
-import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.concrete.ComplexityManagement;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.entities.db.*;
@@ -11,7 +11,6 @@ import org.ahmeteminsaglik.enums.*;
 import org.ahmeteminsaglik.readableformat.ReadableFormat;
 import org.ahmeteminsaglik.searchnode.business.concretes.searchnode.SearchNode;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,14 +21,14 @@ public class Main {
      *  Complexity,*/
     public static void main(String[] args) {
 
-        DBService dbTest = new DBManagement();
-        List<Word> words_50 = dbTest.getWords(EnumWordTable.WORD_50);
-        List<Word> words_1_000 = dbTest.getWords(EnumWordTable.WORD_1_000);
-
-
-        System.out.println("Words Expected 50 Actual : " + words_50.size());
-        System.out.println("Words Expected 1000 Actual : " + words_1_000.size());
-        System.exit(0);
+//        DBService dbTest = new DBManagement();
+//        List<Word> words_50 = dbTest.getWords(EnumWordTable.WORD_50);
+//        List<Word> words_1_000 = dbTest.getWords(EnumWordTable.WORD_1_000);
+//
+//
+//        System.out.println("Words Expected 50 Actual : " + words_50.size());
+//        System.out.println("Words Expected 1000 Actual : " + words_1_000.size());
+//        System.exit(0);
       /*  DBConnectionSaveRecord connectionSaveRecord = new DBConnectionSaveRecord();
         connectionSaveRecord.setEnumWordTable(EnumWordTable.WORD_50)
                 .setEnumDataStructor(EnumDataStructor.ARRAYLIST)
@@ -43,18 +42,18 @@ public class Main {
 //        System.exit(0);
 /*
 
-        DBSaveProcessDataManagement dataManagement = new DBSaveProcessDataManagement();
+        DataPreparation dataManagement = new DataPreparation();
         DBSaveProcessAPI dbSaveProcessAPI = new DBSaveProcessAPI();
 
         dataManagement = fakeProcess(dataManagement);
         dbSaveProcessAPI.save(dataManagement.getDbConfigureObject());*/
 
-        DBManagement db = new DBManagement();
-        String msg = "GET : word_no_selected_table yerine word_50 yapinca hata vermedi. Bide bunun save olanini denemeliyim";
-        List<Word> words = db.getWords(EnumWordTable.WORD_1_000);
-        System.out.println(words.size());
-        JOptionPane.showMessageDialog(null, msg);
-//        testAPI();
+//        DBManagement db = new DBManagement();
+//        String msg = "GET : word_no_selected_table yerine word_50 yapinca hata vermedi. Bide bunun save olanini denemeliyim";
+//        List<Word> words = db.getWords(EnumWordTable.WORD_1_000);
+//        System.out.println(words.size());
+//        JOptionPane.showMessageDialog(null, msg);
+        testAPI();
 
     }
 
@@ -81,8 +80,8 @@ public class Main {
         List<String> searchWordStringList = new ArrayList<>();
         List<String> wordPoolStringList = new ArrayList<>();
 
-        EnumWordTable enumWordTableWordPool = EnumWordTable.WORD_500_000;
-        EnumWordTable enumWordTableSearchWord = EnumWordTable.WORD_3_000;
+        EnumWordTable enumWordTableWordPool = EnumWordTable.WORD_250;
+        EnumWordTable enumWordTableSearchWord = EnumWordTable.WORD_1_000;
         ProcessName processNameDataStructor = processNameManagement.getProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS);//new ProcessName();
         ProcessName processNameSortAlgorithm = processNameManagement.getProcessName(EnumProcessName.SORT_PROCESS); //new ProcessName();
         ProcessName processNameSearchAlgorithm = processNameManagement.getProcessName(EnumProcessName.SEARCH_PROCESS);// new ProcessName();
@@ -155,14 +154,17 @@ public class Main {
         complexityList.add(sortAlgorithmComplexity);
         complexityList.add(searchAlgorithmComplexity);
 
-        DBSaveProcessDataManagement dataManagement = new DBSaveProcessDataManagement();
-        dataManagement.setDataStructorProcess(enumDataStructor);
-        dataManagement.setSortAlgorithmProcess(enumSortAlgorithm);
-        dataManagement.setSearchAlgorithmProcess(enumSearchAlgorithm);
-        dataManagement.setWordProcess(enumWordTableWordPool, enumWordTableSearchWord, foundWordCounter, missingWordNumber);
-        dataManagement.setComplexityList(complexityList);
-        DBSaveProcessAPI dbProcess = new DBSaveProcessAPI();
-        dbProcess.save(dataManagement.getObjectSetting());
+
+        /*TODO burada kaldim. bazi bilgileri disaridan almam icin ek bir library seklinde hazirlamaliyim*/
+
+        DataPreparation dataPreparation = new DataPreparation();
+        dataPreparation.setDataStructorProcess(enumDataStructor);
+        dataPreparation.setSortAlgorithmProcess(enumSortAlgorithm);
+        dataPreparation.setSearchAlgorithmProcess(enumSearchAlgorithm);
+        dataPreparation.setWordProcess(enumWordTableWordPool, enumWordTableSearchWord, foundWordCounter, missingWordNumber);
+        dataPreparation.setComplexityList(complexityList);
+        DatabaseConnectionSN con = new DatabaseConnectionSN();
+        con.save(dataPreparation.getObjectSetting());
 
         System.out.println(dataStructorComplexity);
         System.out.println(sortAlgorithmComplexity);
@@ -191,7 +193,7 @@ public class Main {
     }
 /*
 
-    static DBSaveProcessDataManagement fakeProcess(DBSaveProcessDataManagement dataManagement) {
+    static DataPreparation fakeProcess(DataPreparation dataManagement) {
         List<String> stringList = new ArrayList<>();
 
         WordDAO wordDAO = new WordDAOImp();

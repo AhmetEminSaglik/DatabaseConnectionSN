@@ -5,7 +5,7 @@ import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 
-public interface DBSaveProcessDataService {
+public interface DataPreparationService {
     void setDataStructorProcess(EnumDataStructor enumDataStructor);
 
     void setSortAlgorithmProcess(EnumSortAlgorithm enumSortAlgorithm);

@@ -1,16 +1,15 @@
-/*
-package org.ahmeteminsaglik.API;
+package org.ahmeteminsaglik;
 
 import org.ahmeteminsaglik.API.abstracts.DBSaveProcessAPIService;
-import org.ahmeteminsaglik.dataaccess.abstracts.*;
+import org.ahmeteminsaglik.core.utility.DBSavingProcessObject;
+import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;
 import org.ahmeteminsaglik.entities.db.Record;
-import org.ahmeteminsaglik.core.utility.DBSavingProcessObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBSaveProcessAPI implements DBSaveProcessAPIService {
+public class DatabaseConnectionSN implements DBSaveProcessAPIService {
     private final RecordDAO recordDAO = new RecordDAOImp();
 
     @Override
@@ -30,4 +29,3 @@ public class DBSaveProcessAPI implements DBSaveProcessAPIService {
 
 
 }
-*/
