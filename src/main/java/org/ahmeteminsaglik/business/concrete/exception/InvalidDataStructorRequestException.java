@@ -1,6 +1,7 @@
 package org.ahmeteminsaglik.business.concrete.exception;
 
-import org.ahmeteminsaglik.entities.enums.EnumDataStructor;
+
+import org.ahmeteminsaglik.enums.EnumDataStructor;
 
 public class InvalidDataStructorRequestException extends Exception{
     public InvalidDataStructorRequestException(EnumDataStructor enumDataStructor) {

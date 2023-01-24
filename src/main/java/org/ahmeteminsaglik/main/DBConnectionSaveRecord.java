@@ -1,11 +1,7 @@
 package org.ahmeteminsaglik.main;
 
 import org.ahmeteminsaglik.business.concrete.InputValidation;
-import org.ahmeteminsaglik.entities.enums.EnumDataStructor;
-import org.ahmeteminsaglik.entities.enums.EnumSearchAlgorithm;
-import org.ahmeteminsaglik.entities.enums.EnumSortAlgorithm;
-import org.ahmeteminsaglik.entities.enums.EnumWordTable;
-
+import org.ahmeteminsaglik.enums.*;
 
 public class DBConnectionSaveRecord {
     private EnumWordTable enumWordTable;

@@ -3,8 +3,8 @@ package org.ahmeteminsaglik.business.concrete;
 import org.ahmeteminsaglik.ImproperUseOfStopwatchException;
 import org.ahmeteminsaglik.business.abstracts.ComplexityService;
 import org.ahmeteminsaglik.MemoryUsage;
-import org.ahmeteminsaglik.ReadableFormat;
 import org.ahmeteminsaglik.Stopwatch;
+import org.ahmeteminsaglik.readableformat.ReadableFormat;
 
 public class ComplexityManagement implements ComplexityService {
     protected Stopwatch stopwatch;

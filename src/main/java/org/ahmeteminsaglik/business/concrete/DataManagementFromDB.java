@@ -1,10 +1,9 @@
 package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
-import org.ahmeteminsaglik.business.concrete.DAOServiceManagement;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.entities.enums.*;
+import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 

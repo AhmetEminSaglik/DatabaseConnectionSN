@@ -4,8 +4,8 @@ import org.ahmeteminsaglik.business.abstracts.DBSaveProcessDataService;
 import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
 import org.ahmeteminsaglik.business.concrete.DataManagementFromDB;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.entities.enums.*;
 import org.ahmeteminsaglik.core.utility.DBConfigureObject;
+import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 

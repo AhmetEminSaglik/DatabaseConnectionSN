@@ -1,13 +1,7 @@
 package org.ahmeteminsaglik.business.algorithms;
 
-import org.ahmeteminsaglik.API.abstracts.WordAPIService;
-import org.ahmeteminsaglik.API.concretes.WordAPIManagement;
-import org.ahmeteminsaglik.entities.enums.EnumDataStructor;
-import org.ahmeteminsaglik.entities.enums.EnumSearchAlgorithm;
-import org.ahmeteminsaglik.entities.enums.EnumSortAlgorithm;
-import org.ahmeteminsaglik.entities.enums.EnumWordTable;
 
-import java.util.List;
+import org.ahmeteminsaglik.enums.*;
 
 public class AlgorithmProcess {
     private EnumWordTable enumWordTable;

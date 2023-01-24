@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.core.utility;
 
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.entities.enums.*;
+import org.ahmeteminsaglik.enums.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;

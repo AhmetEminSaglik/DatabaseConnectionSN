@@ -1,9 +1,0 @@
-
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(§Œ‚Ø
-W	java:S125"<This block of commented-out lines of code should be removed.(éõw8ÏÌÊüÜ0
-p
-java:S1128"NRemove this unused import 'org.ahmeteminsaglik.API.abstracts.AbstractBaseAPI'.(ù¤‚Ûüÿÿÿÿ8Ä âŸÝ0
-g
-java:S1128"JRemove this unused import 'org.ahmeteminsaglik.entities.db.SortAlgorithm'.(óëþÐ8Ä âŸÝ0
-s
-java:S1128"QRemove this unused import 'org.ahmeteminsaglik.entities.enums.EnumSortAlgorithm'.(àÑÞÙûÿÿÿÿ8Ä âŸÝ0

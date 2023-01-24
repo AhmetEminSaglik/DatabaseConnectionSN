@@ -1,24 +1,17 @@
 package org.ahmeteminsaglik.main;
 
 import org.ahmeteminsaglik.API.DBSaveProcessAPI;
-import org.ahmeteminsaglik.API.DBTableAndColumCreation;
-import org.ahmeteminsaglik.API.abstracts.ProcessNameService;
 import org.ahmeteminsaglik.API.concretes.*;
-import org.ahmeteminsaglik.ReadableFormat;
 import org.ahmeteminsaglik.business.abstracts.ComplexityService;
 import org.ahmeteminsaglik.business.abstracts.DataServiceFromDB;
 import org.ahmeteminsaglik.business.concrete.ComplexityManagement;
 import org.ahmeteminsaglik.business.concrete.DataManagementFromDB;
-import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
-import org.ahmeteminsaglik.dataaccess.concretes.DBConnectionProcess;
-import org.ahmeteminsaglik.dataaccess.concretes.imp.ProcessNameDAOImp;
-import org.ahmeteminsaglik.dataaccess.concretes.imp.WordDAOImp;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.entities.enums.*;
+import org.ahmeteminsaglik.enums.*;
+import org.ahmeteminsaglik.readableformat.ReadableFormat;
 import org.ahmeteminsaglik.searchnode.business.concretes.searchnode.SearchNode;
 
 import javax.swing.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
