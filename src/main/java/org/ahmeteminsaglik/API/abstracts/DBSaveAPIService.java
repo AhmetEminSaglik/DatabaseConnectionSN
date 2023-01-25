@@ -4,7 +4,7 @@ import org.ahmeteminsaglik.core.utility.DBSavingProcessObject;
 
 import java.util.List;
 
-public interface DBSaveProcessAPIService {
+public interface DBSaveAPIService {
     void save(DBSavingProcessObject dbSavingProcessObject);
     void save(List<DBSavingProcessObject> dbSavingProcessObjectList);
 }

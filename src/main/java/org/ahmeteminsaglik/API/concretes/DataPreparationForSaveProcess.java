@@ -9,7 +9,7 @@ import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 
-public class DataPreparation implements DataPreparationService {
+public class DataPreparationForSaveProcess implements DataPreparationService {
     private DBSavingProcessObject savingObject = new DBSavingProcessObject();
     private DBService dbService = new DBManagement();
 

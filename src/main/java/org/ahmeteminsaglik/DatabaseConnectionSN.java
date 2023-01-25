@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik;
 
-import org.ahmeteminsaglik.API.DBTableAndColumCreation;
-import org.ahmeteminsaglik.API.abstracts.DBSaveProcessAPIService;
+import org.ahmeteminsaglik.API.concretes.DBTableAndColumCreation;
+import org.ahmeteminsaglik.API.abstracts.DBSaveAPIService;
 import org.ahmeteminsaglik.API.abstracts.InitializeTablesService;
 import org.ahmeteminsaglik.core.utility.DBSavingProcessObject;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
@@ -11,7 +11,7 @@ import org.ahmeteminsaglik.entities.db.Record;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseConnectionSN implements DBSaveProcessAPIService, InitializeTablesService {
+public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesService {
     private final RecordDAO recordDAO = new RecordDAOImp();
 
     @Override
@@ -25,7 +25,6 @@ public class DatabaseConnectionSN implements DBSaveProcessAPIService, Initialize
         for (DBSavingProcessObject tmp : dbSavingProcessObjectList) {
             recordList.add(tmp.getRecord());
         }
-
         recordDAO.saveAll(recordList);
     }
 

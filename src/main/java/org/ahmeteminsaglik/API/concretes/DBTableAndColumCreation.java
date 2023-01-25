@@ -1,4 +1,4 @@
-package org.ahmeteminsaglik.API;
+package org.ahmeteminsaglik.API.concretes;
 
 import org.ahmeteminsaglik.business.concrete.DAOServiceManagement;
 import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
