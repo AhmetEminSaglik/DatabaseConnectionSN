@@ -7,8 +7,8 @@ import org.ahmeteminsaglik.Stopwatch;
 import org.ahmeteminsaglik.readableformat.ReadableFormat;
 
 public class ComplexityManagement implements ComplexityService {
-    protected Stopwatch stopwatch;
-    protected MemoryUsage memoryUsage;
+    private Stopwatch stopwatch;
+    private MemoryUsage memoryUsage;
 
     public ComplexityManagement() {
         stopwatch = new Stopwatch();
