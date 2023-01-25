@@ -1,15 +1,11 @@
 package org.ahmeteminsaglik.main;
 
-import org.ahmeteminsaglik.API.DBTableAndColumCreation;
 import org.ahmeteminsaglik.API.concretes.*;
 import org.ahmeteminsaglik.DatabaseConnectionSN;
 import org.ahmeteminsaglik.TestResult;
-import org.ahmeteminsaglik.business.abstracts.ComplexityService;
 import org.ahmeteminsaglik.business.concrete.ComplexityManagement;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.entity.ComplexityConsept;
-import org.ahmeteminsaglik.entity.WordProcessConsept;
 import org.ahmeteminsaglik.enums.*;
 import org.ahmeteminsaglik.readableformat.ReadableFormat;
 import org.ahmeteminsaglik.searchnode.business.concretes.searchnode.SearchNode;
@@ -56,6 +52,11 @@ public class Main {
 //        List<Word> words = db.getWords(EnumWordTable.WORD_1_000);
 //        System.out.println(words.size());
 //        JOptionPane.showMessageDialog(null, msg);
+
+
+//        DatabaseConnectionSN database= new DatabaseConnectionSN();
+//        database.initializeTables();
+
         testAPI();
 
     }
