@@ -15,15 +15,11 @@ public class DataStructorProcess {
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "data_structor_id",nullable = false)
+    @Column(name = "data_structor_id", nullable = false)
     private int dataStructorId;
-    /*    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "data_structor_id", nullable = false)
-    private DataStructor dataStructor;*/
-    @OneToOne(/*mappedBy = "dataStructorProcess",*/
-            cascade = CascadeType.ALL)
-    @JoinColumn(name = "record_id",nullable = false)
-    private Record record;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "record_id", nullable = false)
+    private Record record;
 
 }

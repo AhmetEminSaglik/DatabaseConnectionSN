@@ -18,12 +18,9 @@ public class DataStructor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name", unique = true,nullable = false)
+    @Column(name = "name", unique = true, nullable = false)
     private String name;
-/*@OneToOne(mappedBy = "dataStructor",
-            cascade = CascadeType.ALL,
-            targetEntity = DataStructorProcess.class)
-    private DataStructorProcess dataStructorProcess;*/
+
     public DataStructor(String name) {
         this.name = name;
     }

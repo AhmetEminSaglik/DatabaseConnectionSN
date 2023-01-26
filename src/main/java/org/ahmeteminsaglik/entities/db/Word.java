@@ -21,7 +21,6 @@ public class Word {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-
     @Column(name="word",nullable = false)
     private  String word;
 

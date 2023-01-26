@@ -22,7 +22,6 @@ public class WordList {
     @Column(name = "name", unique = true,nullable = false)
     private String name;
 
-
     public WordList(String name) {
         this.name = name;
     }

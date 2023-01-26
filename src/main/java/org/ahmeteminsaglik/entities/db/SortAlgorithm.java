@@ -15,6 +15,7 @@ import java.util.Objects;
 @Setter
 @ToString
 public class SortAlgorithm {
+
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)

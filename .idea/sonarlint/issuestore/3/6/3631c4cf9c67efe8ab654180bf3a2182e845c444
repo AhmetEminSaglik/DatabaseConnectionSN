@@ -1,8 +1,0 @@
-
-\
-java:S6213":Rename this variable to not match a restricted identifier.(í¸ı´úÿÿÿÿ8ÛĞª‹Ü0
-c
-java:S1128"FRemove this unused import 'org.hibernate.annotations.GeneratedColumn'.(ÙÔ£Ş8İĞª‹Ü0
-M
-java:S1128
-"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ŞĞª‹Ü0
