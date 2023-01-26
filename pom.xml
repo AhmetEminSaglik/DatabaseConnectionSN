@@ -16,9 +16,14 @@
     </properties>
 
     <dependencies>
-        <dependency> <!--this is new one-->
+        <dependency>
             <groupId>org.ahmeteminsaglik</groupId>
             <artifactId>EnumDataSN</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ahmeteminsaglik</groupId>
+            <artifactId>algorithm-test-result</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
