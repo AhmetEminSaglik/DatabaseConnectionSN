@@ -3,7 +3,7 @@ package org.ahmeteminsaglik.API.concretes;
 import org.ahmeteminsaglik.business.concrete.DAOServiceManagement;
 import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.core.utility.EnumUtility;
+import org.ahmeteminsaglik.core.utility.enums.EnumUtility;
 
 import java.util.ArrayList;
 import java.util.List;

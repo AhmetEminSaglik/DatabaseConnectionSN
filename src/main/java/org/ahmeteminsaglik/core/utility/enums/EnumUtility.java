@@ -1,4 +1,4 @@
-package org.ahmeteminsaglik.core.utility;
+package org.ahmeteminsaglik.core.utility.enums;
 
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
