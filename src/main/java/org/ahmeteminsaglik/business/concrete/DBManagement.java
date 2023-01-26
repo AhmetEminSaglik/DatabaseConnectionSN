@@ -1,6 +1,7 @@
 package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.business.abstracts.DBService;
+import org.ahmeteminsaglik.core.utility.RetrivedObjectValidation;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
@@ -14,32 +15,45 @@ public class DBManagement implements DBService {
 
     @Override
     public List<Word> getWords(EnumWordTable enumWordTable) {
-        return daoService.getWordDAO().getAll(new WordStatementInspector(enumWordTable));
+        List<Word> words = daoService.getWordDAO().getAll(new WordStatementInspector(enumWordTable));
+        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(words, enumWordTable.getClass());
+        return words;
     }
 
     @Override
     public WordList getWordList(EnumWordTable enumWordTable) {
-//        StatementInspector statementInspector = new WordStatementInspector(enumWordTable.getName());
-        return daoService.getWordListDAO().getByStringValueFromGivenColumnName(columnName, enumWordTable.getName());
+        WordList wordList = daoService.getWordListDAO().getByStringValueFromGivenColumnName(columnName, enumWordTable.getName());
+        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(wordList, enumWordTable.getClass());
+        return wordList;
     }
 
     @Override
     public DataStructor getDataStructor(EnumDataStructor enumDataStructor) {
-        return daoService.getDataStructorDAO().getByStringValueFromGivenColumnName(columnName, enumDataStructor.getName());
+        DataStructor dataStructor = daoService.getDataStructorDAO().getByStringValueFromGivenColumnName(columnName, enumDataStructor.getName());
+        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(dataStructor, enumDataStructor.getClass());
+        return dataStructor;
     }
 
     @Override
     public SortAlgorithm getSortAlgortihm(EnumSortAlgorithm enumSortAlgorithm) {
-        return daoService.getSortAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSortAlgorithm.getName());
+
+        SortAlgorithm sortAlgorithm = daoService.getSortAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSortAlgorithm.getName());
+        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(sortAlgorithm, enumSortAlgorithm.getClass());
+        return sortAlgorithm;
     }
 
     @Override
     public SearchAlgorithm getSearchAlgortihm(EnumSearchAlgorithm enumSearchAlgorithm) {
-        return daoService.getSearchAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSearchAlgorithm.getName());
+        SearchAlgorithm searchAlgorithm = daoService.getSearchAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSearchAlgorithm.getName());
+        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(searchAlgorithm, enumSearchAlgorithm.getClass());
+        return searchAlgorithm;
+
     }
 
     @Override
     public ProcessName getProcessName(EnumProcessName enumProcessName) {
-        return daoService.getProcessNameDAO().getByStringValueFromGivenColumnName(columnName, enumProcessName.getName());
+        ProcessName processName = daoService.getProcessNameDAO().getByStringValueFromGivenColumnName(columnName, enumProcessName.getName());
+        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(processName, enumProcessName.getClass());
+        return processName;
     }
 }

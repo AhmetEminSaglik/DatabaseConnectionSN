@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.core.utility.objecttranfer;
 
 import org.ahmeteminsaglik.business.abstracts.DataPreparationService;
-import org.ahmeteminsaglik.business.concrete.DBManagement;
+import org.ahmeteminsaglik.core.utility.registeredobject.RegisteredObjectDBUtility;
 import org.ahmeteminsaglik.entities.db.Complexity;
 import org.ahmeteminsaglik.entities.db.ProcessName;
 import org.ahmeteminsaglik.entity.ComplexityConsept;
@@ -15,7 +15,7 @@ import org.ahmeteminsaglik.readableformat.ReadableFormat;
 import java.util.List;
 
 public class ObjectTransferUtility {
-    DBManagement dataManagementFromDB = new DBManagement();
+
 
     public void setDataStructorProcessToDataService(DataPreparationService dataPreparationService, EnumDataStructor enumDataStructor) {
         dataPreparationService.setDataStructorProcess(enumDataStructor);
@@ -49,7 +49,7 @@ public class ObjectTransferUtility {
     }
 
     private ProcessName getProcessNameFromDataBase(EnumProcessName enumProcessName) {
-        return dataManagementFromDB.getProcessName(enumProcessName);
+        return RegisteredObjectDBUtility.getRequestedProcessNameByGivenEnumProcessName(enumProcessName);
     }
 
     private Complexity setValuesToComplexity(Complexity complexity, ComplexityConsept consept) {

@@ -5,7 +5,7 @@ import org.ahmeteminsaglik.GetResultService;
 import java.util.List;
 
 public interface DBSaveAPIService {
-    void save(GetResultService testResult);
+    void save(GetResultService resultService);
 
-    void save(List<GetResultService> testResultList);
+    void save(List<GetResultService> resultServiceList);
 }

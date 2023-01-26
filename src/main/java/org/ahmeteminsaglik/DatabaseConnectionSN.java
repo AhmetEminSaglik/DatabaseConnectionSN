@@ -2,36 +2,39 @@ package org.ahmeteminsaglik;
 
 import org.ahmeteminsaglik.API.concretes.DBTableAndColumCreation;
 import org.ahmeteminsaglik.API.abstracts.DBSaveAPIService;
-import org.ahmeteminsaglik.API.abstracts.InitializeTablesService;
+import org.ahmeteminsaglik.API.abstracts.InitializeTablesAPIService;
 import org.ahmeteminsaglik.core.utility.DBRecordObject;
 import org.ahmeteminsaglik.business.concrete.ObjectTransfer;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;
 import org.ahmeteminsaglik.entities.db.Record;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesService {
+public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesAPIService {
     private final RecordDAO recordDAO = new RecordDAOImp();
     private ObjectTransfer objectTransfer = new ObjectTransfer();
 
     @Override
-    public void save(GetResultService testResult) {
-
-        DBRecordObject recordObject = objectTransfer.transferResultServiceToDBRecordObject(testResult);
-        Record record = recordObject.getRecord();
+    public void save(GetResultService resultService) {
+        Record record = getRecordFromResultService(resultService);
         recordDAO.save(record);
     }
 
     @Override
-    public void save(List<GetResultService> testResultList) {
-   /*     List<Record> recordList = new ArrayList<>();
-        for (DBSavingProcessObject tmp : dbSavingProcessObjectList) {
-            recordList.add(tmp.getRecord());
+    public void save(List<GetResultService> resultServiceList) {
+        List<Record> recordList = new ArrayList<>();
+        for (GetResultService tmp : resultServiceList) {
+            recordList.add(getRecordFromResultService(tmp));
         }
-        recordDAO.saveAll(recordList);*/
+        recordDAO.saveAll(recordList);
     }
 
+    private Record getRecordFromResultService(GetResultService resultService) {
+        DBRecordObject recordObject = objectTransfer.transferResultServiceToDBRecordObject(resultService);
+        return recordObject.getRecord();
+    }
 
     @Override
     public void initializeTables() {

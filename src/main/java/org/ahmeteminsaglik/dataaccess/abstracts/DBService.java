@@ -16,9 +16,6 @@ public class DBService<T> implements BaseDAO<T> {
         return (List<T>) connectionProcess.getAll(statementInspector);
 
     }
-
-
-    //    DBConnection connection;
     DBConnectionProcess connectionProcess;
 
     public DBService(Class<?> clazz) {

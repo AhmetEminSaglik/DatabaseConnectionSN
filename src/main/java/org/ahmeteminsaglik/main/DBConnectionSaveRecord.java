@@ -1,6 +1,7 @@
 package org.ahmeteminsaglik.main;
 
 import org.ahmeteminsaglik.business.concrete.InputValidation;
+import org.ahmeteminsaglik.business.concrete.exception.NullEnumException;
 import org.ahmeteminsaglik.enums.*;
 
 public class DBConnectionSaveRecord {
@@ -12,13 +13,17 @@ public class DBConnectionSaveRecord {
     private InputValidation inputValidation = new InputValidation();
 
     public void saveProcess() {
-        boolean enumValidation = inputValidation.validate(EnumWordTable.class, enumWordTable) &&
-                inputValidation.validate(EnumDataStructor.class, enumDataStructor) &&
-                inputValidation.validate(EnumSortAlgorithm.class, enumSortAlgorithm) &&
-                inputValidation.validate(EnumSearchAlgorithm.class, enumSearchAlgorithm);
-        if (enumValidation) {
+        try {
+            boolean enumValidation = inputValidation.validate(EnumWordTable.class, enumWordTable) &&
+                    inputValidation.validate(EnumDataStructor.class, enumDataStructor) &&
+                    inputValidation.validate(EnumSortAlgorithm.class, enumSortAlgorithm) &&
+                    inputValidation.validate(EnumSearchAlgorithm.class, enumSearchAlgorithm);
+            if (enumValidation) {
 
-            System.out.println("Validation is completed");
+                System.out.println("Validation is completed");
+            }
+        } catch (NullEnumException exception) {
+            System.err.println(exception.getMessage());
         }
     }
 

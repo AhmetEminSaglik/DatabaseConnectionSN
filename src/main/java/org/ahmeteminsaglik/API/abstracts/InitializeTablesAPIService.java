@@ -1,5 +1,5 @@
 package org.ahmeteminsaglik.API.abstracts;
 
-public interface InitializeTablesService {
+public interface InitializeTablesAPIService {
     void initializeTables();
 }

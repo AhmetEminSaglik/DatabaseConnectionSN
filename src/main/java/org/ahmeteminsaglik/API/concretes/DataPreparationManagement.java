@@ -10,7 +10,7 @@ import org.ahmeteminsaglik.enums.*;
 import java.util.List;
 
 public class DataPreparationManagement implements DataPreparationService {
-    private DBRecordObject recordObject = new DBRecordObject();
+    private DBRecordObject recordObject;
     private DBService dbService = new DBManagement();
 
     public DataPreparationManagement(DBRecordObject recordObject) {
