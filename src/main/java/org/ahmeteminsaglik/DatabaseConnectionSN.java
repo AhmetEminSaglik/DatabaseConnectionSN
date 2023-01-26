@@ -3,7 +3,7 @@ package org.ahmeteminsaglik;
 import org.ahmeteminsaglik.API.concretes.DBTableAndColumCreation;
 import org.ahmeteminsaglik.API.abstracts.DBSaveAPIService;
 import org.ahmeteminsaglik.API.abstracts.InitializeTablesAPIService;
-import org.ahmeteminsaglik.core.utility.DBRecordObject;
+import org.ahmeteminsaglik.entities.business.DBRecordObject;
 import org.ahmeteminsaglik.business.concrete.ObjectTransfer;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;

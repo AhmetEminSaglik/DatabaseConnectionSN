@@ -6,7 +6,7 @@ import org.ahmeteminsaglik.dataaccess.concretes.imp.*;
 public class DAOServiceManagement {
     private WordDAO wordDAO = new WordDAOImp();
     private  WordListDAO wordListDAO= new WordListDAOImp();
-    private DataStructorDAO dataStructorDAO = new DataStructorDaoImp();
+    private DataStructorDAO dataStructorDAO = new DataStructorDAOImp();
     private SortAlgorithmDAO sortAlgorithmDAO = new SortAlgoritmDAOImp();
     private SearchAlgorithmDAO searchAlgorithmDAO = new SearchAlgorithmDAOImp();
     private ProcessNameDAO processNameDAO = new ProcessNameDAOImp();

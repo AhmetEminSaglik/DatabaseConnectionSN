@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.core.utility;
 
-import org.ahmeteminsaglik.business.concrete.exception.dbprocess.DBNullColumnException;
+import org.ahmeteminsaglik.core.exception.dbprocess.DBNullColumnException;
 
 public class RetrivedObjectValidation {
     public static void printSolutionHintIfRetrivedDataIsNull(Object o, Class<?> clazz) {

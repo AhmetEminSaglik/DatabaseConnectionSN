@@ -1,6 +1,6 @@
-package org.ahmeteminsaglik.business.concrete.exception.dbprocess;
+package org.ahmeteminsaglik.core.exception.dbprocess;
 
-import org.ahmeteminsaglik.business.concrete.exception.base.BaseCustomException;
+import org.ahmeteminsaglik.core.exception.base.BaseCustomException;
 
 public class BaseDBNullColumnException extends BaseCustomException {
     public BaseDBNullColumnException(String msg) {

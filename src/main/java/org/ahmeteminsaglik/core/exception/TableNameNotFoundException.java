@@ -1,6 +1,6 @@
-package org.ahmeteminsaglik.business.concrete.exception;
+package org.ahmeteminsaglik.core.exception;
 
-import org.ahmeteminsaglik.business.concrete.exception.base.BaseCustomException;
+import org.ahmeteminsaglik.core.exception.base.BaseCustomException;
 
 public class TableNameNotFoundException extends BaseCustomException {
     public TableNameNotFoundException() {

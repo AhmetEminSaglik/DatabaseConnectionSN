@@ -1,7 +1,7 @@
-package org.ahmeteminsaglik.business.concrete.exception.dbprocess;
+package org.ahmeteminsaglik.core.exception.dbprocess;
 
 
-import org.ahmeteminsaglik.business.concrete.exception.solution.SolutionMessageDB;
+import org.ahmeteminsaglik.core.exception.solution.SolutionMessageDB;
 
 public class DBNullColumnException extends BaseDBNullColumnException {
     public DBNullColumnException(String tableName) {

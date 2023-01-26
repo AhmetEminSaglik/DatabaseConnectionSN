@@ -1,4 +1,4 @@
-package org.ahmeteminsaglik.business.concrete.exception.solution;
+package org.ahmeteminsaglik.core.exception.solution;
 
 public class SolutionMessageDB {
     private static final String solutionAdvice = "SOLUTION ADVICE : ";

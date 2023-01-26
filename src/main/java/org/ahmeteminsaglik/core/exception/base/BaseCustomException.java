@@ -1,4 +1,4 @@
-package org.ahmeteminsaglik.business.concrete.exception.base;
+package org.ahmeteminsaglik.core.exception.base;
 
 public class BaseCustomException extends Exception {
     public BaseCustomException(String msg) {

@@ -1,10 +1,13 @@
-package org.ahmeteminsaglik.core.utility;
+package org.ahmeteminsaglik.entities.business;
 
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.entities.db.Record;
 
 import java.util.List;
 
+/**
+* <h2></h2>
+ * */
 public class DBRecordObject {
     private Record record = new Record();
     private DataStructorProcess dataStructorProcess;

@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.core.utility.registeredobject;
 
-import org.ahmeteminsaglik.business.concrete.exception.dbprocess.InvalidProcessNameRequestException;
+import org.ahmeteminsaglik.core.exception.dbprocess.InvalidProcessNameRequestException;
 import org.ahmeteminsaglik.dataaccess.abstracts.ProcessNameDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.ProcessNameDAOImp;
 import org.ahmeteminsaglik.entities.db.ProcessName;

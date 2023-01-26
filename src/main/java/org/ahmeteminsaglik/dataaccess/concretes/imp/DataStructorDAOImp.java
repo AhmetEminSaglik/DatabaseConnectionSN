@@ -7,10 +7,10 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 
 import java.util.List;
 
-public class DataStructorDaoImp implements DataStructorDAO {
+public class DataStructorDAOImp implements DataStructorDAO {
     private DBServiceDAOImp<DataStructor> dbServiceDAOImp;
 
-    public DataStructorDaoImp() {
+    public DataStructorDAOImp() {
         dbServiceDAOImp = new DBServiceDAOImp<>(DataStructor.class);
     }
 

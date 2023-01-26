@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.business.abstracts;
 
-import org.ahmeteminsaglik.core.utility.DBRecordObject;
+import org.ahmeteminsaglik.entities.business.DBRecordObject;
 import org.ahmeteminsaglik.entities.db.Complexity;
 import org.ahmeteminsaglik.enums.*;
 

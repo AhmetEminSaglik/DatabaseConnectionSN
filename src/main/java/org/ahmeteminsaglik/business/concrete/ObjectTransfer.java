@@ -1,9 +1,8 @@
 package org.ahmeteminsaglik.business.concrete;
 
-import org.ahmeteminsaglik.API.concretes.DataPreparationManagement;
 import org.ahmeteminsaglik.GetResultService;
 import org.ahmeteminsaglik.business.abstracts.DataPreparationService;
-import org.ahmeteminsaglik.core.utility.DBRecordObject;
+import org.ahmeteminsaglik.entities.business.DBRecordObject;
 import org.ahmeteminsaglik.core.utility.objecttranfer.ObjectTransferUtility;
 import org.ahmeteminsaglik.entities.db.Complexity;
 import java.util.ArrayList;

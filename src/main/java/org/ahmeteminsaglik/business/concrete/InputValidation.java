@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.business.concrete;
 
-import org.ahmeteminsaglik.business.concrete.exception.NullEnumException;
+import org.ahmeteminsaglik.core.exception.NullEnumException;
 
 public class InputValidation {
     public boolean validate(Class<?> clazz, Enum<?> enumData) throws NullEnumException {

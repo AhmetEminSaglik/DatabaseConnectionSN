@@ -8,28 +8,10 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Stopwatch stopwatchMain= new Stopwatch();
-        stopwatchMain.startTime();
         DatabaseConnectionSN database = new DatabaseConnectionSN();
         database.initializeTables();
-
-        List<GetResultService> testResultList = new ArrayList<>();
-        AlgorithmTestResult testResult1 = getMockAlgorithmResult(100, EnumWordTable.WORD_250, EnumWordTable.WORD_100, 75, 25);
-        AlgorithmTestResult testResult2 = getMockAlgorithmResult(1_000, EnumWordTable.WORD_1_500, EnumWordTable.WORD_1_000, 750, 250);
-        AlgorithmTestResult testResult3 = getMockAlgorithmResult(10_000, EnumWordTable.WORD_3_000, EnumWordTable.WORD_1_500, 1_100, 400);
-        AlgorithmTestResult testResult4 = getMockAlgorithmResult(100_000, EnumWordTable.WORD_10_000, EnumWordTable.WORD_7_500, 5_500, 2_000);
-        testResultList.add(testResult1);
-        testResultList.add(testResult2);
-        testResultList.add(testResult3);
-        for (int i = 0; i < 50; i++) {
-            testResultList.add(testResult4);
-        }
-//        database.save(testResultList);
-        database.save(testResult1);
-//        database.save(testResult2);
-//        database.save(testResult);
-        stopwatchMain.stopTime();
-        System.out.println("Elapsed Time : "+stopwatchMain.getElapsedTimeString());
+        AlgorithmTestResult testResult = getMockAlgorithmResult(100_000, EnumWordTable.WORD_10_000, EnumWordTable.WORD_7_500, 5_500, 2_000);
+        database.save(testResult);
     }
 
     static void fakeProcess(int num) {
