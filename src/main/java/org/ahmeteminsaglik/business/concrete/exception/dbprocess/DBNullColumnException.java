@@ -5,6 +5,6 @@ import org.ahmeteminsaglik.business.concrete.exception.solution.SolutionMessageD
 
 public class DBNullColumnException extends BaseDBNullColumnException {
     public DBNullColumnException(String tableName) {
-        super(tableName + " Column is empty. " + SolutionMessageDB.getSolutionNullColumnException());
+        super(tableName + " Value is not found. " + SolutionMessageDB.getSolutionNullColumnException());
     }
 }

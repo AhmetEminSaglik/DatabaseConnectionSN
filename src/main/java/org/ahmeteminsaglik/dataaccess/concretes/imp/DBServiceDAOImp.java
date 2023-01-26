@@ -7,6 +7,12 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class DBServiceDAOImp<T> implements BaseDAO<T> {
+    DBConnectionProcess connectionProcess;
+
+    public DBServiceDAOImp(Class<?> clazz) {
+        connectionProcess = new DBConnectionProcess(clazz);
+    }
+
     @Override
     public List<T> getAll() {
         return getAll(null);
@@ -15,14 +21,7 @@ public class DBServiceDAOImp<T> implements BaseDAO<T> {
     @Override
     public List<T> getAll(StatementInspector statementInspector) {
         return (List<T>) connectionProcess.getAll(statementInspector);
-
     }
-    DBConnectionProcess connectionProcess;
-
-    public DBServiceDAOImp(Class<?> clazz) {
-        connectionProcess = new DBConnectionProcess(clazz);
-    }
-
 
     @Override
     public void save(T t) {
@@ -48,7 +47,5 @@ public class DBServiceDAOImp<T> implements BaseDAO<T> {
     public T getByStringValueFromGivenColumnName(String columnName, String value) {
         return (T) getByStringValueFromGivenColumnName(columnName, value, null);
     }
-
-
 
 }

@@ -17,6 +17,12 @@ public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesA
     private ObjectTransfer objectTransfer = new ObjectTransfer();
 
     @Override
+    public void initializeTables() {
+        DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
+        DBTableAndColumns.createAllTablesAndColumns();
+    }
+
+    @Override
     public void save(GetResultService resultService) {
         Record record = getRecordFromResultService(resultService);
         recordDAO.save(record);
@@ -36,9 +42,5 @@ public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesA
         return recordObject.getRecord();
     }
 
-    @Override
-    public void initializeTables() {
-        DBTableAndColumCreation DBTableAndColumns = new DBTableAndColumCreation();
-        DBTableAndColumns.createAllTablesAndColumns();
-    }
+
 }

@@ -12,11 +12,11 @@ public class DBTableAndColumCreation {
     DAOServiceManagement service = new DAOServiceManagement();
 
     public void createAllTablesAndColumns() {
-        saveAbsentProcesName();
         saveAbsentDataStructor();
         saveAbsentSortAlgorithm();
         saveAbsentSearchAlgorithm();
         saveAbsentWordListTableName();
+        saveAbsentProcesName();
     }
 
 

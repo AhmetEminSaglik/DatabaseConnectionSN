@@ -11,7 +11,7 @@ public class Main {
         Stopwatch stopwatchMain= new Stopwatch();
         stopwatchMain.startTime();
         DatabaseConnectionSN database = new DatabaseConnectionSN();
-//        database.initializeTables();
+        database.initializeTables();
 
         List<GetResultService> testResultList = new ArrayList<>();
         AlgorithmTestResult testResult1 = getMockAlgorithmResult(100, EnumWordTable.WORD_250, EnumWordTable.WORD_100, 75, 25);
@@ -26,7 +26,7 @@ public class Main {
         }
 //        database.save(testResultList);
         database.save(testResult1);
-        database.save(testResult2);
+//        database.save(testResult2);
 //        database.save(testResult);
         stopwatchMain.stopTime();
         System.out.println("Elapsed Time : "+stopwatchMain.getElapsedTimeString());
