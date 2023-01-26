@@ -3,21 +3,25 @@ package org.ahmeteminsaglik.main;
 import org.ahmeteminsaglik.*;
 import org.ahmeteminsaglik.API.concretes.*;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
+import org.ahmeteminsaglik.core.utility.DBRecordObject;
+import org.ahmeteminsaglik.core.utility.ObjectTransferUtility;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
 import org.ahmeteminsaglik.readableformat.ReadableFormat;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         DatabaseConnectionSN database = new DatabaseConnectionSN();
         database.initializeTables();
+
         AlgorithmTestResult testResult = getMockAlgorithmResult();
 
-        testAPI(testResult);
+        database.save(testResult);
+
+//        testAPI(testResult);
     }
 
     static void fakeProcess(int num) {
@@ -51,51 +55,15 @@ public class Main {
     }
 
     static void testAPI(AlgorithmTestResult algorithmTestResult) {
-        GetResultService testResult = (GetResultService) algorithmTestResult;
+        GetResultService testResult = algorithmTestResult;
 
         DBManagement dataManagementFromDB = new DBManagement();
-
-//        List<String> searchWordStringList = new ArrayList<>();
-//        List<String> wordPoolStringList = new ArrayList<>();
-
-//        EnumWordTable enumWordTableWordPool = EnumWordTable.WORD_1_500;
-//        EnumWordTable enumWordTableSearchWord = EnumWordTable.WORD_1_000;
-//        ProcessName processNameDataStructor = dataManagementFromDB.getProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS);
-//        ProcessName processNameSortAlgorithm = dataManagementFromDB.getProcessName(EnumProcessName.SORT_PROCESS);
-//        ProcessName processNameSearchAlgorithm = dataManagementFromDB.getProcessName(EnumProcessName.SEARCH_PROCESS);
-
-        List<Word> wordPoolList = dataManagementFromDB.getWords(testResult.getWordProcessConsept().getEnumTotalWordList());
-        List<Word> searchWordList = dataManagementFromDB.getWords(testResult.getWordProcessConsept().getEnumSearchWordList());
-//        searchWordList.forEach(e -> searchWordStringList.add(e.getWord()));
-
-//        EnumDataStructor enumDataStructor = EnumDataStructor.ARRAYLIST;
-//        EnumSortAlgorithm enumSortAlgorithm = EnumSortAlgorithm.TIM_SORT;
-//        EnumSearchAlgorithm enumSearchAlgorithm = EnumSearchAlgorithm.LINEAR_SEARCH;
-//
-//        wordPoolList.forEach(e -> wordPoolStringList.add(e.getWord()));
-//
-//        Collections.sort(wordPoolStringList);
-
-//        int foundWordCounter = ;
-//        int missingWordNumber = 0;
-
-//        for (String tmpWordPool : wordPoolStringList) {
-//            for (String tmpSearchWord : searchWordStringList) {
-//                if (tmpWordPool.equals(tmpSearchWord)) {
-//                    foundWordCounter++;
-//                    System.out.println("found counter : " + ReadableFormat.getStringValue(foundWordCounter));
-//                }
-//            }
-//        }
-//        missingWordNumber = searchWordStringList.size() - foundWordCounter;
-
-
-
-        DataPreparationForSaveProcess dataPreparationForSaveProcess = new DataPreparationForSaveProcess();
-        dataPreparationForSaveProcess.setDataStructorProcess(testResult.getDataStructorProcess());
-        dataPreparationForSaveProcess.setSortAlgorithmProcess(testResult.getSortAlgorithmProcess());
-        dataPreparationForSaveProcess.setSearchAlgorithmProcess(testResult.getSearchAlgorithmProcess());
-        dataPreparationForSaveProcess.setWordProcess(testResult.getWordProcessConsept().getEnumTotalWordList(),
+        DBRecordObject recordObject = new DBRecordObject();
+        DataPreparationManagement dataPreparationManagement = new DataPreparationManagement(recordObject);
+        dataPreparationManagement.setDataStructorProcess(testResult.getDataStructorProcess());
+        dataPreparationManagement.setSortAlgorithmProcess(testResult.getSortAlgorithmProcess());
+        dataPreparationManagement.setSearchAlgorithmProcess(testResult.getSearchAlgorithmProcess());
+        dataPreparationManagement.setWordProcess(testResult.getWordProcessConsept().getEnumTotalWordList(),
                 testResult.getWordProcessConsept().getEnumSearchWordList(),
                 testResult.getWordProcessConsept().getFoundWord(),
                 testResult.getWordProcessConsept().getMissingWord());
@@ -155,13 +123,13 @@ public class Main {
 //        complexityList.add(searchAComplexity);
 
 
-        dataPreparationForSaveProcess.setComplexityList(complexityList);
-        DatabaseConnectionSN con = new DatabaseConnectionSN();
-        con.save(dataPreparationForSaveProcess.getObjectSetting());
+        dataPreparationManagement.setComplexityList(complexityList);
+//        DatabaseConnectionSN con = new DatabaseConnectionSN();
+//        con.save(dataPreparationManagement.getObjectSetting());
 
-        System.out.println(dataStructorComplexity);
-        System.out.println(sortAlgorithmComplexity);
-        System.out.println(searchAlgorithmComplexity);
+//        System.out.println(dataStructorComplexity);
+//        System.out.println(sortAlgorithmComplexity);
+//        System.out.println(searchAlgorithmComplexity);
 
     }
 }

@@ -4,14 +4,18 @@ import org.ahmeteminsaglik.business.abstracts.DataPreparationService;
 import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.core.utility.DBSavingProcessObject;
+import org.ahmeteminsaglik.core.utility.DBRecordObject;
 import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 
-public class DataPreparationForSaveProcess implements DataPreparationService {
-    private DBSavingProcessObject savingObject = new DBSavingProcessObject();
+public class DataPreparationManagement implements DataPreparationService {
+    private DBRecordObject recordObject = new DBRecordObject();
     private DBService dbService = new DBManagement();
+
+    public DataPreparationManagement(DBRecordObject recordObject) {
+        this.recordObject = recordObject;
+    }
 
     @Override
     public void setDataStructorProcess(EnumDataStructor enumDataStructor) {
@@ -19,7 +23,7 @@ public class DataPreparationForSaveProcess implements DataPreparationService {
         DataStructor dataStructor = dbService.getDataStructor(enumDataStructor);
         dataStructorProcess.setDataStructorId(dataStructor.getId());
 
-        savingObject.setDataStructorProcess(dataStructorProcess);
+        recordObject.setDataStructorProcess(dataStructorProcess);
     }
 
     @Override
@@ -28,7 +32,7 @@ public class DataPreparationForSaveProcess implements DataPreparationService {
         SortAlgorithm sortAlgorithm = dbService.getSortAlgortihm(enumSortAlgorithm);
         sortAlgorithmProcess.setSortAlgorithmId(sortAlgorithm.getId());
 
-        savingObject.setSortAlgorithmProcess(sortAlgorithmProcess);
+        recordObject.setSortAlgorithmProcess(sortAlgorithmProcess);
     }
 
     @Override
@@ -37,12 +41,7 @@ public class DataPreparationForSaveProcess implements DataPreparationService {
         SearchAlgorithm searchAlgorithm = dbService.getSearchAlgortihm(enumSearchAlgorithm);
         searchAlgorithmProcess.setSearchAlgorithmId(searchAlgorithm.getId());
 
-        savingObject.setSearchAlgorithmProcess(searchAlgorithmProcess);
-    }
-
-    @Override
-    public void setComplexityList(List<Complexity> complexityList) {
-        savingObject.setComplexityList(complexityList);
+        recordObject.setSearchAlgorithmProcess(searchAlgorithmProcess);
     }
 
     @Override
@@ -56,11 +55,18 @@ public class DataPreparationForSaveProcess implements DataPreparationService {
         wordProcess.setFoundWord(foundWord);
         wordProcess.setMissingWord(missingWord);
 
-        savingObject.setWordProcess(wordProcess);
+        recordObject.setWordProcess(wordProcess);
     }
 
-    public DBSavingProcessObject getObjectSetting() {
-        return savingObject;
+    @Override
+    public void setComplexityList(List<Complexity> complexityList) {
+        recordObject.setComplexityList(complexityList);
     }
+
+    @Override
+    public DBRecordObject getRecordObject() {
+        return recordObject;
+    }
+
 
 }

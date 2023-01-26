@@ -13,8 +13,6 @@ r
 Bsrc/main/java/org/ahmeteminsaglik/main/DBConnectionSaveRecord.java,c\f\cf636462e5feea37c78c7a4f6b27043763266979
 v
 Fsrc/main/java/org/ahmeteminsaglik/entities/db/DataStructorProcess.java,a\0\a0ba89da5bf62d7b85e2a4d20d30b369180850b0
-y
-Isrc/main/java/org/ahmeteminsaglik/core/utility/DBSavingProcessObject.java,b\a\ba4c1f6584b278a159640d4266fdfa94cfcd6f0d
 z
 Jsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/imp/WordDAOImp.java,f\d\fd9d21e8e1cba77921aa9a42acb629f180dc9585
 Z
@@ -29,7 +27,3 @@ o
 ?src/main/java/org/ahmeteminsaglik/entities/db/DataStructor.java,0\5\056b66a8fba48cb22065566077ed63c950eea7f1
 s
 Csrc/main/java/org/ahmeteminsaglik/business/abstracts/DBService.java,1\a\1afe0e8843670958ca7d7aa99e627cf8b4bb1977
-€
-Psrc/main/java/org/ahmeteminsaglik/business/abstracts/DataPreparationService.java,8\4\8434eab3266a33fa628333a1afae84e2ce28a668
-o
-?src/main/java/org/ahmeteminsaglik/core/utility/EnumUtility.java,c\6\c6304e0758d42e34896b4808ecffa4cfbec98ab1

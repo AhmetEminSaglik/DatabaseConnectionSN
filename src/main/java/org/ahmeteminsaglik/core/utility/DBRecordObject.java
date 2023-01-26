@@ -5,7 +5,7 @@ import org.ahmeteminsaglik.entities.db.Record;
 
 import java.util.List;
 
-public class DBSavingProcessObject {
+public class DBRecordObject {
     private Record record = new Record();
     private DataStructorProcess dataStructorProcess;
     private SortAlgorithmProcess sortAlgorithmProcess;
