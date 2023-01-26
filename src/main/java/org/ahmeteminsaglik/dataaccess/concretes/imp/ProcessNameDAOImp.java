@@ -1,8 +1,6 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
-import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.ProcessNameDAO;
-import org.ahmeteminsaglik.entities.db.DataStructorProcess;
 import org.ahmeteminsaglik.entities.db.ProcessName;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
@@ -10,20 +8,20 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class ProcessNameDAOImp implements ProcessNameDAO {
-    private DBService<ProcessName> dbService;
+    private DBServiceDAOImp<ProcessName> dbServiceDAOImp;
 
     public ProcessNameDAOImp() {
-        dbService = new DBService<>(ProcessName.class);
+        dbServiceDAOImp = new DBServiceDAOImp<>(ProcessName.class);
     }
 
     @Override
     public void save(ProcessName processName) {
-        dbService.save(processName);
+        dbServiceDAOImp.save(processName);
     }
 
     @Override
     public void saveAll(List<ProcessName> processNameList) {
-        dbService.saveAll(processNameList);
+        dbServiceDAOImp.saveAll(processNameList);
     }
 
     @Override
@@ -33,7 +31,7 @@ public class ProcessNameDAOImp implements ProcessNameDAO {
 
     @Override
     public ProcessName getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
-        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+        return dbServiceDAOImp.getByStringValueFromGivenColumnName(columnName, value);
     }
 
     @Override
@@ -48,6 +46,6 @@ public class ProcessNameDAOImp implements ProcessNameDAO {
 
     @Override
     public List<ProcessName> getAll(StatementInspector statementInspector) {
-        return dbService.getAll(statementInspector);
+        return dbServiceDAOImp.getAll(statementInspector);
     }
 }

@@ -1,6 +1,5 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
-import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.DataStructorDAO;
 import org.ahmeteminsaglik.entities.db.DataStructor;
 import org.hibernate.cfg.NotYetImplementedException;
@@ -9,20 +8,20 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class DataStructorDaoImp implements DataStructorDAO {
-    private DBService<DataStructor> dbService;
+    private DBServiceDAOImp<DataStructor> dbServiceDAOImp;
 
     public DataStructorDaoImp() {
-        dbService = new DBService<>(DataStructor.class);
+        dbServiceDAOImp = new DBServiceDAOImp<>(DataStructor.class);
     }
 
     @Override
     public void save(DataStructor dataStructor) {
-        dbService.save(dataStructor);
+        dbServiceDAOImp.save(dataStructor);
     }
 
     @Override
     public void saveAll(List<DataStructor> dataStructorList) {
-        dbService.saveAll(dataStructorList);
+        dbServiceDAOImp.saveAll(dataStructorList);
     }
 
     @Override
@@ -32,7 +31,7 @@ public class DataStructorDaoImp implements DataStructorDAO {
 
     @Override
     public DataStructor getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
-        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+        return dbServiceDAOImp.getByStringValueFromGivenColumnName(columnName, value);
     }
 
     @Override
@@ -48,6 +47,6 @@ public class DataStructorDaoImp implements DataStructorDAO {
 
     @Override
     public List<DataStructor> getAll(StatementInspector statementInspector) {
-        return dbService.getAll(statementInspector);
+        return dbServiceDAOImp.getAll(statementInspector);
     }
 }

@@ -1,8 +1,6 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
-import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
-import org.ahmeteminsaglik.entities.db.ProcessName;
 import org.ahmeteminsaglik.entities.db.Record;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
@@ -10,20 +8,20 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class RecordDAOImp implements RecordDAO {
-    private DBService<Record> dbService;
+    private DBServiceDAOImp<Record> dbServiceDAOImp;
 
     public RecordDAOImp() {
-        dbService = new DBService<>(Record.class);
+        dbServiceDAOImp = new DBServiceDAOImp<>(Record.class);
     }
 
     @Override
     public void save(Record record) {
-        dbService.save(record);
+        dbServiceDAOImp.save(record);
     }
 
     @Override
     public void saveAll(List<Record> records) {
-        dbService.saveAll(records);
+        dbServiceDAOImp.saveAll(records);
     }
 
     @Override
@@ -33,7 +31,7 @@ public class RecordDAOImp implements RecordDAO {
 
     @Override
     public Record getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
-        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+        return dbServiceDAOImp.getByStringValueFromGivenColumnName(columnName, value);
     }
 
     @Override
@@ -48,6 +46,6 @@ public class RecordDAOImp implements RecordDAO {
 
     @Override
     public List<Record> getAll(StatementInspector statementInspector) {
-        return dbService.getAll(statementInspector);
+        return dbServiceDAOImp.getAll(statementInspector);
     }
 }

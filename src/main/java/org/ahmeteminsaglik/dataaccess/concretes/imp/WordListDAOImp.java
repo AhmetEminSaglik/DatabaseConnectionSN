@@ -1,6 +1,5 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
-import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.WordListDAO;
 import org.ahmeteminsaglik.entities.db.WordList;
 import org.hibernate.cfg.NotYetImplementedException;
@@ -9,20 +8,20 @@ import org.hibernate.resource.jdbc.spi.StatementInspector;
 import java.util.List;
 
 public class WordListDAOImp implements WordListDAO {
-    private DBService<WordList> dbService;
+    private DBServiceDAOImp<WordList> dbServiceDAOImp;
 
     public WordListDAOImp() {
-        dbService = new DBService<>(WordList.class);
+        dbServiceDAOImp = new DBServiceDAOImp<>(WordList.class);
     }
 
     @Override
     public void save(WordList wordList) {
-        dbService.save(wordList);
+        dbServiceDAOImp.save(wordList);
     }
 
     @Override
     public void saveAll(List<WordList> wordLists) {
-        dbService.saveAll(wordLists);
+        dbServiceDAOImp.saveAll(wordLists);
     }
 
     @Override
@@ -32,7 +31,7 @@ public class WordListDAOImp implements WordListDAO {
 
     @Override
     public WordList getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
-        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+        return dbServiceDAOImp.getByStringValueFromGivenColumnName(columnName, value);
     }
 
     @Override
@@ -47,7 +46,7 @@ public class WordListDAOImp implements WordListDAO {
 
     @Override
     public List<WordList> getAll(StatementInspector statementInspector) {
-        return dbService.getAll(statementInspector);
+        return dbServiceDAOImp.getAll(statementInspector);
     }
 
 }

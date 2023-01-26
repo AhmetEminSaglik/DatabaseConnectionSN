@@ -1,29 +1,27 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
-import org.ahmeteminsaglik.dataaccess.abstracts.DBService;
 import org.ahmeteminsaglik.dataaccess.abstracts.SearchAlgorithmDAO;
 import org.ahmeteminsaglik.entities.db.SearchAlgorithm;
-import org.ahmeteminsaglik.entities.db.WordList;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 
 import java.util.List;
 
 public class SearchAlgorithmDAOImp implements SearchAlgorithmDAO {
-    private DBService<SearchAlgorithm> dbService;
+    private DBServiceDAOImp<SearchAlgorithm> dbServiceDAOImp;
 
     public SearchAlgorithmDAOImp() {
-        dbService = new DBService<>(SearchAlgorithm.class);
+        dbServiceDAOImp = new DBServiceDAOImp<>(SearchAlgorithm.class);
     }
 
     @Override
     public void save(SearchAlgorithm searchAlgorithm) {
-        dbService.save(searchAlgorithm);
+        dbServiceDAOImp.save(searchAlgorithm);
     }
 
     @Override
     public void saveAll(List<SearchAlgorithm> searchAlgorithms) {
-        dbService.saveAll(searchAlgorithms);
+        dbServiceDAOImp.saveAll(searchAlgorithms);
     }
 
     @Override
@@ -33,7 +31,7 @@ public class SearchAlgorithmDAOImp implements SearchAlgorithmDAO {
 
     @Override
     public SearchAlgorithm getByStringValueFromGivenColumnName(String columnName, String value, StatementInspector statementInspector) {
-        return dbService.getByStringValueFromGivenColumnName(columnName, value);
+        return dbServiceDAOImp.getByStringValueFromGivenColumnName(columnName, value);
     }
 
     @Override
@@ -48,6 +46,6 @@ public class SearchAlgorithmDAOImp implements SearchAlgorithmDAO {
 
     @Override
     public List<SearchAlgorithm> getAll(StatementInspector statementInspector) {
-        return dbService.getAll(statementInspector);
+        return dbServiceDAOImp.getAll(statementInspector);
     }
 }

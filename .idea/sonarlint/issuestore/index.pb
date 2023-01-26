@@ -11,8 +11,6 @@ g
 7src/main/java/org/ahmeteminsaglik/entities/db/Word.java,f\9\f9d9e9efd58939606f389f4f711dab7ea8cb491c
 v
 Fsrc/main/java/org/ahmeteminsaglik/entities/db/DataStructorProcess.java,a\0\a0ba89da5bf62d7b85e2a4d20d30b369180850b0
-z
-Jsrc/main/java/org/ahmeteminsaglik/dataaccess/concretes/imp/WordDAOImp.java,f\d\fd9d21e8e1cba77921aa9a42acb629f180dc9585
 Z
 *src/main/java/org/ahmeteminsaglik/Todo.txt,0\9\0954554e7ed1fe1e1508ed50e2017efd63ef9c48
 n

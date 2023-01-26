@@ -1,11 +1,12 @@
-package org.ahmeteminsaglik.dataaccess.abstracts;
+package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
+import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.DBConnectionProcess;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 
 import java.util.List;
 
-public class DBService<T> implements BaseDAO<T> {
+public class DBServiceDAOImp<T> implements BaseDAO<T> {
     @Override
     public List<T> getAll() {
         return getAll(null);
@@ -18,7 +19,7 @@ public class DBService<T> implements BaseDAO<T> {
     }
     DBConnectionProcess connectionProcess;
 
-    public DBService(Class<?> clazz) {
+    public DBServiceDAOImp(Class<?> clazz) {
         connectionProcess = new DBConnectionProcess(clazz);
     }
 
