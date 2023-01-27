@@ -2,11 +2,11 @@ package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.registeredobject.*;
+import org.ahmeteminsaglik.business.registeredobject.subclass.*;
 import org.ahmeteminsaglik.core.utility.RetrivedObjectValidation;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
-import org.hibernate.tuple.CreationTimestampGeneration;
 
 import java.util.List;
 

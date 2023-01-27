@@ -1,6 +1,7 @@
 package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.*;
+import org.ahmeteminsaglik.API.concretes.DatabaseConnectionSN;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;
 import org.ahmeteminsaglik.entities.db.Record;

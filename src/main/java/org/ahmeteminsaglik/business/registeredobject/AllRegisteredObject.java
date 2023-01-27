@@ -1,5 +1,6 @@
 package org.ahmeteminsaglik.business.registeredobject;
 
+import org.ahmeteminsaglik.business.registeredobject.subclass.*;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.*;
 
 public class AllRegisteredObject {

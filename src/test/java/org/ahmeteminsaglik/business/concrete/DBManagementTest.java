@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.business.concrete;
 
-import org.ahmeteminsaglik.DatabaseConnectionSN;
+import org.ahmeteminsaglik.API.concretes.DatabaseConnectionSN;
 import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.core.utility.enums.EnumUtility;
 import org.ahmeteminsaglik.entities.db.*;
