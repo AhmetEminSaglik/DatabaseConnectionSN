@@ -6,6 +6,7 @@ import org.ahmeteminsaglik.core.utility.registeredobject.RegisteredObjectDBUtili
 import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
 import org.ahmeteminsaglik.entities.db.DataStructor;
 import org.ahmeteminsaglik.enums.EnumDataStructor;
+import org.ahmeteminsaglik.enums.EnumProcessName;
 
 public class RegisteredDataStructor extends RegisteredObject<DataStructor> {
     public RegisteredDataStructor(BaseDAO<DataStructor> dao) {
@@ -15,16 +16,12 @@ public class RegisteredDataStructor extends RegisteredObject<DataStructor> {
     @Override
     public DataStructor getByEnum(Enum<?> em) {
         RegisteredObjectDBUtility.fillList(this);
-        try {
-            for (DataStructor tmp : getList()) {
-                if (tmp.getName().equals(EnumDataStructor.valueOf(em.name()).getName()))
-                    return tmp;
-            }
-
-            throw new InvalidRequestDataException(EnumDataStructor.valueOf(em.name()).getName());
-        } catch (InvalidRequestDataException exception) {
-            System.err.println(exception.getMessage());
+        for (DataStructor tmp : getList()) {
+            if (tmp.getName().equals(EnumDataStructor.valueOf(em.name()).getName()))
+                return tmp;
         }
+        String absentValue = EnumDataStructor.valueOf(em.name()).getName();
+        printHintInCaseOfRequestedDataIsNotFound(absentValue);
         return null;
     }
 
