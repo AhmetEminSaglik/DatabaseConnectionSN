@@ -1,14 +1,19 @@
 package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.business.abstracts.DBService;
+import org.ahmeteminsaglik.business.registeredobject.AllRegisteredObject;
+import org.ahmeteminsaglik.business.registeredobject.RegisteredProcessName;
+import org.ahmeteminsaglik.business.registeredobject.base.RegisteredObject;
 import org.ahmeteminsaglik.core.utility.RetrivedObjectValidation;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
 
+import javax.swing.*;
 import java.util.List;
 
 public class DBManagement implements DBService {
+
     final String columnName = "name";
 
     private DAOServiceManagement daoService = new DAOServiceManagement();
@@ -58,8 +63,12 @@ public class DBManagement implements DBService {
 
     @Override
     public ProcessName getProcessName(EnumProcessName enumProcessName) {
-        ProcessName processName = daoService.getProcessNameDAO().getByStringValueFromGivenColumnName(columnName, enumProcessName.getName());
-        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(processName, enumProcessName.getClass());
+//        JOptionPane.showMessageDialog(null, " Process Name e geldi registired ile deger alincak");
+        RegisteredProcessName registeredProcessName = AllRegisteredObject.getRegisteredProcessName();
+        ProcessName processName = registeredProcessName.getByEnum(enumProcessName);
+//        ProcessName processName = daoService.getProcessNameDAO().getByStringValueFromGivenColumnName(columnName, enumProcessName.getName());
+//        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(processName, enumProcessName.getClass());
+//        JOptionPane.showMessageDialog(null, "Alinan deger : " + processName);
         return processName;
     }
 }

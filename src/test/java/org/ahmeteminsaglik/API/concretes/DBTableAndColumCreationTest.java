@@ -77,7 +77,7 @@ class DBTableAndColumCreationTest {
     public void testIsProcessNameTableCreatedAndFilledWithAllEnumValues() {
         List<EnumProcessName> enumList = EnumUtility.getEnumProcessNameList();
         for (EnumProcessName tmp : enumList) {
-            ProcessName object = dbService.getProcessName(tmp);//AllRegisteredObjects.getRegisteredProcessName().getByEnum(tmp);//dbService.getProcessName(tmp);
+            ProcessName object = dbService.getProcessName(tmp);//AllRegisteredObject.getRegisteredProcessName().getByEnum(tmp);//dbService.getProcessName(tmp);
             String expected = tmp.getName();
             String actual = object.getName();
             assertEquals(expected, actual);

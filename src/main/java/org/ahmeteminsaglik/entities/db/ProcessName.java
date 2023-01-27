@@ -6,13 +6,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.Objects;
 
 @Entity
 @Table(name = "process_name")
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class ProcessName {
 
     @Id

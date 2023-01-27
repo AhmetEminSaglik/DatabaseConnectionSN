@@ -1,17 +1,14 @@
 package org.ahmeteminsaglik.core.utility.registeredobject;
 
-import org.ahmeteminsaglik.core.exception.dbprocess.InvalidProcessNameRequestException;
-import org.ahmeteminsaglik.dataaccess.abstracts.ProcessNameDAO;
-import org.ahmeteminsaglik.dataaccess.concretes.imp.ProcessNameDAOImp;
+import org.ahmeteminsaglik.business.registeredobject.base.RegisteredObject;
 import org.ahmeteminsaglik.entities.db.ProcessName;
-import org.ahmeteminsaglik.enums.EnumProcessName;
 
 import java.util.List;
 
 public class RegisteredObjectDBUtility {
     private static List<ProcessName> processNameList = null;
 
-    public static ProcessName getRequestedProcessNameByGivenEnumProcessName(EnumProcessName enumProcessName) {
+    /*public static ProcessName getRequestedProcessNameByGivenEnumProcessName(EnumProcessName enumProcessName) {
         fillProcessNameList();
         try {
             for (ProcessName processName : processNameList) {
@@ -19,24 +16,24 @@ public class RegisteredObjectDBUtility {
                     return processName;
                 }
             }
-            throw new InvalidProcessNameRequestException(enumProcessName);
+            throw new InvalidRequestDataException(enumProcessName);
 
-        } catch (InvalidProcessNameRequestException exception) {
+        } catch (InvalidRequestDataException exception) {
             System.err.println(exception.getMessage());
         }
         return null;
     }
-
-    private static synchronized void fillProcessNameList() {
-        if (processNameList == null) {
-            processNameList = getAllProcessNameFromDB();
+*/
+    public static synchronized <T> void fillList(RegisteredObject<T> registeredObject) {
+        if (registeredObject.getList() == null) {
+            registeredObject.setList(registeredObject.getDao().getAll());
         }
     }
 
-    private static List<ProcessName> getAllProcessNameFromDB() {
-        ProcessNameDAO processNameDAO = new ProcessNameDAOImp();
-        return processNameDAO.getAll();
-    }
+//    private static <T> List<T> getAllProcessNameFromDB(BaseDAO<T> baseDAO) {
+//        ProcessNameDAO processNameDAO = new ProcessNameDAOImp();
+//        return baseDAO.getAll();
+//    }
 
 
 }

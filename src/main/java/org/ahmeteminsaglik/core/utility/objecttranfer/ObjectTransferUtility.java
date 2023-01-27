@@ -1,6 +1,7 @@
 package org.ahmeteminsaglik.core.utility.objecttranfer;
 
 import org.ahmeteminsaglik.business.abstracts.DataPreparationService;
+import org.ahmeteminsaglik.business.registeredobject.AllRegisteredObject;
 import org.ahmeteminsaglik.core.utility.registeredobject.RegisteredObjectDBUtility;
 import org.ahmeteminsaglik.entities.db.Complexity;
 import org.ahmeteminsaglik.entities.db.ProcessName;
@@ -49,7 +50,7 @@ public class ObjectTransferUtility {
     }
 
     private ProcessName getProcessNameFromDataBase(EnumProcessName enumProcessName) {
-        return RegisteredObjectDBUtility.getRequestedProcessNameByGivenEnumProcessName(enumProcessName);
+        return AllRegisteredObject.getRegisteredProcessName().getByEnum(enumProcessName);
     }
 
     private Complexity setValuesToComplexity(Complexity complexity, ComplexityConsept consept) {

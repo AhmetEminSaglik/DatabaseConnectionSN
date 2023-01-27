@@ -1,6 +1,4 @@
 
-Z
-*src/main/java/org/ahmeteminsaglik/Todo.txt,0\9\0954554e7ed1fe1e1508ed50e2017efd63ef9c48
 g
 7src/main/java/org/ahmeteminsaglik/entities/db/Word.java,f\9\f9d9e9efd58939606f389f4f711dab7ea8cb491c
 v
@@ -11,8 +9,6 @@ o
 ?src/main/java/org/ahmeteminsaglik/entities/db/DataStructor.java,0\5\056b66a8fba48cb22065566077ed63c950eea7f1
 }
 Msrc/main/java/org/ahmeteminsaglik/business/concrete/DAOServiceManagement.java,d\0\d0f2b3e96868c1b5441c00506569da204c7fffce
-|
-Lsrc/main/java/org/ahmeteminsaglik/API/concretes/DBTableAndColumCreation.java,b\b\bb9b1f6272d0061c3a02ebda64a99eaf42e78e7e
 m
 =src/main/java/org/ahmeteminsaglik/entities/db/Complexity.java,f\3\f378701d9d8c7896f84b7a3c6fa42074d804ba32
 y

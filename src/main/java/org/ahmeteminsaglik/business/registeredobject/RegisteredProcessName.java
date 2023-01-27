@@ -1,57 +1,31 @@
-/*
 package org.ahmeteminsaglik.business.registeredobject;
 
 import org.ahmeteminsaglik.business.registeredobject.base.RegisteredObject;
-import org.ahmeteminsaglik.core.exception.dbprocess.InvalidProcessNameRequestException;
+import org.ahmeteminsaglik.core.exception.dbprocess.InvalidRequestDataException;
 import org.ahmeteminsaglik.core.utility.registeredobject.RegisteredObjectDBUtility;
+import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
 import org.ahmeteminsaglik.entities.db.ProcessName;
 import org.ahmeteminsaglik.enums.EnumProcessName;
 
-import java.util.List;
-
 public class RegisteredProcessName extends RegisteredObject<ProcessName> {
 
-//    private static List<ProcessName> processNameList = null;
-
-*/
-/*    public ProcessName getByEnumProcessName(EnumProcessName enumProcessName) {
-        RegisteredObjectDBUtility.fillProcessNameList();
-        try {
-            for (ProcessName processName : processNameList) {
-                if (processName.getName().equals(enumProcessName.getName())) {
-                    return processName;
-                }
-            }
-            throw new InvalidProcessNameRequestException(enumProcessName);
-
-        } catch (InvalidProcessNameRequestException exception) {
-            System.err.println(exception.getMessage());
-        }
-        return null;
-    }*//*
-
-
+    public RegisteredProcessName(BaseDAO<ProcessName> dao) {
+        super(dao);
+    }
 
     @Override
     public ProcessName getByEnum(Enum<?> em) {
-
-        RegisteredObjectDBUtility.fillProcessNameList(list);
+        RegisteredObjectDBUtility.fillList(this);
         try {
-            for (ProcessName processName : list) {
-                System.out.println("processName.getName() : "+processName.getName());
-                System.out.println("((EnumProcessName) em).getName() : "+((EnumProcessName) em).getName());
-                if (processName.getName().equals(((EnumProcessName) em).getName())) {
-//                    System.out.println("processName.getName() : "+processName.getName());
-//                    System.out.println("((EnumProcessName) em).getName() : "+((EnumProcessName) em).getName());
-                    return processName;
-                }
+            for (ProcessName tmp : getList()) {
+                if (tmp.getName().equals(EnumProcessName.valueOf(em.name()).getName()))
+                    return tmp;
             }
-            throw new InvalidProcessNameRequestException((EnumProcessName) em);
 
-        } catch (InvalidProcessNameRequestException exception) {
+            throw new InvalidRequestDataException(EnumProcessName.valueOf(em.name()).getName());
+        } catch (InvalidRequestDataException exception) {
             System.err.println(exception.getMessage());
         }
         return null;
     }
 }
-*/
