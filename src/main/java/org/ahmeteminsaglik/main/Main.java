@@ -2,9 +2,7 @@ package org.ahmeteminsaglik.main;
 
 import org.ahmeteminsaglik.*;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
-import org.ahmeteminsaglik.dataaccess.concretes.imp.ProcessNameDAOImp;
 import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.entities.db.Record;
 import org.ahmeteminsaglik.enums.*;
 
 import java.util.ArrayList;

@@ -6,6 +6,7 @@ import org.ahmeteminsaglik.core.utility.RetrivedObjectValidation;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
+import org.hibernate.tuple.CreationTimestampGeneration;
 
 import java.util.List;
 
@@ -24,14 +25,17 @@ public class DBManagement implements DBService {
 
     @Override
     public WordList getWordList(EnumWordTable enumWordTable) {
-        WordList wordList = daoService.getWordListDAO().getByStringValueFromGivenColumnName(columnName, enumWordTable.getName());
-        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(wordList, enumWordTable.getClass());
+        RegisteredWordList registeredWordList = AllRegisteredObject.getWordList();
+        WordList wordList = registeredWordList.getByEnum(enumWordTable);
+//        WordList wordList = daoService.getWordListDAO().getByStringValueFromGivenColumnName(columnName, enumWordTable.getName());
+//        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(wordList, enumWordTable.getClass());
         return wordList;
     }
 
     @Override
     public List<WordList> getAllWordList() {
-        List<WordList> list = daoService.getWordListDAO().getAll();
+        List<WordList> list = AllRegisteredObject.getWordList().getList();
+//        List<WordList> list = daoService.getWordListDAO().getAll();
         return list;
     }
 
@@ -57,7 +61,6 @@ public class DBManagement implements DBService {
     public SearchAlgorithm getSearchAlgortihm(EnumSearchAlgorithm enumSearchAlgorithm) {
         RegisteredSearchAlgorithm registeredSearchAlgorithm = AllRegisteredObject.getSearchAlgorithm();
         SearchAlgorithm searchAlgorithm = registeredSearchAlgorithm.getByEnum(enumSearchAlgorithm);
-
 //        SearchAlgorithm searchAlgorithm = daoService.getSearchAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSearchAlgorithm.getName());
 //        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(searchAlgorithm, enumSearchAlgorithm.getClass());
         return searchAlgorithm;
@@ -70,7 +73,6 @@ public class DBManagement implements DBService {
         ProcessName processName = registeredProcessName.getByEnum(enumProcessName);
 //        ProcessName processName = daoService.getProcessNameDAO().getByStringValueFromGivenColumnName(columnName, enumProcessName.getName());
 //        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(processName, enumProcessName.getClass());
-//        JOptionPane.showMessageDialog(null, "Alinan deger : " + processName);
         return processName;
     }
 }

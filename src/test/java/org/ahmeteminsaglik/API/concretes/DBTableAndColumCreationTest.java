@@ -85,9 +85,9 @@ class DBTableAndColumCreationTest {
     }
 
     @Test
-    @DisplayName("WordList Table Exist Test")
+    @DisplayName("All Word Tables Exist Test")
     @Order(5)
-    public void testIsWordListTableTableExitsWithAllEnumValues() {
+    public void testIsWordListTableExitsWithAllEnumValues() {
         List<EnumWordTable> enumList = EnumUtility.getEnumWordTableList();
         for (EnumWordTable tmp : enumList) {
             List<Word> wordList = dbService.getWords(tmp);
