@@ -13,6 +13,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class SortAlgorithm {
 
     @Id

@@ -50,7 +50,7 @@ public class ObjectTransferUtility {
     }
 
     private ProcessName getProcessNameFromDataBase(EnumProcessName enumProcessName) {
-        return AllRegisteredObject.getRegisteredProcessName().getByEnum(enumProcessName);
+        return AllRegisteredObject.getProcessname().getByEnum(enumProcessName);
     }
 
     private Complexity setValuesToComplexity(Complexity complexity, ComplexityConsept consept) {

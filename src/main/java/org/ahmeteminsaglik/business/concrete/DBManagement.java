@@ -4,13 +4,12 @@ import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.registeredobject.AllRegisteredObject;
 import org.ahmeteminsaglik.business.registeredobject.RegisteredDataStructor;
 import org.ahmeteminsaglik.business.registeredobject.RegisteredProcessName;
-import org.ahmeteminsaglik.business.registeredobject.base.RegisteredObject;
+import org.ahmeteminsaglik.business.registeredobject.RegisteredSortAlgorithm;
 import org.ahmeteminsaglik.core.utility.RetrivedObjectValidation;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
 
-import javax.swing.*;
 import java.util.List;
 
 public class DBManagement implements DBService {
@@ -41,7 +40,7 @@ public class DBManagement implements DBService {
 
     @Override
     public DataStructor getDataStructor(EnumDataStructor enumDataStructor) {
-        RegisteredDataStructor registeredDataStructor = AllRegisteredObject.getRegisteredDataStructor();
+        RegisteredDataStructor registeredDataStructor = AllRegisteredObject.getDataStructor();
         DataStructor dataStructor = registeredDataStructor.getByEnum(enumDataStructor);
 //        DataStructor dataStructor = daoService.getDataStructorDAO().getByStringValueFromGivenColumnName(columnName, enumDataStructor.getName());
 //        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(dataStructor, enumDataStructor.getClass());
@@ -50,9 +49,10 @@ public class DBManagement implements DBService {
 
     @Override
     public SortAlgorithm getSortAlgortihm(EnumSortAlgorithm enumSortAlgorithm) {
-
-        SortAlgorithm sortAlgorithm = daoService.getSortAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSortAlgorithm.getName());
-        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(sortAlgorithm, enumSortAlgorithm.getClass());
+        RegisteredSortAlgorithm registeredSortAlgorithm = AllRegisteredObject.getSortAlgorithm();
+        SortAlgorithm sortAlgorithm = registeredSortAlgorithm.getByEnum(enumSortAlgorithm);
+//        SortAlgorithm sortAlgorithm = daoService.getSortAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSortAlgorithm.getName());
+//        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(sortAlgorithm, enumSortAlgorithm.getClass());
         return sortAlgorithm;
     }
 
@@ -66,7 +66,7 @@ public class DBManagement implements DBService {
 
     @Override
     public ProcessName getProcessName(EnumProcessName enumProcessName) {
-        RegisteredProcessName registeredProcessName = AllRegisteredObject.getRegisteredProcessName();
+        RegisteredProcessName registeredProcessName = AllRegisteredObject.getProcessname();
         ProcessName processName = registeredProcessName.getByEnum(enumProcessName);
 //        ProcessName processName = daoService.getProcessNameDAO().getByStringValueFromGivenColumnName(columnName, enumProcessName.getName());
 //        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(processName, enumProcessName.getClass());
