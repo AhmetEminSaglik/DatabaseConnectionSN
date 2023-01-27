@@ -5,8 +5,8 @@ public class SolutionMessageDB {
 
     public static String getSolutionNullColumnException() {
         final String solutionHint = "There are 2 reasons for this exception :" +
-                "\n --> 1 : Column could be empty." +
-                "\n --> 2 : Requested Value is not found in table's column." +
+                "\n --> 1 : Column could be empty. (Not added any value)" +
+                "\n --> 2 : The requested value is not yet added to the database." +
                 "\n >>> " + solutionAdvice + "Please run createAllTablesAndColumns() function in DBTableAndColumCreation Class.";
         return solutionHint;
     }

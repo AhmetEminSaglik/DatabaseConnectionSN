@@ -1,10 +1,7 @@
 package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.business.abstracts.DBService;
-import org.ahmeteminsaglik.business.registeredobject.AllRegisteredObject;
-import org.ahmeteminsaglik.business.registeredobject.RegisteredDataStructor;
-import org.ahmeteminsaglik.business.registeredobject.RegisteredProcessName;
-import org.ahmeteminsaglik.business.registeredobject.RegisteredSortAlgorithm;
+import org.ahmeteminsaglik.business.registeredobject.*;
 import org.ahmeteminsaglik.core.utility.RetrivedObjectValidation;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
 import org.ahmeteminsaglik.entities.db.*;
@@ -58,8 +55,11 @@ public class DBManagement implements DBService {
 
     @Override
     public SearchAlgorithm getSearchAlgortihm(EnumSearchAlgorithm enumSearchAlgorithm) {
-        SearchAlgorithm searchAlgorithm = daoService.getSearchAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSearchAlgorithm.getName());
-        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(searchAlgorithm, enumSearchAlgorithm.getClass());
+        RegisteredSearchAlgorithm registeredSearchAlgorithm = AllRegisteredObject.getSearchAlgorithm();
+        SearchAlgorithm searchAlgorithm = registeredSearchAlgorithm.getByEnum(enumSearchAlgorithm);
+
+//        SearchAlgorithm searchAlgorithm = daoService.getSearchAlgorithmDAO().getByStringValueFromGivenColumnName(columnName, enumSearchAlgorithm.getName());
+//        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(searchAlgorithm, enumSearchAlgorithm.getClass());
         return searchAlgorithm;
 
     }

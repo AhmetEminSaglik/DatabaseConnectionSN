@@ -10,6 +10,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 public class SearchAlgorithm {
 
     @Id
