@@ -3,6 +3,7 @@ package org.ahmeteminsaglik.main;
 import org.ahmeteminsaglik.*;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.ProcessNameDAOImp;
+import org.ahmeteminsaglik.entities.db.DataStructor;
 import org.ahmeteminsaglik.entities.db.ProcessName;
 import org.ahmeteminsaglik.entities.db.Record;
 import org.ahmeteminsaglik.enums.*;
@@ -16,8 +17,10 @@ public class Main {
         DatabaseConnectionSN databaseConnectionSN= new DatabaseConnectionSN();
         databaseConnectionSN.initializeTables();
         DBManagement dbManagement= new DBManagement();
-        ProcessName processName=dbManagement.getProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS);
-        System.out.println(processName);
+//        ProcessName processName=dbManagement.getProcessName(EnumProcessName.DATA_STRUCTOR_PROCESS);
+//        System.out.println(processName);
+        DataStructor dataStructor= dbManagement.getDataStructor(EnumDataStructor.ARRAYLIST);
+        System.out.println(dataStructor);
         System.exit(0);
         /*Todo when values are retrived everytime it get too much time. Instead of everytime I need to store dataStructor, Sort-Search Algorithm, I should store these values in static List
            processName, */

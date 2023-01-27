@@ -5,8 +5,6 @@ v
 Fsrc/main/java/org/ahmeteminsaglik/entities/db/DataStructorProcess.java,a\0\a0ba89da5bf62d7b85e2a4d20d30b369180850b0
 €
 Psrc/test/java/org/ahmeteminsaglik/API/concretes/DBTableAndColumCreationTest.java,1\6\164d0e1f82ec3bd55cd445ae80b566f2df3fa51a
-o
-?src/main/java/org/ahmeteminsaglik/entities/db/DataStructor.java,0\5\056b66a8fba48cb22065566077ed63c950eea7f1
 }
 Msrc/main/java/org/ahmeteminsaglik/business/concrete/DAOServiceManagement.java,d\0\d0f2b3e96868c1b5441c00506569da204c7fffce
 m

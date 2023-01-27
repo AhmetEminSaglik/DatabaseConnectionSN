@@ -2,6 +2,7 @@ package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.registeredobject.AllRegisteredObject;
+import org.ahmeteminsaglik.business.registeredobject.RegisteredDataStructor;
 import org.ahmeteminsaglik.business.registeredobject.RegisteredProcessName;
 import org.ahmeteminsaglik.business.registeredobject.base.RegisteredObject;
 import org.ahmeteminsaglik.core.utility.RetrivedObjectValidation;
@@ -40,8 +41,10 @@ public class DBManagement implements DBService {
 
     @Override
     public DataStructor getDataStructor(EnumDataStructor enumDataStructor) {
-        DataStructor dataStructor = daoService.getDataStructorDAO().getByStringValueFromGivenColumnName(columnName, enumDataStructor.getName());
-        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(dataStructor, enumDataStructor.getClass());
+        RegisteredDataStructor registeredDataStructor = AllRegisteredObject.getRegisteredDataStructor();
+        DataStructor dataStructor = registeredDataStructor.getByEnum(enumDataStructor);
+//        DataStructor dataStructor = daoService.getDataStructorDAO().getByStringValueFromGivenColumnName(columnName, enumDataStructor.getName());
+//        RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(dataStructor, enumDataStructor.getClass());
         return dataStructor;
     }
 
@@ -63,7 +66,6 @@ public class DBManagement implements DBService {
 
     @Override
     public ProcessName getProcessName(EnumProcessName enumProcessName) {
-//        JOptionPane.showMessageDialog(null, " Process Name e geldi registired ile deger alincak");
         RegisteredProcessName registeredProcessName = AllRegisteredObject.getRegisteredProcessName();
         ProcessName processName = registeredProcessName.getByEnum(enumProcessName);
 //        ProcessName processName = daoService.getProcessNameDAO().getByStringValueFromGivenColumnName(columnName, enumProcessName.getName());
