@@ -18,11 +18,9 @@ public class Main {
 
     static void fakeProcess(int num) {
         System.out.println("fake process started");
-        List<Record> list = new ArrayList<>();
+        List<Object> list = new ArrayList<>();
         for (int i = 0; i < num; i++) {
-            System.out.println("i : " + i);
-            list.add(new Record());
-            System.out.println("olusturulan list : " + list.get(i).toString());
+            list.add(new Object());
         }
         System.out.println("fake process is done");
     }
