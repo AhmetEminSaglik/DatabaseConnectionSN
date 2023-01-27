@@ -1,12 +1,10 @@
 package org.ahmeteminsaglik.business.registeredobject.subclass;
 
 import org.ahmeteminsaglik.business.registeredobject.baseclass.RegisteredObject;
-import org.ahmeteminsaglik.core.exception.dbprocess.InvalidRequestDataException;
 import org.ahmeteminsaglik.core.utility.registeredobject.RegisteredObjectDBUtility;
 import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
 import org.ahmeteminsaglik.entities.db.DataStructor;
 import org.ahmeteminsaglik.enums.EnumDataStructor;
-import org.ahmeteminsaglik.enums.EnumProcessName;
 
 public class RegisteredDataStructor extends RegisteredObject<DataStructor> {
     public RegisteredDataStructor(BaseDAO<DataStructor> dao) {

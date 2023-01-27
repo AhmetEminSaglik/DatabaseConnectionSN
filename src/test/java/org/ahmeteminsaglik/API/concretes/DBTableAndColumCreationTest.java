@@ -15,15 +15,14 @@ import java.util.List;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DBTableAndColumCreationTest {
-
     DBService dbService;
-
 
     @BeforeAll
     static void createTables() {
         DatabaseConnectionSN databaseConnectionSN = new DatabaseConnectionSN();
         databaseConnectionSN.initializeTables();
     }
+
     @BeforeEach
     public void initialzeDBManagament() {
         dbService = new DBManagement();
