@@ -1,6 +1,7 @@
 package org.ahmeteminsaglik.API.concretes;
 
 
+import org.ahmeteminsaglik.DatabaseConnectionSN;
 import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.core.utility.enums.EnumUtility;
@@ -16,12 +17,16 @@ import java.util.List;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DBTableAndColumCreationTest {
 
-    DBTableAndColumCreation tableAndColumCreation;
     DBService dbService;
 
+
+    @BeforeAll
+    static void createTables() {
+        DatabaseConnectionSN databaseConnectionSN = new DatabaseConnectionSN();
+        databaseConnectionSN.initializeTables();
+    }
     @BeforeEach
-    public void initialzedObjects() {
-        tableAndColumCreation = new DBTableAndColumCreation();
+    public void initialzeDBManagament() {
         dbService = new DBManagement();
     }
 
@@ -30,8 +35,6 @@ class DBTableAndColumCreationTest {
     @DisplayName("Data Structor Table Creation Test")
     @Order(1)
     public void testIsDataStructorTableCreatedAndFilledWithAllEnumValues() {
-        tableAndColumCreation.createAllTablesAndColumns();
-
         List<EnumDataStructor> enumList = EnumUtility.getEnumDataStructorList();
         for (EnumDataStructor tmp : enumList) {
             DataStructor object = dbService.getDataStructor(tmp);
@@ -45,7 +48,6 @@ class DBTableAndColumCreationTest {
     @DisplayName("Sort Algorithm Table Creation Test")
     @Order(2)
     public void testIsSortAlgorithmTableCreatedAndFilledWithAllEnumValues() {
-        tableAndColumCreation.createAllTablesAndColumns();
 
         List<EnumSortAlgorithm> enumList = EnumUtility.getEnumSortAlgorithmList();
         for (EnumSortAlgorithm tmp : enumList) {
@@ -60,7 +62,6 @@ class DBTableAndColumCreationTest {
     @DisplayName("Search Algorithm Table Creation Test")
     @Order(3)
     public void testIsSearchAlgorithmTableCreatedAndFilledWithAllEnumValues() {
-        tableAndColumCreation.createAllTablesAndColumns();
         List<EnumSearchAlgorithm> enumList = EnumUtility.getEnumSearchAlgorithmList();
         for (EnumSearchAlgorithm tmp : enumList) {
             SearchAlgorithm object = dbService.getSearchAlgortihm(tmp);
@@ -74,8 +75,6 @@ class DBTableAndColumCreationTest {
     @DisplayName("Process Name Table Creation Test")
     @Order(4)
     public void testIsProcessNameTableCreatedAndFilledWithAllEnumValues() {
-        tableAndColumCreation.createAllTablesAndColumns();
-
         List<EnumProcessName> enumList = EnumUtility.getEnumProcessNameList();
         for (EnumProcessName tmp : enumList) {
             ProcessName object = dbService.getProcessName(tmp);//AllRegisteredObjects.getRegisteredProcessName().getByEnum(tmp);//dbService.getProcessName(tmp);
@@ -89,7 +88,6 @@ class DBTableAndColumCreationTest {
     @DisplayName("WordList Table Exist Test")
     @Order(5)
     public void testIsWordListTableTableExitsWithAllEnumValues() {
-        tableAndColumCreation.createAllTablesAndColumns();
         List<EnumWordTable> enumList = EnumUtility.getEnumWordTableList();
         for (EnumWordTable tmp : enumList) {
             List<Word> wordList = dbService.getWords(tmp);

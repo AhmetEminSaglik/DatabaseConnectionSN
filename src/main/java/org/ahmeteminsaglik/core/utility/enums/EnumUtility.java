@@ -14,6 +14,7 @@ public class EnumUtility {
         List<EnumDataStructor> enumList = Arrays.asList(EnumDataStructor.values());
         return enumList;
     }
+
     public static List<DataStructor> getDataStructorListFromEnum() {
         List<EnumDataStructor> enumList = Arrays.asList(EnumDataStructor.values());
         List<DataStructor> dataStructorList = new ArrayList<>();
@@ -27,6 +28,7 @@ public class EnumUtility {
         List<EnumSortAlgorithm> enumList = Arrays.asList(EnumSortAlgorithm.values());
         return enumList;
     }
+
     public static List<SortAlgorithm> getSortAlgorithmListFromEnum() {
         List<EnumSortAlgorithm> enumList = Arrays.asList(EnumSortAlgorithm.values());
         List<SortAlgorithm> sortAlgorithmList = new ArrayList<>();
@@ -41,6 +43,7 @@ public class EnumUtility {
         List<EnumSearchAlgorithm> enumList = Arrays.asList(EnumSearchAlgorithm.values());
         return enumList;
     }
+
     public static List<SearchAlgorithm> getSearchAlgorithmListFromEnum() {
         List<EnumSearchAlgorithm> enumList = Arrays.asList(EnumSearchAlgorithm.values());
         List<SearchAlgorithm> searchAlgorithms = new ArrayList<>();
@@ -50,18 +53,6 @@ public class EnumUtility {
         return searchAlgorithms;
     }
 
-    public static List<EnumWordTable> getEnumWordTableList() {
-        List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
-        return enumList;
-    }
-    public static List<WordList> getWordListFromEnum() {
-        List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
-        List<WordList> wordLists = new ArrayList<>();
-        enumList.forEach(e -> {
-            wordLists.add(new WordList(e.getName()));
-        });
-        return wordLists;
-    }
     public static List<EnumProcessName> getEnumProcessNameList() {
         List<EnumProcessName> enumList = Arrays.asList(EnumProcessName.values());
         return enumList;
@@ -75,5 +66,20 @@ public class EnumUtility {
         });
         return processNameList;
     }
+
+    public static List<EnumWordTable> getEnumWordTableList() {
+        List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
+        return enumList;
+    }
+
+    public static List<WordList> getWordListFromEnum() {
+        List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
+        List<WordList> wordLists = new ArrayList<>();
+        enumList.forEach(e -> {
+            wordLists.add(new WordList(e.getName()));
+        });
+        return wordLists;
+    }
+
 
 }

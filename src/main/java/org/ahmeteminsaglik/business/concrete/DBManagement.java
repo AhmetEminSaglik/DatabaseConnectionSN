@@ -28,6 +28,12 @@ public class DBManagement implements DBService {
     }
 
     @Override
+    public List<WordList> getAllWordList() {
+        List<WordList> list = daoService.getWordListDAO().getAll();
+        return list;
+    }
+
+    @Override
     public DataStructor getDataStructor(EnumDataStructor enumDataStructor) {
         DataStructor dataStructor = daoService.getDataStructorDAO().getByStringValueFromGivenColumnName(columnName, enumDataStructor.getName());
         RetrivedObjectValidation.printSolutionHintIfRetrivedDataIsNull(dataStructor, enumDataStructor.getClass());

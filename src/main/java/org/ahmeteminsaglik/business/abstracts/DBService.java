@@ -10,6 +10,7 @@ public interface DBService {
     public List<Word> getWords(EnumWordTable enumWordTable);
 
     public WordList getWordList(EnumWordTable enumWordTable);
+    public  List<WordList> getAllWordList();
 
     public DataStructor getDataStructor(EnumDataStructor enumDataStructor);
 
