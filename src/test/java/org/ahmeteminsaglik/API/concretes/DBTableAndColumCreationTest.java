@@ -7,14 +7,13 @@ import org.ahmeteminsaglik.core.utility.enums.EnumUtility;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
 import org.ahmeteminsaglik.readableformat.ReadableFormat;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DBTableAndColumCreationTest {
 
     DBTableAndColumCreation tableAndColumCreation;
@@ -26,22 +25,10 @@ class DBTableAndColumCreationTest {
         dbService = new DBManagement();
     }
 
-    @Test
-    @DisplayName("Process Name Table Creation Test")
-    public void testIsProcessNameTableCreatedAndFilledWithAllEnumValues() {
-        tableAndColumCreation.createAllTablesAndColumns();
-
-        List<EnumProcessName> enumList = EnumUtility.getEnumProcessNameList();
-        for (EnumProcessName tmp : enumList) {
-            ProcessName object = dbService.getProcessName(tmp);//AllRegisteredObjects.getRegisteredProcessName().getByEnum(tmp);//dbService.getProcessName(tmp);
-            String expected = tmp.getName();
-            String actual = object.getName();
-            assertEquals(expected, actual);
-        }
-    }
 
     @Test
     @DisplayName("Data Structor Table Creation Test")
+    @Order(1)
     public void testIsDataStructorTableCreatedAndFilledWithAllEnumValues() {
         tableAndColumCreation.createAllTablesAndColumns();
 
@@ -56,6 +43,7 @@ class DBTableAndColumCreationTest {
 
     @Test
     @DisplayName("Sort Algorithm Table Creation Test")
+    @Order(2)
     public void testIsSortAlgorithmTableCreatedAndFilledWithAllEnumValues() {
         tableAndColumCreation.createAllTablesAndColumns();
 
@@ -70,6 +58,7 @@ class DBTableAndColumCreationTest {
 
     @Test
     @DisplayName("Search Algorithm Table Creation Test")
+    @Order(3)
     public void testIsSearchAlgorithmTableCreatedAndFilledWithAllEnumValues() {
         tableAndColumCreation.createAllTablesAndColumns();
         List<EnumSearchAlgorithm> enumList = EnumUtility.getEnumSearchAlgorithmList();
@@ -82,7 +71,23 @@ class DBTableAndColumCreationTest {
     }
 
     @Test
+    @DisplayName("Process Name Table Creation Test")
+    @Order(4)
+    public void testIsProcessNameTableCreatedAndFilledWithAllEnumValues() {
+        tableAndColumCreation.createAllTablesAndColumns();
+
+        List<EnumProcessName> enumList = EnumUtility.getEnumProcessNameList();
+        for (EnumProcessName tmp : enumList) {
+            ProcessName object = dbService.getProcessName(tmp);//AllRegisteredObjects.getRegisteredProcessName().getByEnum(tmp);//dbService.getProcessName(tmp);
+            String expected = tmp.getName();
+            String actual = object.getName();
+            assertEquals(expected, actual);
+        }
+    }
+
+    @Test
     @DisplayName("WordList Table Exist Test")
+    @Order(5)
     public void testIsWordListTableTableExitsWithAllEnumValues() {
         tableAndColumCreation.createAllTablesAndColumns();
         List<EnumWordTable> enumList = EnumUtility.getEnumWordTableList();
