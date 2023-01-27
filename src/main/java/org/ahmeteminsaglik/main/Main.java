@@ -8,6 +8,8 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        /*Todo when values are retrived everytime it get too much time. Instead of everytime I need to store dataStructor, Sort-Search Algorithm, I should store these values in static List
+           processName, */
         DatabaseConnectionSN database = new DatabaseConnectionSN();
         database.initializeTables();
         AlgorithmTestResult testResult = getMockAlgorithmResult(100_000, EnumWordTable.WORD_10_000, EnumWordTable.WORD_7_500, 5_500, 2_000);

@@ -8,7 +8,6 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 public class SearchAlgorithmProcess {
 
     @Id
@@ -17,11 +16,11 @@ public class SearchAlgorithmProcess {
     private int id;
 
 
-    @Column(name = "search_algorithm_id",nullable = false)
+    @Column(name = "search_algorithm_id", nullable = false)
     private int searchAlgorithmId;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "record_id",nullable = false)
+    @JoinColumn(name = "record_id", nullable = false)
     private Record record;
 
 }
