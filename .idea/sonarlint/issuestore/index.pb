@@ -101,3 +101,7 @@ asrc/main/java/org/ahmeteminsaglik/business/registeredobject/subclass/Registered
 csrc/main/java/org/ahmeteminsaglik/business/registeredobject/subclass/RegisteredSearchAlgorithm.java,c\3\c36452b58dab4d3145b0a567e21cf71a8de23e47
 
 _src/main/java/org/ahmeteminsaglik/business/registeredobject/subclass/RegisteredProcessName.java,b\e\be4f95b9a2acbe02e2964bd6b8b296d240c7f033
+g
+7src/main/java/org/ahmeteminsaglik/entities/db/Word.java,f\9\f9d9e9efd58939606f389f4f711dab7ea8cb491c
+u
+Esrc/main/java/org/ahmeteminsaglik/business/concrete/DBManagement.java,0\9\09f45f8226ec031e7499892c923516d14f96d914

@@ -47,7 +47,7 @@ class ObjectTransferTest {
 
     }
 
-    static AlgorithmTestResult mockTestResult(int processNumber) {
+    static TestAlgorithmResult mockTestResult(int processNumber) {
         /* create Fake Algorithm Test Result */
         Stopwatch stopwatch = new Stopwatch();
         MemoryUsage memoryUsage = new MemoryUsage();
@@ -58,7 +58,7 @@ class ObjectTransferTest {
         stopwatch.stopTime();
         memoryUsage.calculateMemoryAfterProcess();
 
-        SetResultService testResult = new AlgorithmTestResult();
+        SetResultService testResult = new TestAlgorithmResult();
         testResult
                 .setDataStructorProcess(EnumDataStructor.SEARCHNODE_V2)
                 .setSortAlgorithmProcess(EnumSortAlgorithm.SEARCH_NODE)
@@ -69,7 +69,7 @@ class ObjectTransferTest {
                 .setComplexityConseptSortAlgorithm(stopwatch, memoryUsage)
                 .setComplexityConseptSearchAlgorithm(stopwatch, memoryUsage);
 
-        return (AlgorithmTestResult) testResult;
+        return (TestAlgorithmResult) testResult;
     }
 
     static void fakeProcess(int num) {
