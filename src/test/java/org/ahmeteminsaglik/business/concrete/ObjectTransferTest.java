@@ -2,9 +2,12 @@ package org.ahmeteminsaglik.business.concrete;
 
 import org.ahmeteminsaglik.*;
 import org.ahmeteminsaglik.API.concretes.DatabaseConnectionSN;
+import org.ahmeteminsaglik.abstracts.get.api.GetTestResultService;
+import org.ahmeteminsaglik.abstracts.set.api.SetTestResultService;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;
 import org.ahmeteminsaglik.entities.db.Record;
+import org.ahmeteminsaglik.entity.WordProcessUsedTable;
 import org.ahmeteminsaglik.enums.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,12 +27,12 @@ class ObjectTransferTest {
         List<Record> recordList = recordDAO.getAll();
         int oldRecordSize = recordList.size();
 
-        GetResultService testResult = mockTestResult(1_000);
+        GetTestResultService testResult = mockTestResult(1_000);
 
-        List<GetResultService> testResultlist = new ArrayList<>();
-        GetResultService testResult1 = mockTestResult(5_000);
-        GetResultService testResult2 = mockTestResult(10_000);
-        GetResultService testResult3 = mockTestResult(15_000);
+        List<GetTestResultService> testResultlist = new ArrayList<>();
+        GetTestResultService testResult1 = mockTestResult(5_000);
+        GetTestResultService testResult2 = mockTestResult(10_000);
+        GetTestResultService testResult3 = mockTestResult(15_000);
         testResultlist.add(testResult1);
         testResultlist.add(testResult2);
         testResultlist.add(testResult3);
@@ -58,13 +61,12 @@ class ObjectTransferTest {
         stopwatch.stopTime();
         memoryUsage.calculateMemoryAfterProcess();
 
-        SetResultService testResult = new TestAlgorithmResult();
+        SetTestResultService testResult = new TestAlgorithmResult();
         testResult
                 .setDataStructorProcess(EnumDataStructor.SEARCHNODE_V2)
                 .setSortAlgorithmProcess(EnumSortAlgorithm.SEARCH_NODE)
                 .setSearchAlgorithmProcess(EnumSearchAlgorithm.SEARCH_NODE)
-                .setWordProcessConsept(EnumWordTable.WORD_10_000, EnumWordTable.WORD_5_000,
-                        3_500, 1_500)
+                .setWordProcessUsedTable(new WordProcessUsedTable(EnumWordTable.WORD_10_000,EnumWordTable.WORD_5_000))
                 .setComplexityConseptDataStructor(stopwatch, memoryUsage)
                 .setComplexityConseptSortAlgorithm(stopwatch, memoryUsage)
                 .setComplexityConseptSearchAlgorithm(stopwatch, memoryUsage);

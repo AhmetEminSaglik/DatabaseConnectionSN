@@ -2,7 +2,6 @@ package org.ahmeteminsaglik.entities.db;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 @Entity
 @Table(name = "search_algorithm_process")
 @NoArgsConstructor

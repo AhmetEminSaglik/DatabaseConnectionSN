@@ -1,10 +1,11 @@
 package org.ahmeteminsaglik.API.abstracts;
 
-import org.ahmeteminsaglik.GetResultService;
+
+import org.ahmeteminsaglik.abstracts.get.api.GetTestResultService;
 
 import java.util.List;
 
 public interface DBSaveAPIService {
-    void save(GetResultService resultService);
-    void save(List<GetResultService> resultServiceList);
+    void save(GetTestResultService resultService);
+    void save(List<GetTestResultService> resultServiceList);
 }

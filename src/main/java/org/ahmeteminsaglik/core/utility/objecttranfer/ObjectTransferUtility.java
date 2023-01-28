@@ -32,10 +32,10 @@ public class ObjectTransferUtility {
 
     public void setWordProcessToDataService(DataPreparationService dataPreparationService, WordProcessConsept wordProcessConsept) {
         dataPreparationService.setWordProcess(
-                wordProcessConsept.getEnumTotalWordList(),
-                wordProcessConsept.getEnumSearchWordList(),
-                wordProcessConsept.getFoundWord(),
-                wordProcessConsept.getMissingWord()
+                wordProcessConsept.getUsedTable().getEnumTotalWordList(),
+                wordProcessConsept.getUsedTable().getEnumSearchWordList(),
+                wordProcessConsept.getStatistics().getFoundWord(),
+                wordProcessConsept.getStatistics().getMissingWord()
         );
     }
 

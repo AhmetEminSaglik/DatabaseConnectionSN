@@ -2,7 +2,7 @@ package org.ahmeteminsaglik.API.concretes;
 
 import org.ahmeteminsaglik.API.abstracts.DBSaveAPIService;
 import org.ahmeteminsaglik.API.abstracts.InitializeTablesAPIService;
-import org.ahmeteminsaglik.GetResultService;
+import org.ahmeteminsaglik.abstracts.get.api.GetTestResultService;
 import org.ahmeteminsaglik.entities.business.DBRecordObject;
 import org.ahmeteminsaglik.business.concrete.ObjectTransfer;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
@@ -23,21 +23,21 @@ public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesA
     }
 
     @Override
-    public void save(GetResultService resultService) {
+    public void save(GetTestResultService resultService) {
         Record record = getRecordFromResultService(resultService);
         recordDAO.save(record);
     }
 
     @Override
-    public void save(List<GetResultService> resultServiceList) {
+    public void save(List<GetTestResultService> resultServiceList) {
         List<Record> recordList = new ArrayList<>();
-        for (GetResultService tmp : resultServiceList) {
+        for (GetTestResultService tmp : resultServiceList) {
             recordList.add(getRecordFromResultService(tmp));
         }
         recordDAO.saveAll(recordList);
     }
 
-    private Record getRecordFromResultService(GetResultService resultService) {
+    private Record getRecordFromResultService(GetTestResultService resultService) {
         DBRecordObject recordObject = objectTransfer.transferResultServiceToDBRecordObject(resultService);
         return recordObject.getRecord();
     }

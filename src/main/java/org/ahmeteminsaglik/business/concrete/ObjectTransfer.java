@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.business.concrete;
 
-import org.ahmeteminsaglik.GetResultService;
+import org.ahmeteminsaglik.abstracts.get.api.GetTestResultService;
 import org.ahmeteminsaglik.business.abstracts.DataPreparationService;
 import org.ahmeteminsaglik.entities.business.DBRecordObject;
 import org.ahmeteminsaglik.core.utility.objecttranfer.ObjectTransferUtility;
@@ -12,7 +12,7 @@ public class ObjectTransfer {
 
     ObjectTransferUtility objectTransferUtility = new ObjectTransferUtility();
 
-    public DBRecordObject transferResultServiceToDBRecordObject(GetResultService resultService) {
+    public DBRecordObject transferResultServiceToDBRecordObject(GetTestResultService resultService) {
         DBRecordObject recordObject = new DBRecordObject();
         DataPreparationManagement dataPreparationService = new DataPreparationManagement(recordObject);
 
@@ -23,17 +23,17 @@ public class ObjectTransfer {
         return recordObject;
     }
 
-    private void setUsedStructors(DataPreparationService dataPreparationService, GetResultService resultService) {
+    private void setUsedStructors(DataPreparationService dataPreparationService, GetTestResultService resultService) {
         objectTransferUtility.setDataStructorProcessToDataService(dataPreparationService, resultService.getDataStructorProcess());
         objectTransferUtility.setSortAlgorithmToDataService(dataPreparationService, resultService.getSortAlgorithmProcess());
         objectTransferUtility.setSearchAlgorithmToDataService(dataPreparationService, resultService.getSearchAlgorithmProcess());
     }
 
-    private void setWordProcess(DataPreparationService dataPreparationService, GetResultService resultService) {
+    private void setWordProcess(DataPreparationService dataPreparationService, GetTestResultService resultService) {
         objectTransferUtility.setWordProcessToDataService(dataPreparationService, resultService.getWordProcessConsept());
     }
 
-    private void setComplexityList(DataPreparationService dataPreparationService, GetResultService resultService) {
+    private void setComplexityList(DataPreparationService dataPreparationService, GetTestResultService resultService) {
         List<Complexity> complexityList = new ArrayList<>();
 
         Complexity dataStructorComplexity = objectTransferUtility.createComplexityByComplexityConsept(resultService.getDataStructorComplexityConcept());
