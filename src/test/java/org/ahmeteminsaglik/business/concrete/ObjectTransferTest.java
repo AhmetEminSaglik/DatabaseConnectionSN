@@ -33,7 +33,7 @@ class ObjectTransferTest {
         testResultlist.add(testResult1);
         testResultlist.add(testResult2);
         testResultlist.add(testResult3);
-        /*  */
+
         dbConnection.save(testResult);
         dbConnection.save(testResultlist);
 
@@ -65,9 +65,9 @@ class ObjectTransferTest {
                 .setSearchAlgorithmProcess(EnumSearchAlgorithm.SEARCH_NODE)
                 .setWordProcessConsept(EnumWordTable.WORD_10_000, EnumWordTable.WORD_5_000,
                         3_500, 1_500)
-                .setComplexityDataStructor(stopwatch, memoryUsage)
-                .setComplexitySortAlgorithm(stopwatch, memoryUsage)
-                .setComplexitySearchAlgorithm(stopwatch, memoryUsage);
+                .setComplexityConseptDataStructor(stopwatch, memoryUsage)
+                .setComplexityConseptSortAlgorithm(stopwatch, memoryUsage)
+                .setComplexityConseptSearchAlgorithm(stopwatch, memoryUsage);
 
         return (AlgorithmTestResult) testResult;
     }
