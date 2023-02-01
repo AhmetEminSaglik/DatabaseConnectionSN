@@ -8,19 +8,17 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 public class DataStructorProcess {
 
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "data_structor_id")
+    @Column(name = "data_structor_id", nullable = false)
     private int dataStructorId;
-    @OneToOne(/*mappedBy = "dataStructorProcess",*/
-            cascade = CascadeType.ALL)
-    @JoinColumn(name = "record_id")
-    private Record recordId;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "record_id", nullable = false)
+    private Record record;
 
 }

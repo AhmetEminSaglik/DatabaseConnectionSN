@@ -15,29 +15,17 @@ import java.util.Objects;
 @Setter
 @ToString
 public class SortAlgorithm {
+
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
+    @Column(name = "name",unique = true,nullable = false)
     private String name;
 
     public SortAlgorithm(String name) {
         this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SortAlgorithm that = (SortAlgorithm) o;
-        return Objects.equals(name, that.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
     }
 
 }

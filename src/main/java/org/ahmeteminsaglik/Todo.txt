@@ -1,0 +1,42 @@
+Query Console
+-- SELECT * FROM record
+-- SELECT * FROM complexity
+-- SELECT * FROM word_process
+-- SELECT * FROM data_structor_process
+-- SELECT * FROM sort_algorithm_process
+-- SELECT * FROM search_algorithm_process
+-- SELECT * FROM process_name
+
+-- SELECT * FROM data_structor
+-- SELECT * FROM sort_algorithm
+-- SELECT * FROM search_algorithm
+
+-- delete
+-- DROP TABLE if exists process_name cascade;
+-- DROP TABLE if exists record,process_name,complexity,word_process,search_algorithm_process,search_algorithm,sort_algorithm,sort_algorithm_process,data_structor_process,data_structor,word_list,word_no_selected_table cascade;
+
+Todo
+ ---
+    Rule :
+    - Select functions may return the type because it may be wanted to use it anyway.
+    - All processes must be done in the saveRecordDB library. It has to be so easy to use it.
+    - There may be hundreds of processes to have so much test data quickly. So batch save must be added.
+ ---
+ SaveRecordDB saveRecordDB = new SaveRecordDB();
+ 1-) saveRecordDb.selectWords(EnumWordTable.WORD_200) --> this returns wordList
+        -->
+ 2-) saveRecordDb.selectDataStructor(EnumDataStructor enumDS)
+ 3-) saveRecordDB.selectSortAlgorithm(EnumSortAlgorithm enumSA)
+ 4-) saveRecordDb.selectSearchAlgorithm(EnumSearchAlgorithm enumSA)
+ 5-) saveRecordDb.saveProcess();
+ 6-) saveRecordDb.saveAllProcess(List<SaveRecordDB> list):
+ ---
+  need to get by word_<tbl_name>
+ record, complexity, word_process, data_structor_process, sort_algorithm_process, search_algorithm_process
+ ---
+ Done :
+ -) Created Tickets in Jira
+
+
+
+

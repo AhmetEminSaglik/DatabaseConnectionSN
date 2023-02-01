@@ -1,0 +1,1 @@
+speeded up the small object's process with Registered Object

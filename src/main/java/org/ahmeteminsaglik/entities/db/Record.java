@@ -11,7 +11,6 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 public class Record {
 
     @Id
@@ -19,41 +18,29 @@ public class Record {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToOne(mappedBy = "recordId",
+    @OneToOne(mappedBy = "record",
             cascade = CascadeType.ALL,
             targetEntity = DataStructorProcess.class)
     private DataStructorProcess dataStructorProcess;
 
-
-    @OneToOne(mappedBy = "recordId",
+    @OneToOne(mappedBy = "record",
             cascade = CascadeType.ALL,
             targetEntity = SortAlgorithmProcess.class)
     private SortAlgorithmProcess sortAlgorithmProcess;
 
-    @OneToOne(mappedBy = "recordId",
+    @OneToOne(mappedBy = "record",
             cascade = CascadeType.ALL,
             targetEntity = SearchAlgorithmProcess.class)
     private SearchAlgorithmProcess searchAlgorithmProcess;
 
-    @OneToOne(mappedBy = "recordId",
+    @OneToOne(mappedBy = "record",
             cascade = CascadeType.ALL,
             targetEntity = WordProcess.class)
     private WordProcess wordProcess;
-    /*@OneToMany(mappedBy = "recordId",
-//    fetch = FetchType.LAZY,
+    @OneToMany(mappedBy = "record",
             cascade = CascadeType.ALL,
-            targetEntity = DataStructorProcess.class)
-    private List<DataStructorProcess> dataStructorProcessList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "recordId",
-            cascade = CascadeType.ALL,
-            targetEntity = SortAlgorithmProcess.class)
-    private List<SortAlgorithmProcess> sortAlgorithmProcessList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "recordId",
-            cascade = CascadeType.ALL,
-            targetEntity = SearchAlgorithmProcess.class)
-    private List<SearchAlgorithmProcess> searchAlgorithmProcessList = new ArrayList<>();*/
+            targetEntity = Complexity.class)
+    private List<Complexity> complexityList = new ArrayList<>();
 
     public int getId() {
         return id;

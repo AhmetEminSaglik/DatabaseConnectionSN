@@ -1,0 +1,3 @@
+org\ahmeteminsaglik\business\concrete\DBManagementTest.class
+org\ahmeteminsaglik\business\concrete\ObjectTransferTest.class
+org\ahmeteminsaglik\API\concretes\DBTableAndColumCreationTest.class
