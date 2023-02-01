@@ -16,6 +16,7 @@ org\ahmeteminsaglik\core\exception\dbprocess\BaseDBNullColumnException.class
 org\ahmeteminsaglik\dataaccess\concretes\imp\DBServiceDAOImp.class
 org\ahmeteminsaglik\business\registeredobject\AllRegisteredObject.class
 org\ahmeteminsaglik\dataaccess\abstracts\ProcessNameDAO.class
+org\ahmeteminsaglik\API\abstracts\DBWordAPIService.class
 org\ahmeteminsaglik\business\registeredobject\subclass\RegisteredProcessName.class
 org\ahmeteminsaglik\core\exception\dbprocess\InvalidRequestDataException.class
 org\ahmeteminsaglik\business\registeredobject\subclass\RegisteredSearchAlgorithm.class
@@ -39,6 +40,7 @@ org\ahmeteminsaglik\core\exception\TableNameNotFoundException.class
 org\ahmeteminsaglik\dataaccess\concretes\imp\SearchAlgorithmDAOImp.class
 org\ahmeteminsaglik\API\abstracts\InitializeTablesAPIService.class
 org\ahmeteminsaglik\dataaccess\abstracts\DataStructorProcessDAO.class
+org\ahmeteminsaglik\API\concretes\DatabaseConnectionRetriveData.class
 org\ahmeteminsaglik\dataaccess\abstracts\WordDAO.class
 org\ahmeteminsaglik\API\concretes\DBTableAndColumCreation.class
 org\ahmeteminsaglik\business\registeredobject\subclass\RegisteredWordList.class

@@ -1,20 +1,27 @@
 package org.ahmeteminsaglik.API.concretes;
 
 import org.ahmeteminsaglik.API.abstracts.DBSaveAPIService;
+import org.ahmeteminsaglik.API.abstracts.DBWordAPIService;
 import org.ahmeteminsaglik.API.abstracts.InitializeTablesAPIService;
 import org.ahmeteminsaglik.abstracts.get.api.GetTestResultService;
+import org.ahmeteminsaglik.business.abstracts.DBService;
+import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.entities.business.DBRecordObject;
 import org.ahmeteminsaglik.business.concrete.ObjectTransfer;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;
 import org.ahmeteminsaglik.entities.db.Record;
+import org.ahmeteminsaglik.entities.db.Word;
+import org.ahmeteminsaglik.enums.EnumWordTable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesAPIService {
+public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesAPIService, DBWordAPIService {
     private final RecordDAO recordDAO = new RecordDAOImp();
     private ObjectTransfer objectTransfer = new ObjectTransfer();
+
+    private DBService dbService = new DBManagement();
 
     @Override
     public void initializeTables() {
@@ -42,4 +49,8 @@ public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesA
         return recordObject.getRecord();
     }
 
+    @Override
+    public List<Word> getWords(EnumWordTable enumWordTable) {
+        return dbService.getWords(enumWordTable);
+    }
 }

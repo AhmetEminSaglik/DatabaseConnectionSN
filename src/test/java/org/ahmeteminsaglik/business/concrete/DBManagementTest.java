@@ -105,8 +105,8 @@ class DBManagementTest {
     @DisplayName("Requested Sort Algorithm Test ")
     void testGetSortAlgortihmWithGivenEnum() {
         /* For one item Static Testing*/
-        SortAlgorithm sortAlgorithm = dbService.getSortAlgortihm(EnumSortAlgorithm.SEARCH_NODE);
-        String expected = EnumSortAlgorithm.SEARCH_NODE.getName();
+        SortAlgorithm sortAlgorithm = dbService.getSortAlgortihm(EnumSortAlgorithm.NO_SORT);
+        String expected = EnumSortAlgorithm.NO_SORT.getName();
         String actual = sortAlgorithm.getName();
         assertEquals(expected, actual);
 

@@ -7,6 +7,7 @@ import org.ahmeteminsaglik.abstracts.set.api.SetTestResultService;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;
 import org.ahmeteminsaglik.entities.db.Record;
+import org.ahmeteminsaglik.entity.WordProcessStatistics;
 import org.ahmeteminsaglik.entity.WordProcessUsedTable;
 import org.ahmeteminsaglik.enums.*;
 import org.junit.jupiter.api.DisplayName;
@@ -64,9 +65,10 @@ class ObjectTransferTest {
         SetTestResultService testResult = new TestAlgorithmResult();
         testResult
                 .setDataStructorProcess(EnumDataStructor.SEARCHNODE_V2)
-                .setSortAlgorithmProcess(EnumSortAlgorithm.SEARCH_NODE)
+                .setSortAlgorithmProcess(EnumSortAlgorithm.NO_SORT)
                 .setSearchAlgorithmProcess(EnumSearchAlgorithm.SEARCH_NODE)
                 .setWordProcessUsedTable(new WordProcessUsedTable(EnumWordTable.WORD_10_000,EnumWordTable.WORD_5_000))
+                .setWordProcessStatistic(new WordProcessStatistics(4_725,275))
                 .setComplexityConseptDataStructor(stopwatch, memoryUsage)
                 .setComplexityConseptSortAlgorithm(stopwatch, memoryUsage)
                 .setComplexityConseptSearchAlgorithm(stopwatch, memoryUsage);
