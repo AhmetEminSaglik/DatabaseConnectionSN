@@ -10,7 +10,6 @@ import java.util.List;
 
 public class EnumUtility {
 
-
     public static List<EnumDataStructor> getEnumDataStructorList() {
         return EnumDataUtility.getEnumDataStructorList();
     }
