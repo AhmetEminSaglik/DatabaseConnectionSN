@@ -1,6 +1,4 @@
 
-Z
-*src/main/java/org/ahmeteminsaglik/Todo.txt,0\9\0954554e7ed1fe1e1508ed50e2017efd63ef9c48
 ‹
 [src/main/java/org/ahmeteminsaglik/business/registeredobject/baseclass/RegisteredObject.java,6\5\65524d59eb81dd467c9b37980f653eb51018d712
 

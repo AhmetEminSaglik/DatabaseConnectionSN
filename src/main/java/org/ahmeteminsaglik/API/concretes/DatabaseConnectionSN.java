@@ -18,10 +18,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseConnectionSN implements DBSaveAPIService, InitializeTablesAPIService, DBWordAPIService {
+    private static boolean DBTablesAreInitilazed = false;
     private final RecordDAO recordDAO = new RecordDAOImp();
     private ObjectTransfer objectTransfer = new ObjectTransfer();
 
     private DBService dbService = new DBManagement();
+
+    public DatabaseConnectionSN() {
+        if (DBTablesAreInitilazed == false) {
+            initializeTables();
+            DBTablesAreInitilazed = true;
+        }
+    }
 
     @Override
     public void initializeTables() {

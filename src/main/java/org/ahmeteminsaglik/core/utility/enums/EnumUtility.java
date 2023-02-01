@@ -2,6 +2,7 @@ package org.ahmeteminsaglik.core.utility.enums;
 
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
+import org.ahmeteminsaglik.enums.utility.EnumDataUtility;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,8 +12,7 @@ public class EnumUtility {
 
 
     public static List<EnumDataStructor> getEnumDataStructorList() {
-        List<EnumDataStructor> enumList = Arrays.asList(EnumDataStructor.values());
-        return enumList;
+        return EnumDataUtility.getEnumDataStructorList();
     }
 
     public static List<DataStructor> getDataStructorListFromEnum() {
@@ -25,8 +25,7 @@ public class EnumUtility {
     }
 
     public static List<EnumSortAlgorithm> getEnumSortAlgorithmList() {
-        List<EnumSortAlgorithm> enumList = Arrays.asList(EnumSortAlgorithm.values());
-        return enumList;
+        return EnumDataUtility.getEnumSortAlgorithmList();
     }
 
     public static List<SortAlgorithm> getSortAlgorithmListFromEnum() {
@@ -40,8 +39,7 @@ public class EnumUtility {
 
 
     public static List<EnumSearchAlgorithm> getEnumSearchAlgorithmList() {
-        List<EnumSearchAlgorithm> enumList = Arrays.asList(EnumSearchAlgorithm.values());
-        return enumList;
+        return EnumDataUtility.getEnumSearchAlgorithmList();
     }
 
     public static List<SearchAlgorithm> getSearchAlgorithmListFromEnum() {
@@ -54,8 +52,7 @@ public class EnumUtility {
     }
 
     public static List<EnumProcessName> getEnumProcessNameList() {
-        List<EnumProcessName> enumList = Arrays.asList(EnumProcessName.values());
-        return enumList;
+        return EnumDataUtility.getEnumProcessNameList();
     }
 
     public static List<ProcessName> getProcessNameListFromEnum() {
@@ -68,8 +65,7 @@ public class EnumUtility {
     }
 
     public static List<EnumWordTable> getEnumWordTableList() {
-        List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
-        return enumList;
+        return EnumDataUtility.getEnumWordTableList();
     }
 
     public static List<WordList> getWordListFromEnum() {
