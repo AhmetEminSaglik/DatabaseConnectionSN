@@ -1,6 +1,7 @@
 package org.ahmeteminsaglik.dataaccess.abstracts;
 
-import org.ahmeteminsaglik.entities.db.DataStructorProcess;
+
+import org.ahmeteminsaglik.entity.DataStructorProcess;
 
 public interface DataStructorProcessDAO extends BaseDAO<DataStructorProcess> {
 }

@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.dataaccess.abstracts;
 
-import org.ahmeteminsaglik.entities.db.ProcessName;
+import org.ahmeteminsaglik.entity.ProcessName;
 
 public interface ProcessNameDAO extends BaseDAO<ProcessName> {
 }

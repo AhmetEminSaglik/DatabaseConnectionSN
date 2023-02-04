@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.dataaccess.abstracts;
 
-import org.ahmeteminsaglik.entities.db.Word;
+import org.ahmeteminsaglik.entity.Word;
 
 public interface WordDAO extends BaseDAO<Word> {
 }

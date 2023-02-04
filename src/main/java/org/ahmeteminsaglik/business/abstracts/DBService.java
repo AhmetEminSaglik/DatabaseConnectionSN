@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.business.abstracts;
 
-import org.ahmeteminsaglik.entities.db.*;
+import org.ahmeteminsaglik.entity.*;
 import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;

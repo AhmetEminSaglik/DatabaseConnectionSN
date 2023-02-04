@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.WordDAO;
-import org.ahmeteminsaglik.entities.db.Word;
+import org.ahmeteminsaglik.entity.Word;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 

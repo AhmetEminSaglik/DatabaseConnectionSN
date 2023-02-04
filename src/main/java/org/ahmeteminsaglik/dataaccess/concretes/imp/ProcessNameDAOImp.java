@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.ProcessNameDAO;
-import org.ahmeteminsaglik.entities.db.ProcessName;
+import org.ahmeteminsaglik.entity.ProcessName;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 

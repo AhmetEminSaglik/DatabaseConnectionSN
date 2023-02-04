@@ -1,8 +1,8 @@
 package org.ahmeteminsaglik.business.registeredobject.baseclass;
 
 import org.ahmeteminsaglik.core.exception.dbprocess.InvalidRequestDataException;
+import org.ahmeteminsaglik.core.utility.registeredobject.RegisteredObjectDBUtility;
 import org.ahmeteminsaglik.dataaccess.abstracts.BaseDAO;
-import org.ahmeteminsaglik.enums.EnumProcessName;
 
 import java.util.List;
 
@@ -12,6 +12,7 @@ public abstract class RegisteredObject<T> {
 
     public RegisteredObject(BaseDAO<T> dao) {
         this.dao = dao;
+        RegisteredObjectDBUtility.fillList(this);
     }
 
     public abstract T getByEnum(Enum<?> em);

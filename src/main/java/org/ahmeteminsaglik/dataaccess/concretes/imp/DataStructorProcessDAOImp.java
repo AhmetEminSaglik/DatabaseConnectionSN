@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.DataStructorProcessDAO;
-import org.ahmeteminsaglik.entities.db.DataStructorProcess;
+import org.ahmeteminsaglik.entity.DataStructorProcess;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 

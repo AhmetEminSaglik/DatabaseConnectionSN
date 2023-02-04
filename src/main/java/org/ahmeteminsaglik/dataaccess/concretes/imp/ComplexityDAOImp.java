@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.ComplexityDAO;
-import org.ahmeteminsaglik.entities.db.Complexity;
+import org.ahmeteminsaglik.entity.Complexity;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 

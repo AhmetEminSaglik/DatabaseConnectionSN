@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.SearchAlgorithmDAO;
-import org.ahmeteminsaglik.entities.db.SearchAlgorithm;
+import org.ahmeteminsaglik.entity.SearchAlgorithm;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 

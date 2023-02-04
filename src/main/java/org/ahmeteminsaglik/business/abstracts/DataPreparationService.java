@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.business.abstracts;
 
 import org.ahmeteminsaglik.entities.business.DBRecordObject;
-import org.ahmeteminsaglik.entities.db.Complexity;
+import org.ahmeteminsaglik.entity.Complexity;
 import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;

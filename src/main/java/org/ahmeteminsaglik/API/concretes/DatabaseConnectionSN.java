@@ -10,8 +10,8 @@ import org.ahmeteminsaglik.entities.business.DBRecordObject;
 import org.ahmeteminsaglik.business.concrete.ObjectTransfer;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;
-import org.ahmeteminsaglik.entities.db.Record;
-import org.ahmeteminsaglik.entities.db.Word;
+import org.ahmeteminsaglik.entity.Record;
+import org.ahmeteminsaglik.entity.Word;
 import org.ahmeteminsaglik.enums.EnumWordTable;
 
 import java.util.ArrayList;

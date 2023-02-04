@@ -1,7 +1,8 @@
 package org.ahmeteminsaglik.entities.business;
 
-import org.ahmeteminsaglik.entities.db.*;
-import org.ahmeteminsaglik.entities.db.Record;
+import org.ahmeteminsaglik.entity.*;
+import org.ahmeteminsaglik.entity.Record;
+
 
 import java.util.List;
 

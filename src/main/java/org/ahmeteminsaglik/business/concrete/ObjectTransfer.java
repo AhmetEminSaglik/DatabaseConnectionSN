@@ -4,7 +4,8 @@ import org.ahmeteminsaglik.abstracts.get.api.GetTestResultService;
 import org.ahmeteminsaglik.business.abstracts.DataPreparationService;
 import org.ahmeteminsaglik.entities.business.DBRecordObject;
 import org.ahmeteminsaglik.core.utility.objecttranfer.ObjectTransferUtility;
-import org.ahmeteminsaglik.entities.db.Complexity;
+import org.ahmeteminsaglik.entity.Complexity;
+
 import java.util.ArrayList;
 import java.util.List;
 

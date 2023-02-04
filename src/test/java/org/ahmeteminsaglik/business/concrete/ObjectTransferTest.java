@@ -6,7 +6,7 @@ import org.ahmeteminsaglik.abstracts.get.api.GetTestResultService;
 import org.ahmeteminsaglik.abstracts.set.api.SetTestResultService;
 import org.ahmeteminsaglik.dataaccess.abstracts.RecordDAO;
 import org.ahmeteminsaglik.dataaccess.concretes.imp.RecordDAOImp;
-import org.ahmeteminsaglik.entities.db.Record;
+import org.ahmeteminsaglik.entity.Record;
 import org.ahmeteminsaglik.entity.WordProcessStatistics;
 import org.ahmeteminsaglik.entity.WordProcessUsedTable;
 import org.ahmeteminsaglik.enums.*;

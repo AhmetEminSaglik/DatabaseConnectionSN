@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.core.utility.enums;
 
-import org.ahmeteminsaglik.entities.db.*;
+import org.ahmeteminsaglik.entity.*;
 import org.ahmeteminsaglik.enums.*;
 import org.ahmeteminsaglik.enums.utility.EnumDataUtility;
 
@@ -68,7 +68,7 @@ public class EnumUtility {
     }
 
     public static List<WordList> getWordListFromEnum() {
-        List<EnumWordTable> enumList = Arrays.asList(EnumWordTable.values());
+        List<EnumWordTable> enumList = EnumDataUtility.getEnumWordTableList();
         List<WordList> wordLists = new ArrayList<>();
         enumList.forEach(e -> {
             wordLists.add(new WordList(e.getName()));

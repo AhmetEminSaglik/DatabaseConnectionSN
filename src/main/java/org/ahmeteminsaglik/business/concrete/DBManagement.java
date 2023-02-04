@@ -5,14 +5,14 @@ import org.ahmeteminsaglik.business.registeredobject.*;
 import org.ahmeteminsaglik.business.registeredobject.subclass.*;
 import org.ahmeteminsaglik.core.utility.RetrivedObjectValidation;
 import org.ahmeteminsaglik.dataaccess.concretes.statementinspector.WordStatementInspector;
-import org.ahmeteminsaglik.entities.db.*;
+import org.ahmeteminsaglik.entity.*;
 import org.ahmeteminsaglik.enums.*;
 
 import java.util.List;
 
 public class DBManagement implements DBService {
 
-    final String columnName = "name";
+    private final String columnName = "name";
 
     private DAOServiceManagement daoService = new DAOServiceManagement();
 
@@ -60,7 +60,7 @@ public class DBManagement implements DBService {
 
     @Override
     public ProcessName getProcessName(EnumProcessName enumProcessName) {
-        RegisteredProcessName registeredProcessName = AllRegisteredObject.getProcessname();
+        RegisteredProcessName registeredProcessName = AllRegisteredObject.getProcessName();
         ProcessName processName = registeredProcessName.getByEnum(enumProcessName);
         return processName;
     }

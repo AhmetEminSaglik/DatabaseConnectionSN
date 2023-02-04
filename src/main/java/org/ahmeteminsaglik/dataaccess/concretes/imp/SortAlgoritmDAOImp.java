@@ -1,7 +1,7 @@
 package org.ahmeteminsaglik.dataaccess.concretes.imp;
 
 import org.ahmeteminsaglik.dataaccess.abstracts.SortAlgorithmDAO;
-import org.ahmeteminsaglik.entities.db.SortAlgorithm;
+import org.ahmeteminsaglik.entity.SortAlgorithm;
 import org.hibernate.cfg.NotYetImplementedException;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 

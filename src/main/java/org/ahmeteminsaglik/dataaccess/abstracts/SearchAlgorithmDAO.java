@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.dataaccess.abstracts;
 
-import org.ahmeteminsaglik.entities.db.SearchAlgorithm;
+import org.ahmeteminsaglik.entity.SearchAlgorithm;
 
 public interface SearchAlgorithmDAO extends BaseDAO<SearchAlgorithm> {
 }

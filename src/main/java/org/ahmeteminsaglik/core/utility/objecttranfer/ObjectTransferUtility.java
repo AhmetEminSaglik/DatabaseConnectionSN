@@ -3,14 +3,8 @@ package org.ahmeteminsaglik.core.utility.objecttranfer;
 import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.business.abstracts.DataPreparationService;
 import org.ahmeteminsaglik.business.concrete.DBManagement;
-import org.ahmeteminsaglik.entities.db.Complexity;
-import org.ahmeteminsaglik.entities.db.ProcessName;
-import org.ahmeteminsaglik.entity.ComplexityConsept;
-import org.ahmeteminsaglik.entity.WordProcessConsept;
-import org.ahmeteminsaglik.enums.EnumDataStructor;
-import org.ahmeteminsaglik.enums.EnumProcessName;
-import org.ahmeteminsaglik.enums.EnumSearchAlgorithm;
-import org.ahmeteminsaglik.enums.EnumSortAlgorithm;
+import org.ahmeteminsaglik.entity.*;
+import org.ahmeteminsaglik.enums.*;
 import org.ahmeteminsaglik.readableformat.ReadableFormat;
 
 import java.util.List;

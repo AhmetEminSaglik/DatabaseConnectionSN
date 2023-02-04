@@ -19,15 +19,15 @@
         <property name="hibernate.jdbc.time_zone">UTC</property>
         <!--        <property name="hibernate.jdbc.batch_size">10</property>-->
         <property name="hibernate.order_inserts">true</property>
-        <mapping class="org.ahmeteminsaglik.entities.db.Record"/>
-        <mapping class="org.ahmeteminsaglik.entities.db.DataStructor"/>
-        <mapping class="org.ahmeteminsaglik.entities.db.DataStructorProcess"/>
-        <mapping class="org.ahmeteminsaglik.entities.db.SortAlgorithmProcess"/>
-        <mapping class="org.ahmeteminsaglik.entities.db.SearchAlgorithmProcess"/>
-        <mapping class="org.ahmeteminsaglik.entities.db.WordProcess"/>
-        <mapping class="org.ahmeteminsaglik.entities.db.WordList"/>
-        <mapping class="org.ahmeteminsaglik.entities.db.Complexity"/>
-        <mapping class="org.ahmeteminsaglik.entities.db.ProcessName"/>
+        <mapping class="org.ahmeteminsaglik.entity.Record"/>
+        <mapping class="org.ahmeteminsaglik.entity.DataStructor"/>
+        <mapping class="org.ahmeteminsaglik.entity.DataStructorProcess"/>
+        <mapping class="org.ahmeteminsaglik.entity.SortAlgorithmProcess"/>
+        <mapping class="org.ahmeteminsaglik.entity.SearchAlgorithmProcess"/>
+        <mapping class="org.ahmeteminsaglik.entity.WordProcess"/>
+        <mapping class="org.ahmeteminsaglik.entity.WordList"/>
+        <mapping class="org.ahmeteminsaglik.entity.Complexity"/>
+        <mapping class="org.ahmeteminsaglik.entity.ProcessName"/>
 
     </session-factory>
 </hibernate-configuration>

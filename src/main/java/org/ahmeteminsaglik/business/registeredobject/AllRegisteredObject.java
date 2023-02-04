@@ -22,7 +22,7 @@ public class AllRegisteredObject {
         return registeredSearchAlgorithm;
     }
 
-    public static RegisteredProcessName getProcessname() {
+    public static RegisteredProcessName getProcessName() {
         return registeredProcessName;
     }
 

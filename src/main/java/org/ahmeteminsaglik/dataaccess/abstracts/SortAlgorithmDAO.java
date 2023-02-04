@@ -1,6 +1,6 @@
 package org.ahmeteminsaglik.dataaccess.abstracts;
 
-import org.ahmeteminsaglik.entities.db.SortAlgorithm;
+import org.ahmeteminsaglik.entity.SortAlgorithm;
 
 public interface SortAlgorithmDAO extends BaseDAO<SortAlgorithm>{
 }
