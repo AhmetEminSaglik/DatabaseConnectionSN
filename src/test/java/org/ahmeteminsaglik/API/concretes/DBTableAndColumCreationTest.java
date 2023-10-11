@@ -6,7 +6,7 @@ import org.ahmeteminsaglik.business.concrete.DBManagement;
 import org.ahmeteminsaglik.core.utility.enums.EnumUtility;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
-import org.ahmeteminsaglik.readableformat.ReadableFormat;
+import org.ahmeteminsaglik.ReadableFormat;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
