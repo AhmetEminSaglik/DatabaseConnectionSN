@@ -11,7 +11,7 @@ import org.ahmeteminsaglik.enums.EnumDataStructor;
 import org.ahmeteminsaglik.enums.EnumProcessName;
 import org.ahmeteminsaglik.enums.EnumSearchAlgorithm;
 import org.ahmeteminsaglik.enums.EnumSortAlgorithm;
-import org.ahmeteminsaglik.readableformat.ReadableFormat;
+import org.ahmeteminsaglik.ReadableFormat;
 
 import java.util.List;
 

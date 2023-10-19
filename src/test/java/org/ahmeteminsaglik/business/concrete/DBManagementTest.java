@@ -5,7 +5,7 @@ import org.ahmeteminsaglik.business.abstracts.DBService;
 import org.ahmeteminsaglik.core.utility.enums.EnumUtility;
 import org.ahmeteminsaglik.entities.db.*;
 import org.ahmeteminsaglik.enums.*;
-import org.ahmeteminsaglik.readableformat.ReadableFormat;
+import org.ahmeteminsaglik.ReadableFormat;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
